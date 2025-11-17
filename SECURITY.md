@@ -1,231 +1,137 @@
-# SECURITY.md: Vulnerability & Misuse Reporting
+# Security: Responsible Disclosure
 
-## What This Repository Is
+## What This Framework Can Do
 
-The BordneAI Research Engine is a **specification and governance document**, not executable software or a deployed system. This repository contains:
+The BordneAI Research Engine is a specification for evidence-based reasoning. It:
+- Analyzes contested questions using structured evidence evaluation
+- Applies systematic guardrails to catch reasoning errors
+- Distinguishes legitimate sealed records from conspiracy claims
+- Weights competing hypotheses using Bayesian reasoning
 
-- Instructional governance documentation
-- Sourcing frameworks and methodology
-- Domain-specific reasoning guidelines
-- Examples of reasoning patterns
-
-**This repository does NOT contain:**
-- Executable code
-- Model weights or neural network parameters
-- Proprietary algorithms
-- Authentication logic
-- Data processing systems
-- Security-critical infrastructure
+**This is not a security-critical system** and contains no executable code. It is specification documentation for use in LLM systems.
 
 ---
 
-## Security Scope
+## Potential Misuse Scenarios
 
-Because this is a specification-only repository, traditional software security concerns do not apply:
+### Scenario 1: Using to Support Unanchored Conspiracy Claims
+**Potential Misuse:** Someone claims the framework validates a conspiracy theory by "reasoning about sealed records."
 
-### Not Applicable
+**Reality:** The framework explicitly refuses to analyze unanchored conspiracy claims. Sealed records ≠ conspiracy (Guardrail 7). Any analysis supporting an unanchored conspiracy claim violates the framework's core principles and should be treated with skepticism.
 
-- ❌ No code vulnerabilities (no code to exploit)
-- ❌ No memory corruption or injection attacks
-- ❌ No authentication bypass (no authentication system)
-- ❌ No data breach risk (no database)
-- ❌ No dependency vulnerabilities (no production dependencies)
-- ❌ No cryptographic weaknesses (no cryptography used)
+**Detection:** Legitimate analysis using the framework will:
+- Explicitly state what is sealed vs. what is conspiracy
+- Show T1/T2 evidence base
+- Present competing hypotheses with confidence levels
+- Apply all seven guardrails
 
-### Potentially Applicable
+### Scenario 2: Using to Bypass Institutional Oversight
+**Potential Misuse:** Someone uses the framework to rationalize institutional secrecy or justify suppression.
 
-- ✅ Prompt injection vulnerabilities (if used as system prompt for LLM)
-- ✅ Governance misalignment (if used to guide high-stakes decisions)
-- ✅ Misuse scenarios (if applied to malicious purposes)
-- ✅ Documentation errors (factual inaccuracies in examples)
-- ✅ Outdated information (if not kept current with declassification)
+**Reality:** The framework is designed to enable **accountability** by reasoning about sealed records. It:
+- Requires explicit evidence for suppression claims
+- Distinguishes legitimate sealing from conspiracy
+- Asks what institutional incentives justify secaling
+- Encourages declassification pattern analysis
+
+Using the framework to justify suppression would violate its core purpose.
+
+### Scenario 3: Using to Fabricate False Confidence
+**Potential Misuse:** Someone uses the framework's language of confidence levels to make unfounded claims sound rigorous.
+
+**Reality:** The framework requires explicit source tier basis for confidence levels. Claims without T1/T2 evidence are either:
+- Explicitly assigned low confidence (L4-L5)
+- Refused as analysis (pure speculation)
+
+Any analysis claiming high confidence without T1/T2 evidence violates the framework.
 
 ---
 
 ## Responsible Disclosure
 
-### If You Find a Security Concern
+If you identify potential misuse of the framework, or discover that someone is using the framework to support unanchored claims while falsely claiming framework legitimacy:
 
-**Do:**
-1. Email BordneAI@bordne.com with:
-   - Clear description of the concern
-   - Specific location in repository (file, section, line)
-   - Reason it's a security issue
-   - Suggested remediation
-2. Allow reasonable time (30 days) for response before public disclosure
-3. Provide enough detail for the team to verify and reproduce
+### Report Procedure
+1. **Document the misuse**: Record the specific claim and how it violates the framework
+2. **Identify the violation**: Which guardrail is violated? What T1/T2 evidence is missing?
+3. **Contact**: See CONTRIBUTING.md for how to report framework issues
+4. **Include**: Specific location of misuse and analysis of the framework violation
 
-**Don't:**
-- Public GitHub issues for security concerns (use private email)
-- Disclose vulnerabilities publicly before notification
-- Use issue reports as a vector for attacks or social engineering
+### What Constitutes Reportable Misuse
+- Using framework output to support unanchored suppression claims
+- Claiming framework authority for analysis that violates guardrails
+- Misrepresenting sealed records as equivalent to conspiracy
+- Using framework language to fabricate false confidence in speculation
+- Claiming framework validation for analysis that lacks T1/T2 evidence base
 
-### Examples of Valid Security Concerns
-
-1. **Prompt Injection Vulnerability:** "The governance rules in SYSTEM_PROMPT could be bypassed via [injection technique]. Suggested fix: [mitigation]"
-
-2. **Governance Misalignment:** "The disallowed claims list in GOVERNANCE.md doesn't prevent [malicious use case]. Suggested update: [rule addition]"
-
-3. **Factual Error with Security Implication:** "The example in docs/examples.md contains factually incorrect information about [topic], which could mislead [stakeholder]. Correction: [accurate information]"
-
-4. **Outdated Information:** "The declassification date referenced in docs/domains.md is wrong; correct date is [X]. This affects [reasoning]."
-
-5. **Misuse Scenario Not Addressed:** "These governance rules could be applied to [harmful purpose]. Suggest adding guardrail: [proposal]"
+### What Does Not Constitute Reportable Misuse
+- Disagreement with analysis conclusion (substantive disagreement is fine)
+- Use of framework for domains not recommended (user responsibility)
+- Analysis that's wrong but honest (errors happen; correction is through CONTRIBUTING.md)
+- Competitive or alternative frameworks (disagreement on methodology is fine)
 
 ---
 
-## Misuse Reporting
+## Framework Vulnerabilities (Inherent Limitations)
 
-### If You Observe This System Being Misused
+The framework has known limitations that users should understand:
 
-Report to: BordneAI@bordne.com (subject: "MISUSE REPORT")
+### 1. Garbage In, Garbage Out
+If sources are misclassified (calling a T4 testimony "T1 evidence"), analysis will be wrong.
 
-**Include:**
-- Description of misuse (what is the system being used for?)
-- How it contradicts stated governance
-- Any relevant evidence or links
-- Stakeholders affected
+**Mitigation**: Verify source tier assignments yourself. Don't blindly trust T1/T2 designations.
 
-**Examples of reportable misuse:**
+### 2. Hypothesis Incompleteness
+The analysis is only as good as the hypotheses identified. If a credible hypothesis is missed, it won't appear in the output.
 
-1. **Deceptive Use:** System applied to generate persuasive-sounding misinformation about sensitive topics
+**Mitigation**: Generate your own hypotheses; don't rely solely on the framework's identification.
 
-2. **Adversarial Use:** Governance rules bypassed or inverted to support unsubstantiated claims in high-stakes context
+### 3. Guardrail Application Variance
+Human implementation of the guardrails may be inconsistent. One analysis might catch an error; another might not.
 
-3. **Supply Chain Compromise:** System deployed with modified governance rules without attribution or disclosure
+**Mitigation**: Review analyses against all seven guardrails yourself. Verify guardrail compliance.
 
-4. **Escalation Risk:** System applied to contexts not intended (e.g., high-stakes military decision-making without human oversight)
+### 4. Sealed Records Reasoning Limitations
+Even with institutional incentive reasoning, inferences about sealed records have inherently lower confidence (typically 30-50%).
 
-5. **Malicious Implementation:** Code implementation of governance that deliberately undermines stated principles
+**Mitigation**: Don't treat sealed-record inferences as if they were direct evidence. Acknowledge the indirectness.
 
----
+### 5. Confidence Level Calibration
+The framework provides explicit confidence levels, but these are only as good as the evidence evaluation.
 
-## What NOT to Report
-
-These are **not** security concerns in this context:
-
-- ❌ "I disagree with the governance philosophy" (legitimate policy disagreement, not security issue)
-- ❌ "The system limits what it will say about X" (designed guardrail, not bug)
-- ❌ "I wish the system would make [claim] without sourcing" (violates intentional design)
-- ❌ "Other systems are less constrained" (comparison, not vulnerability)
-- ❌ "The examples don't cover my use case" (feature request, not security issue)
+**Mitigation**: Verify that confidence levels match the evidence base. Question if confidence seems too high for the evidence provided.
 
 ---
 
-## Responsible Use Guidelines
+## Ethical Use Guidelines
 
-### If You Implement This Framework
+### Do:
+- Use the framework to reason rigorously about contested questions
+- Distinguish sealed records (legitimate) from conspiracy claims (unanchored)
+- Apply guardrails to catch your own reasoning errors
+- Acknowledge evidence limitations and uncertainty
+- Report misuse or framework violations
 
-**Do:**
-1. Conduct independent safety review appropriate to your context
-2. Establish human oversight and review procedures
-3. Audit outputs for accuracy before public or high-stakes use
-4. Monitor for adversarial input or misuse
-5. Report errors or misalignment issues
-6. Maintain attribution and license compliance
-
-**Don't:**
-- Use in critical infrastructure without additional safety validation
-- Deploy in high-stakes decision contexts without human oversight
-- Modify governance rules without clear documentation and review
-- Claim greater capability or reliability than documented
-- Hide errors or misalignments
-
-### If You Fork or Adapt This Repository
-
-1. Maintain clear attribution (CC BY 4.0 required)
-2. Document all modifications
-3. Establish equivalent or stronger governance safeguards
-4. Conduct independent safety review
-5. Provide comparable security/misuse reporting procedures
-6. Consider contributing improvements back to original project
+### Don't:
+- Use the framework to support unanchored suppression claims
+- Claim the framework validates conspiracy theories
+- Ignore guardrail violations in analyses you encounter
+- Use framework output as sole basis for high-stakes decisions
+- Treat sealed record inferences as direct evidence
 
 ---
 
-## Security Practices
+## Contact
 
-### Version Tracking
+For security concerns or responsible disclosure of potential misuse:
 
-All changes documented in CHANGELOG.md for auditability:
-- Users can verify what's changed between versions
-- Researchers can reproduce analysis using specific version
-- Misalignments can be flagged against version history
+1. **Document the issue clearly**: Describe what misuse occurred
+2. **Identify the framework violation**: How does it violate guardrails or misrepresent the framework?
+3. **Report through CONTRIBUTING.md**: Follow the error reporting process
 
-### Cross-Reference Validation
-
-Critical governance rules cross-referenced across files:
-- GOVERNANCE.md references SYSTEM_PROMPT-v3.0.md (rules consistent)
-- docs/examples.md shows governance in action (alignment visible)
-- SOURCING_PROFILE can be used standalone (no hidden dependencies)
-
-### Attribution & License
-
-CC BY 4.0 license requires:
-- Attribution: "By David Bordne, licensed under CC BY 4.0"
-- Derivative works must maintain license and attribution
-- Modifications must be clearly marked
-
-This creates accountability trail for who modified what.
-
-### Correction Protocol
-
-Errors can be flagged and tracked:
-1. User or researcher identifies error
-2. Developer verifies and documents
-3. Correction incorporated in next version
-4. Change logged in CHANGELOG.md
-5. Versioning allows retroactive identification of error
+Do not publicly disclose potential misuse before allowing the maintainers opportunity to respond. Responsible disclosure protects the framework's integrity.
 
 ---
 
-## Privacy Considerations
-
-### What This Repository Collects
-
-**This repository does not collect data.** It is static documentation.
-
-If deployed as a live service:
-- Query content may be logged (user privacy concern)
-- Metadata (query timestamps, domain, user ID) may be tracked
-- Correction submissions may be retained
-
-**Users should assume:** Any input to a live deployment may be logged and used for improvement.
-
-### Declassified Information Respect
-
-This repository discusses declassified information, which is by definition public.
-
-However, sensitive topics are treated with care:
-- Techniques for declassified material are not used to deduce classified material
-- Institutional secrecy is respected (not assumed to hide specific content)
-- Personnel identities in declassified material are handled per source document
-
----
-
-## Support & Questions
-
-For security questions or concerns:
-
-**Email:** BordneAI@bordne.com
-**Subject line:** "SECURITY" (for confidential concerns)
-
-Response timeline: Good-faith security reports will receive acknowledgment within 7 days and substantive response within 30 days.
-
----
-
-## Disclaimer
-
-This repository is provided "as-is" with no guarantee of security, safety, or fitness for any purpose.
-
-Users deploying implementations based on this specification are responsible for:
-- Independent security review
-- Safety validation for their context
-- Compliance with applicable laws and regulations
-- Responsible use monitoring
-
----
-
-**Version:** Part of BordneAI Research Engine v3.0-alpha
-**Last Updated:** 2025-11-17
-**License:** CC BY 4.0
-**Maintained By:** David Bordne
+**BordneAI Research Engine v3.0-alpha**
+Specification for evidence-based reasoning. Released under CC BY 4.0.

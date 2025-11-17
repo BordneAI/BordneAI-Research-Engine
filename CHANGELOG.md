@@ -1,185 +1,131 @@
-# CHANGELOG
+# Changelog
 
-All changes to the BordneAI Research Engine are tracked here for auditability and transparency, consistent with the verifiability principle.
+All notable changes to the BordneAI Research Engine are documented in this file.
 
 ---
 
-## [v3.0-alpha] — 2025-11-17
+## [3.0-alpha] - 2025-11-17
 
-### Initial Public Release
+### First Release: Universal, Domain-Agnostic Framework
 
-This is the first public release of the BordneAI Research Engine governance specification.
-
-#### Summary
-Complete reference documentation for the governance framework, sourcing hierarchy, and operational guidelines for the BordneAI GPT research assistant. Specification-only; no executable code included.
+This is the first release of BordneAI Research Engine v3.0-alpha, a complete specification for evidence-based reasoning into contested domains.
 
 #### Added
 
-**Core Governance Files:**
-- `SYSTEM_PROMPT-v3.0.md` — Canonical system instructions and prompt configuration
-- `SOURCING_PROFILE_V2.1.md` — Tiered evidence hierarchy (T1–T4) with conflict resolution rules
-- `GOVERNANCE.md` — Domain-specific rules, safety guardrails, and correction protocols
+**Core Framework Components:**
+- `SYSTEM_PROMPT-v3.0.md` - Complete system instructions for LLM deployment
+- `SOURCING_PROFILE_V2.1.md` - Tiered sourcing hierarchy (T1-T4) with detailed definitions and citation standards
+- `GOVERNANCE.md` - Seven universal guardrails and failure mode recovery procedures
+- `README.md` - Framework overview and quick start guide
 
-**Documentation & Examples:**
-- `docs/domains.md` — Per-domain methodology deep dives:
-  - Nuclear history & NC3 secrecy treatment
-  - Intelligence oversight and institutional analysis
-  - UAP/UFO/USO sensor data and physics constraints
-  - Scientific/historical anomalies and competing hypotheses
-- `docs/structural-secrecy.md` — Framework for respecting institutional secrecy without speculation
-- `docs/examples.md` — Five representative query/response pairs demonstrating governance in action
+**Documentation:**
+- `docs/framework.md` - Five-step methodology for applying framework to any domain
+- `docs/structural-secrecy.md` - Framework for reasoning about sealed records and distinguishing from conspiracy claims
+- `docs/examples.md` - Five generic methodology examples demonstrating framework application
 
-**Reference & Licensing:**
-- `README.md` — High-level overview, quick-start guide, and repository structure
-- `LICENSE.md` — CC BY 4.0 legal text and attribution requirements
-- `NOTICE.md` — Operational safety disclaimers and usage guidance
-- `CHANGELOG.md` — This file; version history and audit trail
+**Templates & Deployment:**
+- `prompts/research-engine-v3.0.md` - System prompt copy for direct LLM deployment
+- `prompts/menu-template.md` - Domain-agnostic guided menu for users
 
-**Optional Administrative Files:**
-- `SECURITY.md` — Vulnerability reporting and misuse guidance
-- `CONTRIBUTING.md` — External feedback and governance update procedures
-- `prompts/research-engine-v3.0.md` — System prompt copy for experimentation
-- `prompts/menu-template.md` — Guided menu structure for interactive mode
+**Governance & Licensing:**
+- `LICENSE.md` - CC BY 4.0 license with attribution requirements
+- `NOTICE.md` - Scope, limitations, and appropriate use cases
+- `SECURITY.md` - Responsible disclosure and misuse scenarios
+- `CONTRIBUTING.md` - Error reporting and feedback process
 
-#### Configuration
+#### Key Features
 
-**Enabled Domains (Core 4):**
-- `nuclear_history_Okinawa` — Nuclear near-misses, NC3 protocols, declassified incidents
-- `politics_intel_elections` — Oversight records, FOIA releases, intelligence assessments
-- `uap_ufo_usos` — UAP kinematics, sensor data, physics constraints
-- `3i_atlas_core` — [Scope per implementation]
+**Universal Methodology:**
+- Domain-agnostic framework applies to historical research, intelligence analysis, scientific disputes, policy analysis, and any contested domain
+- Same methodology, sourcing hierarchy, and guardrails across all domains
 
-**Key Features:**
-- Tiered sourcing with T1 (Primary/Agency), T2 (Peer-Reviewed), T3 (Secondary), T4 (Testimony) hierarchy
-- Temporal anchoring requirement: all factual claims tied to specific documents or dates
-- Entropy control and BAAM weighting for uncertainty quantification
-- Structural secrecy respect: distinction between "sealed (unknown)" and "declassified (unresolved)"
-- Competing hypotheses framework with confidence distribution
-- David Bordne as T4_named researcher; T4 contributions always flagged
-- Domain-specific disallowed claims and guardrails
+**Evidence-Based Reasoning:**
+- T1-T4 tiered sourcing hierarchy with explicit confidence levels
+- Bayesian weighting of competing hypotheses
+- Mandatory analysis structure ensuring transparency and reproducibility
 
-**Governance Principles:**
-- Verifiability First: sources citable, claims checkable
-- Structural Secrecy Respect: institutional sealing is legitimate, not conspiracy
-- Competing Hypotheses Valued: uncertainty quantified, not hedged
-- Correction protocol: user flagging, developer feedback integration
+**Governance Guardrails:**
+1. Temporal Anchoring - All claims specify *when* they apply
+2. No Unanchored Suppression - Suppression claims require explicit evidence
+3. Competing Hypotheses - All credible interpretations presented
+4. Language Precision - Explicit confidence levels instead of hedging
+5. Institutional Context - Behavior explained through incentives, not conspiracy
+6. Physics/Logic Constraints - Violations explicitly noted
+7. Sealed ≠ Unknown ≠ Conspiracy - Three distinct categories
 
-**Safety Gates:**
-- Refusal of unanchored suppression claims ("hidden docs definitely exist")
-- Physics plausibility checks (UAP domain)
-- Neutral language enforcement (contested domains: politics, intelligence, UAP)
-- Temporal anchoring verification
-- T4 testimony isolation (never sufficient alone)
+**Structural Secrecy Framework:**
+- Legitimate reasoning about sealed records using institutional incentives
+- Clear distinction between sealed (legitimate), unknown (natural gap), and conspiracy (unanchored)
+- Refusal protocol for pure speculation
 
-#### Documentation Completeness
-
-- README serves as entry point with repository structure diagram
-- All 16+ files per specification completed
-- Cross-references validated
-- Tone consistency verified (professional, neutral, specification-forward)
-- Examples span all enabled domains
-- Readability tested for multiple audiences
-
-#### License
-
-- CC BY 4.0 with explicit attribution requirement
-- Applicable to governance content only (no executable code)
-- Derivative works permitted with attribution and disclaimer
-
-#### Known Limitations
-
-- `3i_atlas_core` scope to be defined per implementation
-- Entropy levels and BAAM weighting parameters marked as [specify] in SYSTEM_PROMPT-v3.0.md
-- GPT Store deployment URL placeholder ([GPT_STORE_URL])
-- Contact email placeholder (BordneAI@bordne.com — verify during publication)
+**Accessibility:**
+- Clear documentation for researchers, analysts, policy makers, and developers
+- Five-step workflow for applying framework to any question
+- Generic examples (no incident-specific references)
+- Guided menu for choosing research domain
 
 ---
 
-## Versioning & Future Updates
+## Planned Enhancements (Future Versions)
 
-### Version Bump Triggers
+### Version 3.1 (Planned)
+- Guardrail refinement based on alpha testing feedback
+- Additional example types and application scenarios
+- Expanded structural secrecy reasoning patterns
+- Formal Bayesian model specification document
 
-The following events will trigger a version update:
+### Version 3.2 (Planned)
+- Software implementation (Python or similar)
+- LLM API integration examples
+- Batch analysis capabilities
+- Analysis quality validation tools
 
-1. **Prompt Modifications:** Changes to SYSTEM_PROMPT-v3.0.md logic, disallowed claims, or guardrails
-2. **New Domains:** Addition or removal of enabled research domains
-3. **Safety Gate Changes:** Significant modifications to governance rules or correction procedures
-4. **Sourcing Rules:** Updates to tiered hierarchy, conflict resolution, or T4 testimony protocols
-5. **Documentation Clarification:** Substantial rewrites or corrections affecting interpretation
-
-Minor clarifications or typo corrections will not trigger version bumps but will be noted in this file.
-
-### Version Numbering Scheme
-
-- **Major (X.0):** Fundamental changes to core governance or domain structure
-- **Minor (3.Y):** New features, domains, or significant documentation additions
-- **Alpha/Beta:** Pre-release versions (e.g., v3.0-alpha, v3.1-beta)
-- **Release:** Stable, production-recommended versions
-
-### Update Process
-
-1. Changes proposed and documented
-2. CHANGELOG.md entry drafted with proposed changes
-3. Safety and consistency review performed
-4. SYSTEM_PROMPT-v3.0.md updated if applicable
-5. All related files (GOVERNANCE.md, docs/) updated for consistency
-6. New version committed with descriptive message
-7. CHANGELOG.md finalized with version number and date
-8. Release announced via GitHub and documentation
-
-### Template for Future Versions
-
-```markdown
-## [vX.Y-stage] — YYYY-MM-DD
-
-### Release Title
-
-Brief summary of major changes.
-
-#### Added
-- [New features, domains, files]
-
-#### Changed
-- [Modified files, rule updates]
-
-#### Fixed
-- [Corrections, clarifications]
-
-#### Known Issues
-- [Limitations, placeholders]
-
-#### Migration Notes (if applicable)
-- [Instructions for adapting prior implementations]
-```
+### Version 4.0 (Planned)
+- Major restructuring based on deployment experience
+- Domain-specific application guides (while maintaining universality)
+- Advanced hypothesis generation methods
+- Quantified guardrail violation detection
 
 ---
 
-## Feedback & Error Reporting
+## Release Notes
 
-To report errors, request clarifications, or propose improvements:
+### v3.0-alpha
 
-1. **GitHub Issues:** [https://github.com/BordneAI/BordneAI-Research-Engine/issues](https://github.com/BordneAI/BordneAI-Research-Engine/issues)
-2. **Email:** BordneAI@bordne.com
-3. **Correction Protocol:** See GOVERNANCE.md for formal correction submission procedure
+**Status:** Specification complete; ready for deployment and testing
 
-Issues will be reviewed and prioritized. Accepted corrections will be incorporated in the next version bump.
+**Stability:** Stable specification; may receive clarifications and error corrections
 
----
+**Deployment:**
+- Ready for use as system prompt in Claude API, ChatGPT, and other LLM systems
+- Suitable for research, educational, and professional analysis
+- Not recommended for real-time emergency decision-making
 
-## Audit & Verifiability
-
-This CHANGELOG serves as an audit trail for the BordneAI Research Engine specification. All changes are documented here, enabling:
-
-- **Transparency:** Users can see what has changed and when
-- **Accountability:** Attribution of changes to development phases
-- **Reproducibility:** Earlier versions are identifiable for comparison
-- **Trust:** Version consistency verifiable across deployments
-
-The git commit history (visible via `git log`) provides the underlying verification mechanism.
+**Known Limitations:**
+- Framework is specification only; no software implementation
+- Sealed records reasoning has inherent uncertainty (typically 30-50% confidence)
+- Framework effectiveness depends on source tier classification accuracy
+- Requires human judgment for question scoping and evidence evaluation
 
 ---
 
-**Last Updated:** 2025-11-17
-**Current Version:** v3.0-alpha
-**Maintained By:** David Bordne
-**License:** CC BY 4.0
+## Version Numbering
+
+The BordneAI Research Engine uses semantic versioning:
+- **Major version** (3, 4, etc.) - Fundamental framework restructuring
+- **Minor version** (3.1, 3.2, etc.) - New features or significant improvements
+- **Patch version** (3.0.1, 3.0.2, etc.) - Bug fixes and error corrections
+- **Release status** (-alpha, -beta, none) - Maturity level
+
+---
+
+## Feedback & Contributions
+
+For error reports, suggestions, and governance feedback, see CONTRIBUTING.md.
+
+For security concerns, see SECURITY.md.
+
+---
+
+**BordneAI Research Engine v3.0-alpha**
+Released 2025-11-17 under Creative Commons Attribution 4.0 International (CC BY 4.0)

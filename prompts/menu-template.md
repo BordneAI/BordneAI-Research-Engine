@@ -1,202 +1,270 @@
-# Interactive Menu Template
+# BordneAI Research Engine v3.0 - Guided Menu
 
-## BordneAI Research Engine: Domain Selection Menu
+## Choose Your Research Domain
 
-Welcome to the BordneAI Research Engine. This guided menu helps you explore evidence-based analysis in historically sensitive and institutionally complex domains.
+Welcome to the BordneAI Research Engine. This tool applies rigorous, governed reasoning to contested domains of knowledge. Whatever your question, we'll analyze it systematically:
 
----
-
-## Select a Domain to Explore
-
-### Option 1: Nuclear History & NC3
-
-**Description:** U.S. nuclear weapons history, particularly Okinawa and Pacific deployments; Nuclear Command & Control & Communications (NC3) protocols; near-miss incidents; institutional secrecy norms around deterrence.
-
-**Key Questions This Domain Answers:**
-- What do declassified sources tell us about nuclear weapons deployment history?
-- How do we reason about sealed NC3 records without speculation?
-- What institutional incentives explain classification of nuclear policy?
-
-**Available Evidence (T1):**
-- ~500+ declassified State Department cables on nuclear policy
-- Military historical records covering 1945–present
-- Congressional hearing records (Armed Services, Foreign Relations committees)
-
-**Sourcing Standards:** High (strong declassified baseline; significant T1 material available)
-
-**Typical Queries:** "What happened in Incident X?", "Why are NC3 details sealed?", "What does historical precedent suggest about current status?"
-
-**[Explore Nuclear History Domain]**
+- **Verifiable**: Every claim is traceable to a source
+- **Transparent**: All reasoning is shown; readers can verify conclusions
+- **Rigorous**: Seven universal guardrails catch common reasoning errors
+- **Humble**: Uncertainty is acknowledged; confidence levels are explicit
 
 ---
 
-### Option 2: Intelligence & Oversight
+## Select Your Domain
 
-**Description:** Electoral history and institutional analysis; declassified intelligence assessments; Congressional oversight records; intelligence activities disclosed via FOIA; institutional analysis of how intelligence systems work.
+### Option 1: Historical Research
+**For questions about past events, historical narratives, and declassified records**
 
-**Key Questions This Domain Answers:**
-- What did declassified intelligence assessments conclude?
-- How reliable are institutional assessments on contested topics?
-- What does the record show about intelligence oversight and accountability?
+Historical research often involves:
+- Incomplete evidence (documents may be lost, sealed, or never created)
+- Competing historical interpretations (scholars disagree on significance)
+- Declassification over time (new documents reshape understanding)
+- Long timescales (decades or centuries; change is real)
 
-**Available Evidence (T1):**
-- Declassified Intelligence Community Assessments (ICAs)
-- Congressional hearing records (open sessions)
-- Congressional Research Service (CRS) reports
-- FOIA-released intelligence documents
+**How the framework helps:**
+- Systematic source evaluation: Which historians cite primary documents? Which rely on secondhand sources?
+- Temporal anchoring: When did this change? How do we distinguish different eras?
+- Competing hypotheses: If multiple historical interpretations exist, what evidence favors each?
+- Sealed records reasoning: What can we infer about declassified documents from patterns of what institutions release?
 
-**Sourcing Standards:** Medium-High (good declassified baseline; some material withheld for OPSEC)
+**Example questions for this domain:**
+- "What does evidence show about historical institutional policy during [time period]?"
+- "Historians disagree on interpretation of [event]. What evidence supports each view?"
+- "Why was [topic] sealed at the time? What does declassification reveal?"
 
-**Typical Queries:** "What did the 2016 intelligence assessment conclude?", "How do institutions assess controversial events?", "What does declassified evidence show about Y?"
-
-**[Explore Intelligence & Oversight Domain]**
-
----
-
-### Option 3: UAP/UFO/USO
-
-**Description:** Unidentified Aerial Phenomena; declassified military sensor data and kinematics analysis; physics constraints on reported behavior; pilot testimony; institutional responses to UAP reports.
-
-**Key Questions This Domain Answers:**
-- What can physics constraints tell us about reported UAP kinematics?
-- How do we evaluate sensor data quality and false positive rates?
-- What competing hypotheses fit declassified evidence?
-
-**Available Evidence (T1):**
-- Declassified military video and radar data
-- Congressional hearing records (recent)
-- DoD incident reports (partially declassified)
-- Sensor technical specifications
-
-**Sourcing Standards:** Medium (growing declassification; large evidence gaps remain; significant sealed material)
-
-**Typical Queries:** "What does the Gimbal video show?", "Could X acceleration be physically possible?", "What are competing explanations?"
-
-**[Explore UAP/UFO/USO Domain]**
+**To begin:** Describe your historical question, including the time period and what sources are available (documents, testimony, academic research, etc.)
 
 ---
 
-### Option 4: 3i_atlas_core (Astronomy & Astrophysics)
+### Option 2: Intelligence & Institutional Analysis
+**For questions about institutional behavior, decision-making, and classified operations**
 
-**Description:** Astronomy and astrophysics analysis; celestial phenomena, astronomical observations, space missions, physics constraints. T1 prioritizes NASA-JPL, peer-reviewed astronomy journals, international space agency reports.
+Intelligence analysis and institutional oversight often involve:
+- Classified information (sealed records; reasoning about them is possible)
+- Institutional incentives (understand behavior through incentive structure, not conspiracy)
+- Competing institutional positions (different agencies may have different views)
+- Operational security concerns (legitimate reasons for classification)
 
-**Key Questions This Domain Answers:**
-- What do NASA/JPL observations tell us about [celestial phenomenon]?
-- How do physics constraints bound plausible explanations?
-- What telescope/instrument limitations affect detection reliability?
+**How the framework helps:**
+- Institutional incentive reasoning: Why would an institution make this decision? What incentives drive behavior?
+- Sealed records analysis: What legitimate reasons justify classification? What can we infer from declassified patterns?
+- Avoid conspiracy thinking: Distinguish institutional secrecy (legitimate) from conspiracy (unanchored)
+- Competing hypotheses: What are plausible institutional explanations for observed behavior?
 
-**Available Evidence (T1):**
-- NASA-JPL official mission data and announcements
-- International space agency reports (ESA, JAXA, CNSA)
-- Peer-reviewed primary data from major observatories
-- Published astronomical survey catalogs
+**Example questions for this domain:**
+- "What explains institutional position on [policy]? What are competing explanations?"
+- "Given institutional incentives, what likely drives [behavior]?"
+- "Information about [topic] remains classified. What can we reason about based on institutional patterns?"
 
-**Sourcing Standards:** High (strong T1 baseline; physics constraints binding; observable data high-quality)
-
-**Typical Queries:** "What does NASA-JPL data show about X?", "How do physics constraints limit Y interpretation?", "What are conventional astrophysical explanations?"
-
-**[Explore Astronomy Domain]**
-
----
-
-### Option 5: Custom Query
-
-**Description:** Not sure which domain fits your question? Or have a question that spans multiple domains?
-
-**How This Works:**
-1. Describe your question or topic
-2. System will identify relevant domains and sourcing frameworks
-3. Response will apply appropriate governance rules
-4. Analysis will integrate T1/T2/T3 evidence as available
-
-**Examples of cross-domain queries:**
-- "How do institutional incentives explain both nuclear secrecy and intelligence classification?"
-- "What role did intelligence assessments play in decisions about weapons deployment?"
-- "How do physics constraints and institutional behavior combine to explain UAP patterns?"
-
-**[Submit Custom Query]**
+**To begin:** Describe the institutional question, including which institutions are involved, what their known positions are, and what information is sealed vs. available.
 
 ---
 
-## How to Use This Engine
+### Option 3: Scientific Phenomena & Anomalies
+**For questions about unexplained phenomena, competing scientific hypotheses, and replication disputes**
 
-### Sourcing Hierarchy (T1–T4)
+Scientific research involves:
+- Peer-reviewed literature (the gold standard for scientific evidence)
+- Competing hypotheses (multiple explanations consistent with evidence)
+- Methodological questions (how good was the research? Sample sizes? Controls?)
+- Edge cases (phenomena that don't fit standard models; may require new understanding)
 
-All responses use a four-tier sourcing system:
+**How the framework helps:**
+- Source tier evaluation: Is this a peer-reviewed finding or preprint? How rigorous is the methodology?
+- Physics/logic constraints: If a hypothesis seems to violate known physics, does it eliminate it or just lower confidence?
+- Competing hypotheses: What explanations are consistent with evidence? How do they weight?
+- Uncertainty quantification: Rather than "proven" vs. "disproven," what are confidence levels for competing explanations?
 
-- **T1 (Highest Confidence):** Declassified documents, official records, primary sources
-- **T2 (Medium Confidence):** Peer-reviewed research, published analysis, institutional studies
-- **T3 (Medium-Low Confidence):** Historical syntheses, journalism, secondary accounts
-- **T4 (Lowest Confidence):** Testimony, eyewitness accounts (always flagged; never sufficient alone)
+**Example questions for this domain:**
+- "What does peer-reviewed research show about [phenomenon]?"
+- "Scientists disagree about [topic]. What evidence supports each interpretation?"
+- "A hypothesis seems to violate known physics. How do we assess it?"
 
-### What Responses Include
-
-Every response will:
-1. ✅ Break down evidence by tier (what's T1, T2, T3, T4?)
-2. ✅ Cite sources (you can verify independently)
-3. ✅ Flag competing hypotheses with confidence ranges
-4. ✅ Acknowledge sealed records and why they're sealed
-5. ✅ Use precise language (no hedging: "70% likely X" not "perhaps X")
-6. ✅ Show reasoning (why does this interpretation outweigh that one?)
-
-### Governance Rules
-
-This engine respects three core principles:
-
-1. **Verifiability:** All claims traceable to sources
-2. **Structural Secrecy:** Sealed records explained without assuming content
-3. **Competing Hypotheses:** Uncertainty quantified, not hidden
-
-See `/GOVERNANCE.md` for full rules.
+**To begin:** Describe the scientific question, including what research exists, which findings are established, and where scientists disagree.
 
 ---
 
-## Quick Reference
+### Option 4: Policy & Decision-Making Analysis
+**For questions about why institutions make specific decisions and what incentives drive policy**
 
-### What This Engine Does Well
+Policy analysis involves:
+- Documented decision records (policy papers, statements, official records)
+- Competing policy positions (different stakeholders advocate different approaches)
+- Outcome analysis (did the policy achieve stated goals?)
+- Institutional incentives (budget constraints, legal requirements, institutional missions)
 
-- ✅ Reason about incomplete, contested, or classified information
-- ✅ Distinguish declassified facts from interpretation
-- ✅ Respect institutional secrecy without assuming conspiracy
-- ✅ Present multiple competing explanations with confidence levels
-- ✅ Apply physics/institutional constraints to bound plausibility
-- ✅ Flag testimony as testimony (not treat it as fact)
+**How the framework helps:**
+- Decision analysis: What evidence exists about why a specific decision was made?
+- Institutional reasoning: What incentives explain observed policy? (Rather than assuming conspiracy, use incentive analysis)
+- Competing positions: What are the different policy viewpoints? What evidence supports each?
+- Outcome assessment: How well did the policy work? What sources evaluate outcomes?
 
-### What This Engine Won't Do
+**Example questions for this domain:**
+- "What explains institutional policy choice [X] over alternatives [Y] and [Z]?"
+- "Stakeholders disagree about [policy]. What evidence supports each position?"
+- "Why did institution change policy from [old] to [new]? What drove the change?"
 
-- ❌ Assume sealed records definitely contain specific content
-- ❌ Use hedging language instead of confidence ranges
-- ❌ Present single hypothesis as only explanation
-- ❌ Ignore physics or institutional constraints
-- ❌ Make partisan inferences without T1/T2 evidence
-- ❌ Claim certainty about unknowable matters
-
----
-
-## Feedback & Corrections
-
-See something wrong? Have a suggestion?
-
-- **Flag errors:** Use GitHub Issues or email (see `/GOVERNANCE.md`)
-- **Propose domains:** Contact BordneAI@bordne.com
-- **Security concerns:** Email BordneAI@bordne.com (subject: "SECURITY")
+**To begin:** Describe the policy question, including the specific decision, when it was made, and what institutional documents or statements exist about it.
 
 ---
 
-## Documentation
+### Option 5: Cultural & Institutional Memory Disputes
+**For questions about contested historical narratives, cultural interpretation, and institutional memory**
 
-For deeper understanding:
+Cultural disputes often involve:
+- Competing narratives (different communities remember events differently)
+- Primary sources (documents, testimony, artifacts with multiple interpretations)
+- Institutional context (what incentive does an institution have for specific narrative?)
+- Contemporary relevance (why does this historical question matter now?)
 
-- **Sourcing guide:** `/SOURCING_PROFILE_V2.1.md`
-- **Governance rules:** `/GOVERNANCE.md`
-- **Domain methodology:** `/docs/domains.md`
-- **Sealed records reasoning:** `/docs/structural-secrecy.md`
-- **Real examples:** `/docs/examples.md`
-- **System architecture:** `/SYSTEM_PROMPT-v3.0.md`
+**How the framework helps:**
+- Multiple perspectives: What do different communities say about [topic]? What sources does each cite?
+- Evidence evaluation: Which narrative is supported by primary documents? Which relies on oral history?
+- Testimony handling: How do we weight personal testimony vs. documented records?
+- Institutional context: Why might institutions prefer specific narratives? What incentives shape memory?
+
+**Example questions for this domain:**
+- "Different communities have different accounts of [event]. What primary evidence exists?"
+- "What do institutional records show about [disputed topic]?"
+- "Why do competing narratives persist about [historical question]?"
+
+**To begin:** Describe the cultural dispute, including what different perspectives exist, what primary sources are available, and what the disagreement is about.
 
 ---
 
-**Version:** BordneAI Research Engine v3.0-alpha
-**Last Updated:** 2025-11-17
-**License:** CC BY 4.0 (attribution required)
-**Maintained By:** David Bordne
+### Option 6: Custom Domain
+**For questions not fitting the above categories**
+
+If your question doesn't fit the standard domains, the framework still applies. The methodology is universal.
+
+**How to frame it:**
+- What is the contested question? (Be specific)
+- What evidence exists? (Documents, research, testimony, sealed records?)
+- What are the competing interpretations?
+- What makes this question difficult to resolve?
+
+**The framework will:**
+1. Classify available evidence by tier (T1-T4)
+2. Identify all credible hypotheses
+3. Weight them based on evidence strength
+4. Identify what information is sealed vs. unknown vs. conspiratorial
+5. Apply seven universal guardrails to catch reasoning errors
+
+**To begin:** Describe your question clearly, including why it's contested and what evidence exists.
+
+---
+
+## How the Analysis Works
+
+Regardless of which domain you choose, the framework follows the same systematic methodology:
+
+### 1. Clarify Your Question
+- What exactly are you asking?
+- What time period or scope is relevant?
+- What are the competing interpretations?
+
+### 2. Gather Evidence by Tier
+- **T1**: Official documents, primary sources, declassified records
+- **T2**: Peer-reviewed research, credentialed analysis
+- **T3**: Reputable secondary sources, established analysis
+- **T4**: Testimony, interviews, insider accounts
+
+### 3. Identify Competing Hypotheses
+- What are all the credible interpretations?
+- Which evidence supports each?
+- What evidence contradicts each?
+
+### 4. Apply Seven Guardrails
+- Temporal Anchoring: When does each claim apply?
+- No Unanchored Suppression: Claims require evidence, not absence of disclosure
+- Competing Hypotheses: Present all credible interpretations
+- Language Precision: Explicit confidence; no hedging
+- Institutional Context: Incentives, not conspiracy
+- Physics/Logic: Constraints noted
+- Sealed ≠ Unknown ≠ Conspiracy: Categories distinguished
+
+### 5. Assign Bayesian Weights
+- Confidence level for each hypothesis: 70% vs. 25% vs. 5%
+- Basis for weights: Which source tiers support each?
+- Next steps: What evidence would change the weights?
+
+---
+
+## Typical Output Structure
+
+Your analysis will include:
+
+**Header:**
+- Question being analyzed
+- Entropy level (L1-L5: very confident to pure speculation)
+- Source tier mix (what % of evidence is T1 vs. T2 vs. T3 vs. T4?)
+
+**Verified Facts (T1/T2 Only):**
+- Claims directly supported by primary or peer-reviewed sources
+
+**Analysis & Interpretation:**
+- What do the facts suggest?
+- What are competing interpretations?
+- What evidence supports each?
+
+**Testimony Attribution (if applicable):**
+- Named sources with credentials
+- Anonymous sources with contextual markers
+
+**Structural Secrecy Context (if sealed records relevant):**
+- What information is sealed?
+- Why is it sealed?
+- What can we infer using institutional incentives?
+
+**Competing Hypotheses:**
+- Hypothesis A: XX% confidence
+- Hypothesis B: XX% confidence
+- Hypothesis C: XX% confidence
+
+**Guardrail Verification:**
+- ✓ Temporal Anchoring: Dates specified
+- ✓ No Unanchored Suppression: Claims have evidence
+- ✓ Competing Hypotheses: All credible views presented
+- ✓ Language Precision: Explicit confidence; no hedging
+- ✓ Institutional Context: Incentives explained
+- ✓ Physics/Logic: Constraints noted
+- ✓ Sealed ≠ Unknown ≠ Conspiracy: Categories clear
+
+**Next Steps:**
+- What evidence would increase confidence in each hypothesis?
+- What evidence would refute each hypothesis?
+
+---
+
+## Getting Started
+
+Choose one of the six options above (Historical Research, Intelligence Analysis, Scientific Phenomena, Policy Analysis, Cultural Disputes, or Custom Domain), then:
+
+1. **Describe your question clearly**
+2. **Mention what sources are available** (documents, research, testimony, sealed records)
+3. **Identify competing interpretations** (what do different perspectives claim?)
+4. **Ask your specific query** (What does evidence show? How do competing views weight?)
+
+The BordneAI Research Engine will analyze systematically, showing all reasoning transparently.
+
+---
+
+## Important Notes
+
+- **This framework is for analysis, not argument**: We analyze what evidence shows, not which position is "right"
+- **Uncertainty is genuine**: If multiple credible interpretations exist, we acknowledge all of them
+- **Sealed records are analyzable**: Even when information is classified, we can reason about likely content using institutional incentives
+- **Speculation is refused**: If a question lacks evidence anchoring, we'll refuse to analyze it and explain why
+
+---
+
+## Version & References
+
+**Version**: 3.0-alpha
+**Last Updated**: 2025-11-17
+
+For full system instructions, see SYSTEM_PROMPT-v3.0.md
+For detailed sourcing rules, see SOURCING_PROFILE_V2.1.md
+For methodology, see docs/framework.md
+For guardrails and error correction, see GOVERNANCE.md
