@@ -1,141 +1,202 @@
-# NOTICE: Scope and Limitations
-
-## What This Repository Contains
-
-The BordneAI Research Engine is a **specification document** describing a governed epistemic system for evidence-based inquiry. This repository contains:
-
-- **Documentation**: System instructions, methodology guides, sourcing specifications, governance rules
-- **Templates**: Example prompts for deployment in LLM systems
-- **Examples**: Generic (non-incident-specific) methodology demonstrations
-- **No executable code**: No software, no model weights, no deployed system
-
-This is **not a software package**. It is **instructional specification documentation** designed to be copied into language model systems as a system prompt or context.
+# Notice: BordneAI Research Engine v3.3.1
 
 ---
 
-## Important Disclaimers
+## What This Is
 
-### 1. Non-Production Status
-The BordneAI Research Engine v3.0-alpha is **specification documentation only**. It has not been deployed in production systems. It is suitable for:
-- Research and study of epistemic systems
-- Testing in controlled environments
-- Deployment as a system prompt in LLM APIs (Claude, ChatGPT, etc.)
-- Educational examination of evidence-based reasoning
+The BordneAI Research Engine v3.3.1 is a **governance specification and reference architecture** for evidence-based inquiry.
 
-### 2. No Automated Reasoning
-This framework describes methodology for **human-guided analysis** using LLM systems. The LLM executes the reasoning process under human direction; humans are responsible for:
-- Formulating questions
-- Evaluating whether the analysis is sound
-- Making decisions based on the analysis
-- Verifying claims against sources
+### Explicitly NOT:
 
-### 3. Knowledge Cutoff Limitations
-The framework applies only to questions that can be anchored to evidence available at the time of analysis. The framework explicitly refuses to analyze:
-- Pure speculation (no T1/T2 evidence base)
-- Questions post-dating available evidence
-- Unanchored conspiracy claims
+- ❌ Executable code or software
+- ❌ Model weights or neural network parameters
+- ❌ Production-certified or safety-approved system
+- ❌ A substitute for professional judgment, expertise, or consultation
+- ❌ A conspiracy framework or alternative epistemology
+- ❌ A replacement for domain-specific standards and ethics
 
-### 4. Domain Applicability
-The framework is **universal and domain-agnostic**. It can be applied to any contested domain. However:
-- **Appropriate domains**: Historical research, institutional analysis, policy analysis, scientific disputes, intelligence assessment
-- **Inappropriate domains**: Personal advice, medical diagnosis, legal guidance requiring professional expertise
-- **User responsibility**: The user must determine whether the framework is appropriate for their question
+### Explicitly IS:
 
-### 5. Not a Source of Truth
-The BordneAI Research Engine is not a source of truth about any domain. It is a **method for analyzing evidence**. The framework's output is only as good as:
-- The evidence available
-- The accuracy of source tier assignments
-- The completeness of hypothesis identification
-- The application of guardrails
-
-Users are responsible for independently verifying claims and evaluating analysis quality.
-
-### 6. Evidence Limitations
-The framework is subject to fundamental limitations:
-- **Sealed records**: Information that is sealed cannot be directly accessed
-- **Unknown information**: Gaps in evidence may be large or systematic
-- **Source bias**: All sources reflect incentives and perspectives
-- **Interpretation uncertainty**: Competing hypotheses may have similar confidence levels
-
-The framework acknowledges these limitations; it does not overcome them.
+- ✅ Instructional documentation for how to treat evidence
+- ✅ A framework for transparent reasoning under uncertainty
+- ✅ Applicable across any domain where ambiguity or conflict exists
+- ✅ A reference implementation for those building AI systems
+- ✅ Governed by CC BY 4.0 (Creative Commons Attribution)
 
 ---
 
-## Use Cases
+## Safety & Scope Limitations
 
-### Recommended Uses
-- **Research and Analysis**: Systematic examination of contested questions using documented evidence
-- **Educational**: Learning how to reason rigorously about incomplete information
-- **Policy Analysis**: Understanding institutional behavior and decision-making
-- **Historical Research**: Analyzing competing historical narratives with source evaluation
-- **Scientific Disputes**: Weighing competing scientific hypotheses and research findings
-- **Intelligence Analysis**: Reasoning about sealed records using institutional incentive frameworks
+### What This Framework Cannot Do
 
-### Not Recommended Uses
-- **Personal Decisions**: Do not use for medical, legal, or personal advice requiring specialized expertise
-- **Real-Time Emergencies**: Not designed for time-critical decision-making
-- **Replacing Professional Expertise**: Not a substitute for specialized professionals (doctors, lawyers, etc.)
-- **Automated Decision-Making**: Framework requires human judgment; do not automate decisions based on framework output alone
+1. **Access classified material.** The framework cannot retrieve, analyze, or confirm claims about sealed or classified records. It can discuss why classification exists, but cannot access what is classified.
 
----
+2. **Resolve unknowns.** When a question's answer is unknown, the framework acknowledges this. It does not speculate beyond what evidence supports.
 
-## Attribution & Licensing
+3. **Guarantee accuracy.** The framework applies rigorous methods, but is not immune to error. Outputs should be verified against authoritative sources in your domain.
 
-This work is released under **Creative Commons Attribution 4.0 International (CC BY 4.0)**.
+4. **Substitute for professional judgment.** In medicine, law, finance, security, and other professional domains, this framework informs analysis but does not replace qualified professionals. Always consult appropriately-credentialed experts for consequential decisions.
 
-**You must:**
-- Provide attribution to BordneAI Research Engine
-- Include the license text (see LICENSE.md)
-- Indicate if changes were made
-- Include a copy of the license with any distribution
+5. **Resolve philosophical disputes.** Questions of value, meaning, or preference ultimately lie outside the scope of evidence-based frameworks.
 
-**You may:**
-- Use for any purpose (commercial or noncommercial)
-- Modify and adapt the framework
-- Distribute or republish
+6. **Provide real-time data.** Without access to live web services or current databases, assessments are limited by knowledge cutoff dates.
 
-See LICENSE.md for full licensing terms.
+### When Professional Consultation Is Required
 
----
+**Medical/Health Questions:**
+- Consult a physician, licensed healthcare provider, or mental health professional
+- This framework is for educational understanding, not medical guidance
+- Individual health circumstances vary; medical decisions require professional assessment
 
-## Governance & Feedback
+**Legal Questions:**
+- Consult an attorney licensed in your jurisdiction
+- This framework is for legal understanding, not legal advice
+- Laws vary by jurisdiction; professional counsel is essential
 
-### Errors or Issues
-If you find errors in the specification or examples, report them:
-- See CONTRIBUTING.md for reporting procedure
-- Include specific location of error
-- Describe the problem and suggest fix if possible
+**Financial Questions:**
+- Consult a financial advisor or professional
+- This framework is informational, not financial advice
+- Investment decisions require professional assessment of your circumstances
 
-### Security or Misuse Concerns
-See SECURITY.md for responsible disclosure of potential misuse.
+**Security/Safety-Critical Questions:**
+- Consult qualified security professionals
+- This framework is analytical, not operational guidance
+- Safety-critical systems require professional risk assessment
 
-### Governance Improvement Proposals
-For suggestions on improving the governance framework or adding guardrails, see CONTRIBUTING.md.
+**Policy/Regulatory Questions:**
+- Consult regulatory experts or compliance professionals
+- This framework is for policy understanding, not compliance guidance
+- Regulatory requirements vary by context
 
 ---
 
-## Version Information
+## How Outputs Should Be Used
 
-**Current Version**: v3.0-alpha
-**Release Date**: 2025-11-17
-**Status**: Specification complete; ready for alpha testing and deployment
+### Appropriate Uses
 
-This is an **alpha release**. The framework is stable and ready for use, but may be updated as deployment experience accumulates.
+- ✅ Educational and informational purposes
+- ✅ Research and background understanding
+- ✅ Initial analysis prior to professional consultation
+- ✅ Reference for how to think about evidence and uncertainty
+- ✅ Framework implementation in other AI systems
+- ✅ Learning how tiered sourcing and governance apply to your domain
 
-See CHANGELOG.md for version history and planned updates.
+### Inappropriate Uses
+
+- ❌ Medical decisions without physician consultation
+- ❌ Legal decisions without attorney consultation
+- ❌ Financial decisions without professional financial advice
+- ❌ Safety-critical decisions without qualified expert review
+- ❌ Relying on outputs as definitive answers in high-stakes domains
+- ❌ Treating framework as basis for rejecting professional expertise
 
 ---
 
-## Contact & Support
+## Limitations & Disclaimers
 
-This is specification documentation; it does not have traditional "support." However:
-- **Questions about framework**: See the README.md and docs/ folder
-- **Questions about system instructions**: See SYSTEM_PROMPT-v3.0.md
-- **Questions about sourcing**: See SOURCING_PROFILE_V2.1.md
-- **Questions about guardrails**: See GOVERNANCE.md
-- **Errors or suggestions**: See CONTRIBUTING.md
+### Scope Limitations
+
+This framework:
+- Prioritizes T1/T2 (primary sources and peer-reviewed research) but cannot create evidence that doesn't exist
+- Acknowledges uncertainty explicitly rather than hiding it
+- Does not presume what topics are acceptable (you specify domains)
+- Applies best efforts to evidence-based reasoning but guarantees nothing
+
+### Individual Variation
+
+Outputs describe general evidence bases but do not account for:
+- Individual health conditions, genetics, and circumstances
+- Jurisdictional variations in law
+- Personal risk tolerance and preferences
+- Organizational context and constraints
+- Local cultural and professional norms
+
+**Always apply professional judgment and context to generic outputs.**
+
+### Time Sensitivity
+
+This framework reflects information current as of its release date (2025-11-17). For:
+- Scientific claims: newer research may contradict older assessments
+- Policy claims: regulations and laws change
+- Technology claims: systems evolve rapidly
+- Medical claims: treatment guidelines evolve
+- Market claims: conditions change continuously
+
+**Always verify time-sensitive claims against current authoritative sources.**
 
 ---
 
-**BordneAI Research Engine v3.0-alpha**
-Specification documentation released under CC BY 4.0
+## What The Framework Does Not Imply
+
+- 🚫 That absence of evidence is evidence of suppression
+- 🚫 That institutional silence proves hidden truth
+- 🚫 That documented facts are conspiracies
+- 🚫 That experts who disagree are covering something up
+- 🚫 That marginal evidence should outweigh mainstream research
+- 🚫 That distrust in institutions justifies distrust in evidence
+
+---
+
+## Licensing & Attribution
+
+This work is licensed under **CC BY 4.0** (Creative Commons Attribution 4.0 International).
+
+**Attribution requirement:** If you use, adapt, or build upon this framework, you must:
+- Provide appropriate attribution to BordneAI
+- Include a copy of or link to the CC BY 4.0 license
+- Indicate if modifications were made
+
+For details, see [LICENSE.md](LICENSE.md).
+
+---
+
+## No Warranty
+
+This specification is provided "as-is" without warranty of any kind, express or implied. Users are responsible for:
+
+- Verifying outputs against authoritative sources in their domain
+- Applying professional standards and ethics
+- Obtaining expert consultation for high-stakes decisions
+- Complying with applicable laws and regulations in their jurisdiction
+- Taking responsibility for decisions made based on framework outputs
+
+---
+
+## Reporting Issues
+
+If you identify:
+
+- **Factual errors** in the specification → GitHub Issues or email
+- **Security concerns** about framework misuse → See [SECURITY.md](SECURITY.md)
+- **Clarity gaps** in documentation → GitHub Issues
+- **Suggested improvements** → See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+See these files for specific reporting protocols.
+
+---
+
+## Governing Philosophy
+
+This framework is designed to:
+
+1. **Make reasoning transparent** — how evidence is weighted, what is known, what remains unknown
+2. **Enable correction** — when new information contradicts earlier assessment, update explicitly
+3. **Prioritize documents over narratives** — verifiable sources over storytelling
+4. **Acknowledge limits** — when evidence is insufficient, say so rather than speculate
+5. **Govern reasoning, not conclusions** — enable evidence-based inquiry regardless of topic
+
+It does **not** enforce particular worldviews, political positions, or conclusions.
+
+---
+
+## Summary
+
+**Use this framework for:** Evidence-based reasoning, learning, research, and analytical guidance across any domain.
+
+**Do not use this framework as:** A substitute for professional expertise, medical/legal/financial advice, or a reason to disregard qualified professionals.
+
+**Remember:** This framework informs analysis. Humans make decisions. Professional judgment and local context always apply.
+
+---
+
+*BordneAI Research Engine v3.3.1 | Released 2025-11-17 | CC BY 4.0 License*

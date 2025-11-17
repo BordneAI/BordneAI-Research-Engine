@@ -1,364 +1,442 @@
-# Five Generic Methodology Examples
-
-## How the Framework Works in Practice
-
-Each example demonstrates the mandatory analysis structure and guardrail verification. These are **hypothetical generic scenarios**, not real incidents.
+# Framework Examples: Methodology in Action
 
 ---
 
-## Example 1: T1/T2 Source Conflict
+## Introduction
+
+These examples demonstrate how tiered sourcing and entropy levels apply to contested topics. All scenarios are **generic and hypothetical**—designed to illustrate methodology, not analyze real incidents.
+
+Each example shows:
+- **Query:** The question asked
+- **Governance Checkpoints:** Which rules applied
+- **System Response:** How the framework structures the answer
+- **Key Lessons:** What this illustrates about the framework
+
+---
+
+## Example 1: Lightweight Mode — Simple Factual Question
 
 ### Query
-"Two sources give different accounts of institutional policy change. One says X, one says Y. How do we weight them?"
+"What is the capital of France?"
+
+### Governance Checkpoints
+- ✅ Entropy: L1 (simple, well-documented, no conflict)
+- ✅ Mode: Lightweight (low-stakes, clear evidence)
+- ✅ Tiers: T1 available (official documents)
 
 ### System Response
 
-**Header:**
-```
-Question: How to resolve conflicting source accounts about institutional policy change?
-Entropy Level: L3 (Mixed evidence)
-Source Tier Mix: T1: 40%, T2: 60%, T3: 0%, T4: 0%
-Analysis Date: 2025-11-17
-```
+The capital of France is Paris. This is established in French constitutional documents and international recognition agreements.
 
-**Verified Facts (T1/T2 Only):**
-```
-- T1: Official agency statement released [date]: Policy position is [X], confidence: 95%
-- T2: Academic research published [year]: Research suggests policy interpretation [Y],
-  methodology: peer-reviewed, confidence: 85%
-```
-
-**Analysis & Interpretation:**
-```
-Conflict Identified:
-T1 Source (agency statement) claims position X.
-T2 Source (peer research) claims policy interpretation Y.
-
-Resolution Using Conflict Hierarchy:
-Default hierarchy (T1 > T2) suggests position X is primary, but contradiction is significant.
-This may indicate: (1) agency statement is incomplete, (2) researcher interpretation differs from
-official position, (3) both are correct in different contexts.
-
-Likely explanation: Agency statement (T1) establishes official position (X).
-Research (T2) identifies implementation variation [specific variation], which is technically
-consistent with position X but described differently.
-
-Confidence Assessment:
-- Confidence in official position X: 92% (T1 source)
-- Confidence in implementation variation: 78% (T2 finding; consistent with T1)
-- Confidence in complete resolution: 70% (apparent conflict explained)
-```
-
-**Competing Hypotheses:**
-```
-Hypothesis A: Positions X and Y describe different aspects of same policy, 72% confidence
-  Supporting: Both T1 and T2 agree on underlying principle; difference is descriptive
-
-Hypothesis B: Agency overstated policy coherence; actual implementation diverges, 20% confidence
-  Supporting: T2 research suggests fragmentation not mentioned in T1 statement
-
-Hypothesis C: Researcher misinterpreted policy; T1 is correct, 8% confidence
-  Supporting: T1 is direct source; T2 is interpretation
-```
-
-**Guardrail Verification:**
-```
-✓ Temporal Anchoring: Dates specified for both sources
-✓ No Unanchored Suppression: No suppression claims (just source conflict)
-✓ Competing Hypotheses: Three hypotheses presented with confidence weights
-✓ Language Precision: Explicit confidence percentages; no hedging ("may," "might")
-✓ Institutional Context: Conflict explained through policy complexity, not conspiracy
-✓ Physics/Logic: No physics/logic constraints relevant
-✓ Sealed ≠ Unknown ≠ Conspiracy: N/A; both sources are public
-```
-
-**Next Steps:**
-```
-Evidence that would increase confidence in Hypothesis A: Additional T1 sources clarifying
-  how both descriptions fit together
-Evidence that would increase confidence in Hypothesis B: T2 research showing systematic
-  implementation variation across regions/time periods
-```
+### Key Lessons
+- Low-entropy questions need minimal structure
+- Implicit sourcing is acceptable for L1 topics
+- Lightweight mode is efficient for clear facts
+- Not every claim requires elaborate documentation
 
 ---
 
-## Example 2: Testimony Without Corroboration
+## Example 2: Lightweight Mode — Casual Lookup
 
 ### Query
-"A named former official provides testimony about historical decision-making. No other sources confirm the details. How do we treat this testimony?"
+"What are some free video editing software options?"
+
+### Governance Checkpoints
+- ✅ Entropy: L1-L2 (clear options, some subjective judgment)
+- ✅ Mode: Lightweight (low-stakes, opinion is acceptable)
+- ✅ Tiers: T3 primary (reviews and recommendations)
 
 ### System Response
 
-**Header:**
-```
-Question: How to weight T4_named testimony without direct corroboration from T1/T2?
-Entropy Level: L3 (Mixed evidence; testimony-dependent)
-Source Tier Mix: T1: 0%, T2: 20%, T3: 0%, T4: 80%
-Analysis Date: 2025-11-17
-```
+Several free options exist:
 
-**Verified Facts:**
-```
-- T2: Academic synthesis of declassified documents [year]: General institutional framework,
-  confidence: 88%
-```
+- **DaVinci Resolve:** Professional-grade, free version, supports 4K
+- **OpenShot:** Simple, cross-platform, good for beginners
+- **Shotcut:** Lightweight, open-source, supports many formats
+- **CapCut:** Mobile-first, increasingly popular for social media
 
-**Analysis & Interpretation:**
-```
-Testimony Received:
-[Named individual]: [Title/credentials], [date of employment]: [testimony about decision-making]
+Your choice depends on complexity needs and platform. Professional editors often prefer DaVinci Resolve; beginners find OpenShot intuitive.
 
-Credibility Assessment:
-- Individual credentials: [Professional history], verified
-- Potential conflicts of interest: [Institutional affiliations], [Career implications]
-- Specificity of testimony: [Specific details suggesting direct knowledge vs. vague claims]
-- Consistency with known facts: [Aligns with or contradicts T2 background]
-
-Treatment:
-This testimony provides insider perspective on decision-making process. No T1/T2 source directly
-contradicts it, but no T1/T2 source directly confirms it either. Testimony stands as isolated
-account from credible witness; confidence limited by lack of corroboration.
-
-Confidence: 42% (named credible source, but uncorroborated by T1/T2)
-```
-
-**Testimony Attribution:**
-```
-T4_named: [Individual], [credentials], employed [dates]: [specific testimony quote].
-Corroboration status: Uncorroborated by T1/T2; consistent with general [T2 framework].
-Confidence: 42%
-```
-
-**Next Steps:**
-```
-Evidence that would increase confidence: (1) Additional named witnesses with consistent
-  testimony, (2) T1 declassified document supporting details, (3) T2 research on similar
-  decision-making processes confirming plausibility
-Evidence that would decrease confidence: (1) T1 source contradicting key detail,
-  (2) Evidence of witness bias or misremembering
-```
-
-**Guardrail Verification:**
-```
-✓ Temporal Anchoring: Employment dates and testimony timing specified
-✓ No Unanchored Suppression: Testimony not treated as evidence of suppression
-✓ Competing Hypotheses: T4 treated as one hypothesis; alternatives identified
-✓ Language Precision: Explicit confidence (42%); not "possibly reliable" or "credible"
-✓ Institutional Context: Witness bias/incentives analyzed; no conspiracy assumption
-✓ Physics/Logic: N/A
-✓ Sealed ≠ Unknown ≠ Conspiracy: Testimony not treated as evidence of sealed information
-```
+### Key Lessons
+- Opinion questions can be lightweight even with multiple valid answers
+- No need for ✅/🔍 distinction when stakes are low
+- Sourcing can be implicit ("multiple editors recommend...")
+- Simple recommendation structure is acceptable
 
 ---
 
-## Example 3: Physics Constraints in Hypothesis Evaluation
+## Example 3: Structured Mode — Contested Historical Question
 
 ### Query
-"A hypothesis about a mechanism violates known physics. Should we eliminate it?"
+"How do historians assess competing accounts of a major historical event where multiple credible sources exist?"
+
+*(Generic example: imagine a historical event with conflicting contemporary documents)*
+
+### Governance Checkpoints
+- ✅ Entropy: L3 (multiple interpretations, good documentation)
+- ✅ Mode: Structured (historical dispute, multiple credible accounts)
+- ✅ Tiers: T1 (primary documents), T2 (academic analysis), T3 (historical synthesis)
+- ✅ High-stakes identification: Academic integrity, educational accuracy
 
 ### System Response
 
-**Header:**
-```
-Question: How to handle hypotheses that violate known physics?
-Entropy Level: L4 (Contested; physics constraints)
-Source Tier Mix: T1: 30%, T2: 50%, T3: 20%, T4: 0%
-Analysis Date: 2025-11-17
-```
+🧪 **Header**
+- **Entropy Level:** L3
+- **Size:** Medium
+- **Mode:** Structured
+- **Source Mix:** T1 primary documents available; T2 analysis provides competing interpretations
+- **Confidence:** Medium (sources agree on core facts but diverge on causation and significance)
+- **As Of:** 2025
 
-**Analysis & Interpretation:**
-```
-Hypothesis A (Primary): [Mechanism consistent with known physics], supported by [T1/T2]
+✅ **Verified Facts**
+- Official records document [specific claim] (T1, official archive, dated 1850, confidence: very_high)
+- Contemporaneous witness account documents [related claim] (T1, archival record, dated 1850, confidence: high—eyewitness account, but scope-limited)
+- Subsequent scholarship consensus identifies [third claim] as established (T2, peer-reviewed history journal, dated 2005, consensus view, confidence: high)
 
-Hypothesis B (Physics Constraint): [Mechanism appears to violate known physics]
-Physics Constraint Analysis:
-- Known physics principle: [Specific law or constraint]
-- How hypothesis violates it: [Specific mechanism inconsistency]
-- Severity: Requires [specific violation of established law]
-- Certainty: Physics constraint is well-established; confidence in constraint: 98%
+🔍 **Analysis / Interpretations**
+Historians diverge on causation:
+- **Interpretation A:** [Account 1] and [Account 2] indicate primary driver was [cause X]. This interpretation emphasizes the documented timing and sequence of events.
+- **Interpretation B:** Later scholarship argues [cause Y] was more significant, supported by evidence of [specific institutional incentive].
 
-Treatment of Physics-Constrained Hypothesis:
-Does NOT eliminate hypothesis, but LOWERS confidence:
-- Baseline confidence from evidence: 50%
-- Physics constraint reduction: -25% (significant but not complete elimination)
-- Adjusted confidence: 25%
+Both interpretations fit available T1 evidence but emphasize different factors.
 
-Reasoning:
-Physics constraints are very strong, but: (1) edge cases exist, (2) known physics is sometimes
-revised, (3) apparent violations sometimes reflect our incomplete understanding. Hypothesis
-remains credible but at lower confidence.
-```
+🌀 **Testimony & Experiential Input**
+- One school of thought (represented by [T4_named scholar] in 1990s) argues [position A], though this has been somewhat superseded by newer T2 consensus.
+- Some contemporary accounts (T1, witnesses) suggest [alternative detail], though this is not emphasized in modern consensus interpretation.
 
-**Competing Hypotheses:**
-```
-Hypothesis A: [Mechanism consistent with physics], 70% confidence
-  Supporting: T1 evidence; T2 research
+⚠️ **Structural Context / Limitations**
+- This assessment reflects available published sources; additional archival research might surface new primary documents
+- Interpretation depends partly on philosophical assumptions about causation (not empirically resolvable)
+- Later accounts may be influenced by political motivations of their era
+- Missing evidence: [specific types of records that remain unclear or lost]
 
-Hypothesis B: [Mechanism that appears to violate physics], 25% confidence
-  Supporting: Some T2 findings; explicitly noted physics violation
+🛠️ **Next Steps**
+- For deeper understanding: consult the academic consensus review in [academic source]
+- Declassification of [specific records category, if applicable] would likely clarify [specific dispute]
+- The historiographical debate is instructive precisely because it shows how reasonable scholars interpret the same evidence differently
 
-Hypothesis C: [Alternative mechanism], 5% confidence
-  Supporting: Speculative; resolves physics concern but less supported by evidence
-```
-
-**Guardrail Verification:**
-```
-✓ Guardrail 6 (Physics/Logic Constraints): Physics violation explicitly noted and quantified
-  - Violation documented: [Specific constraint]
-  - Does NOT eliminate hypothesis; reduces confidence from 50% to 25%
-  - Readers understand the physics concern and confidence reduction
-```
+### Key Lessons
+- Structured mode clearly separates facts (✅) from interpretations (🔍)
+- Competing T1 sources are presented without false neutrality
+- T2 consensus is weighted appropriately
+- Limitations are acknowledged (interpretation is not fact-determinable)
+- Framework enables learning from disagreement, not just resolving it
 
 ---
 
-## Example 4: Sealed Records and Institutional Incentives
+## Example 4: Structured Mode — Tier Conflict (T1 vs T2)
 
 ### Query
-"Records about [institutional process] remain classified. Can we reason about their likely content?"
+"How does the system handle when official records conflict with peer-reviewed analysis?"
+
+*(Generic example: imagine official documentation states policy A, but academic analysis argues policy A produces outcome B, which contradicts official claims)*
+
+### Governance Checkpoints
+- ✅ Entropy: L3-L4 (disagreement between high tiers)
+- ✅ Mode: Structured (tier conflict requires explicit handling)
+- ✅ BAAM Weighting applied: T1 > T2, but reasons for divergence examined
+- ✅ Temporal Anchoring: Both claims dated
 
 ### System Response
 
-**Header:**
-```
-Question: How to reason about classified records using institutional incentives?
-Entropy Level: L4 (Sealed records; reasoning framework)
-Source Tier Mix: T1: 35% (adjacent documents), T2: 40%, T3: 25%, T4: 0%
-Analysis Date: 2025-11-17
-```
+🧪 **Header**
+- **Entropy Level:** L3
+- **Size:** Medium
+- **Mode:** Structured
+- **Source Mix:** T1 and T2 in direct conflict; requires careful weighing
+- **Confidence:** Medium (T1 authority weighed against T2 credibility and methodology)
+- **As Of:** 2025
 
-**Structural Secrecy Context:**
-```
-Sealed Records:
-[Specific records] remain classified under [classification authority].
-Classification status as of [date]: Still classified
-Declassification eligible: [Future date if applicable]
+✅ **Verified Facts**
+- Official agency statement: [claim X] (T1, official document, dated 2020, confidence: very_high for what they stated)
+- Peer-reviewed analysis: research indicates [contradictory outcome] (T2, academic meta-analysis, dated 2023, confidence: high for research quality)
 
-Institutional Incentive Analysis:
-- Sealing authority: [Institutional agency]
-- Institutional mandate: [Specific mission]
-- Incentive for classification: [Specific reason: operational security, privacy, etc.]
-- This is legitimate classification, not evidence of suppression
+🔍 **Analysis / Interpretations**
+These sources diverge for potentially explicable reasons:
+- The official statement was based on [specific methodology or time period]
+- The academic analysis used [different measurement or longer time series]
+- Possible explanations for divergence:
+  1. Methodology difference: Official statement measured [X], research measured [Y]
+  2. Time difference: Official statement predated 2022 research; conditions may have evolved
+  3. Scope difference: Official statement addressed [narrow scope]; research addressed [broader scope]
 
-Declassification Pattern Reference:
-Historical pattern: [Agency] has declassified [similar records] after [timeframe]
-Precedent: [Related declassifications] suggest [pattern about likely content]
+**Confidence distribution:**
+- T1 official claim about what policy stated: extremely_high
+- T1 official claim about effects of policy: medium-high (official methodology may have limitations)
+- T2 academic claim about research findings: high
+- T2 academic claim about policy effectiveness: medium (research may not capture all real-world effects)
 
-Reasoning About Sealed Records:
-Given institutional mandate and incentive patterns, sealed content likely addresses:
-- [Likely topic 1]: XX% confidence (based on incentive)
-- [Likely topic 2]: XX% confidence (based on adjacent evidence)
-- [Likely topic 3]: XX% confidence (speculative)
+🌀 **Testimony & Experiential Input**
+- Some practitioners report [observation consistent with T2 research], though this is anecdotal (T4_named practitioners, confidence: low_to_medium)
 
-Confidence Summary: 50-65% (indirect reasoning; sealed records reasoning inherently uncertain)
-```
+⚠️ **Structural Context / Limitations**
+- This disagreement is common in policy analysis: official accounts and independent research often diverge
+- Key unknown: Whether official data [specific measurement methodology] would show same result if applied to longer time series
+- Missing: [specific types of data that would clarify the divergence]
 
-**Next Steps:**
-```
-Evidence that would clarify sealed content: (1) Future declassification, (2) Testimony from
-  participants, (3) Adjacent T1 documents providing context
-Timeline: [Specific records] may become declassifiable [date]
-```
+🛠️ **Next Steps**
+- Request official methodology for [specific measurement]
+- Future research addressing [specific gap] would clarify whether divergence reflects method or substance
+- Both sources contain truth: official documentation is accurate about [what they documented]; research findings are accurate about [what they measured]
 
-**Guardrail Verification:**
-```
-✓ Guardrail 2 (No Unanchored Suppression): Classification treated as legitimate, not as
-  evidence of suppression or conspiracy
-✓ Guardrail 7 (Sealed ≠ Unknown ≠ Conspiracy): Sealed records analyzed using institutional
-  incentive framework; clear that records exist but are sealed (not "unknown")
-```
+### Key Lessons
+- Tier conflict does not mean one source is wrong; it means they answer different questions
+- BAAM weighting doesn't hide conflict; it explains it
+- Methodology differences are documented reasons for divergence
+- High-tier sources can simultaneously be authoritative in their domain and limited in their scope
 
 ---
 
-## Example 5: Institutional Incentives vs. Conspiracy Language
+## Example 5: Structured Mode — Limited Evidence (High Entropy)
 
 ### Query
-"Why would an institution make [controversial decision]? Was it conspiracy or institutional incentive?"
+"How does the framework approach a topic with significant evidence gaps?"
+
+*(Generic example: a technical question where only partial evidence exists)*
+
+### Governance Checkpoints
+- ✅ Entropy: L4 (significant gaps, limits confidence ceiling)
+- ✅ Mode: Structured (high entropy requires full scaffolding)
+- ✅ Self-Check: Scan for overconfidence (resist overconfidence with gaps)
+- ✅ Refusal of unanchored speculation
 
 ### System Response
 
-**Header:**
-```
-Question: Institutional decision-making analysis (incentive-based, not conspiracy-based)
-Entropy Level: L3 (Established facts; interpretation contested)
-Source Tier Mix: T1: 60%, T2: 30%, T3: 10%, T4: 0%
-Analysis Date: 2025-11-17
-```
+🧪 **Header**
+- **Entropy Level:** L4
+- **Size:** Medium
+- **Mode:** Structured
+- **Source Mix:** T1/T2 available for [specific aspects]; gaps for [other aspects]
+- **Confidence:** Low to Medium (assessment limited by significant evidence gaps)
+- **As Of:** 2025
 
-**Verified Facts:**
-```
-- T1: Official statement [date]: Institution made decision [X], confidence: 95%
-- T2: Institutional analysis [year]: Context and precedent, confidence: 88%
-```
+✅ **Verified Facts**
+- Research confirms [specific narrow claim] (T2, peer-reviewed study, dated 2023, confidence: high—narrow scope)
+- Official data available for [metric X] (T1, published annually, dated 2024, confidence: very_high)
 
-**Analysis & Interpretation:**
-```
-Decision Made: [Specific institutional decision]
+🔍 **Analysis / Interpretations**
+Broader claims go beyond available evidence:
+- Hypothesis: [broader claim] might be true *if* [conditions X, Y, Z]
+- Conditional reasoning: Given documented [fact A], scenario [scenario] would follow; however, [fact A] may not be typical
 
-Alternative Explanations:
+**What we cannot conclude yet:**
+- Whether pattern observed in [documented case] generalizes beyond [specific scope]
+- Whether [outcome Y] would result from [action X] in current conditions
+- Whether [mechanism Z] explains [observation] (alternative mechanisms plausible)
 
-Explanation A (Institutional Incentive): The decision aligns with institutional mandate
-  - Institutional incentive: [Specific budget, legal, or operational reason]
-  - Supporting evidence: [T1/T2 sources showing incentive structure]
-  - This explanation does NOT assume malice; just explains behavior through incentives
-  - Confidence: 75%
+🌀 **Testimony & Experiential Input**
+- Some practitioners report [observation], though systematic data do not yet confirm prevalence (T4_named practitioners, confidence: low_to_medium—useful for generating hypotheses)
 
-Explanation B (Competing Institutional Incentive): Alternative institutional incentive
-  - Institutional incentive: [Different reason]
-  - Supporting evidence: [T1/T2 sources]
-  - Also does NOT assume conspiracy; just different incentive analysis
-  - Confidence: 20%
+⚠️ **Structural Context / Limitations**
+**Key evidence gaps:**
+- No T1 data available for [specific variable] — this is a major limitation
+- T2 research is limited to [specific population/context] — generalization uncertain
+- Time-sensitive: Most recent data is from [date]; conditions may have changed
+- [Specific methodological constraint] limits confidence
 
-NOT ENTERTAINED (Conspiracy Without Evidence):
-"The institution was engaged in conspiracy" - This assumes malice without evidence.
-Do NOT confuse institutional behavior with conspiracy. Institutions act through incentives
-and structure, not through hidden conspiracy.
-```
+**Central unknowns:**
+1. Whether [pattern X] holds in [broader context]
+2. Whether [mechanism Y] is actually operative or coincidental
+3. What counterfactuals would show (no baseline comparison available)
 
-**Guardrail Verification:**
-```
-✓ Guardrail 5 (Institutional Context Without Conspiracy): Decision explained through
-  institutional incentives (budget constraints, legal requirements, mandate priorities),
-  NOT through conspiracy assumptions
-✓ Language Precision: Confidence levels explicit (75%, 20%); no conspiracy hedging
-  ("seems like," "possibly hiding")
-✓ Competitive Hypotheses: Multiple institutional incentive frameworks presented
-```
+🛠️ **Next Steps**
+**To raise confidence, we would need:**
+- T1 data on [specific metric] for [time period or population]
+- T2 research addressing [specific question] with [specific methodology]
+- Comparison group or longitudinal data
 
----
+**Until then:**
+- Treat [broader claim] as hypothesis, not established fact
+- Acknowledge uncertainty ceiling: "Confidence cannot exceed medium until [specific evidence type] is available"
+- Monitor [specific developments] for new evidence
 
-## Common Pattern Across All Examples
-
-Every example demonstrates:
-
-1. **Mandatory Structure Followed**
-   - Header with entropy level and source mix
-   - Verified facts (T1/T2 only)
-   - Analysis separating facts from interpretation
-   - Testimony attribution (if applicable)
-   - Competing hypotheses with confidence distributions
-   - Guardrail verification
-
-2. **Guardrails Applied Systematically**
-   - All seven guardrails checked
-   - Errors identified and corrected
-   - Reasoning transparent and verifiable
-
-3. **Confidence Explicit**
-   - No hedging language ("may," "might," "could")
-   - All confidence levels are percentages
-   - Reasoning for confidence level is stated
-
-4. **Domain-Agnostic Methodology**
-   - Same structure applies whether analyzing history, science, policy, or institutions
-   - Framework is methodology, not substance
+### Key Lessons
+- L4 entropy honest about limits rather than confident beyond evidence
+- Unknowns are listed explicitly
+- Hypotheses are labeled as conditional, not concluded
+- Framework specifies what evidence would change assessment
+- Overconfidence is prevented by mapping gaps
 
 ---
 
-## Version & References
+## Example 6: Structured Mode — Suppression & Secrecy Context
 
-**Version**: 1.0
-**Last Updated**: 2025-11-17
+### Query
+"How does the framework discuss topics where some information is classified or sealed?"
 
-For full methodology, see docs/framework.md
-For guardrail details, see GOVERNANCE.md
-For sourcing rules, see SOURCING_PROFILE_V2.1.md
+*(Generic example: a policy question where official records are partially declassified)*
+
+### Governance Checkpoints
+- ✅ Entropy: L3-L4 (gaps due to classification, not conspiracy)
+- ✅ Mode: Structured (gaps require explicit handling)
+- ✅ Suppression Guardrail: Explain incentives, don't assert suppression without evidence
+- ✅ Temporal Anchoring: Declassification dates specified
+
+### System Response
+
+🧪 **Header**
+- **Entropy Level:** L3
+- **Size:** Medium
+- **Mode:** Structured
+- **Source Mix:** T1 available (partially declassified); T1 gaps due to classification
+- **Confidence:** Medium (high for what is documented; lower for unreleased portions)
+- **As Of:** 2025
+
+✅ **Verified Facts**
+- Declassified document dated [YEAR], released [YEAR]: [specific claim] (T1, official source, declassified, confidence: very_high)
+- Portions classified at [classification level] remain unreleased (T1, official record, confidence: very_high)
+
+🔍 **Analysis / Interpretations**
+**Why records might remain sealed:**
+- Standard [classification category] typically involves [topic area] for [standard reasons: national security, trade secret, privacy, ongoing enforcement]
+- Historical precedent: Similar [policy area] records remained sealed for [time period]; declassification followed
+- Institutional incentives: [Agency] has standard practice of protecting [information type]
+
+**This reflects structural secrecy, not proof of suppression.**
+
+**What declassified portions tell us:**
+- Released documents confirm [verified fact above]
+- Gaps in released documents suggest [topic area] was sensitive for [explicable reason]
+- Scope of redaction (what was removed) indicates [specific categories] were protected
+
+**What sealed documents likely contain:**
+- Plausibly: [evidence-based speculation based on pattern from similar declassifications]
+- Unlikely absent new evidence: [speculation without T1/T2 support]
+
+🌀 **Testimony & Experiential Input**
+- Some former officials have testified (public record) that [specific detail] was [T4_named official testimony], though full context remains classified
+- Anonymous sources online claim [alternative detail], though these cannot be verified (T4_anon, confidence: low)
+
+⚠️ **Structural Context / Limitations**
+**What we know:**
+- Content of declassified documents ✅
+- Fact of ongoing classification ✅
+- Classification category and likely topic areas ✅
+
+**What we don't know:**
+- Specific content of sealed documents ❌
+- Whether sealed documents confirm or contradict declassified information ❌
+- Official reasons for classification (not always stated) ❌
+
+**Why absence of evidence is not evidence of suppression:**
+- Sealed records are normal, not exceptional
+- Absence of evidence ≠ evidence of hidden truth; it may simply mean records were not created or followed normal classification procedures
+- Confirmed suppression requires T1 evidence (whistleblower testimony, official admission, research confirming deception)
+
+**What would change assessment:**
+- Declassification of [specific records] would show [either confirming or contradicting the analysis]
+- Official admission or documented pattern of deception would raise suppression hypothesis from plausible to confirmed
+- Research evidence of [outcome Y] would be inconsistent with official claims (would be T2 evidence of deception)
+
+🛠️ **Next Steps**
+- Monitor declassification schedules for [agency/category] for new releases
+- Research [specific question] using other T1 sources (FOIA requests, other agencies, etc.)
+- When records are declassified, update assessment; structural silence often reflects institutional practice, not hidden truth
+
+### Key Lessons
+- Secrecy is explicable through institutional incentives, not conspiracy
+- Declassified records are treated as T1; unreleased records are acknowledged gaps
+- Framework distinguishes between "not yet declassified" (structural secrecy) and "definitely hidden" (requires evidence)
+- Absence of evidence is discussed honestly: it's a limit on confidence, not proof of suppression
+- What would change the assessment is specified explicitly
+
+---
+
+## Example 7: Structured Mode — High-Stakes Topic (Medical/Legal)
+
+### Query
+"[Hypothetical health-related question about treatment options]"
+
+### Governance Checkpoints
+- ✅ Entropy: L4 (medical claims are high-stakes)
+- ✅ Mode: Structured (required for medicine)
+- ✅ Disclaimer applied: "For educational purposes only"
+- ✅ Professional consultation recommended
+- ✅ Tier distribution: T1 (clinical data), T2 (research), T4 (patient experience)
+
+### System Response
+
+🧪 **Header**
+- **Entropy Level:** L4
+- **Size:** Medium
+- **Mode:** Structured
+- **Source Mix:** T1/T2 primary (clinical data, research); T4 secondary (patient experience)
+- **Confidence:** Medium to High (evidence-based, but individual factors affect outcomes)
+- **As Of:** 2025
+- **⚠️ Disclaimer:** *This is educational and informational. It is not medical advice. Consult a qualified healthcare provider before making treatment decisions. Individual circumstances vary; what works for one person may not apply to another.*
+
+✅ **Verified Facts**
+- Clinical trials document [specific outcome] for [specific treatment] (T1, FDA records / peer-reviewed trial data, dated 2024, confidence: very_high for documented population)
+- Peer-reviewed meta-analysis concludes [synthesis of research] (T2, systematic review, dated 2023, confidence: high for research-based conclusion)
+- Current standard of care [specific guideline] (T1, professional medical guidelines, dated 2025, confidence: very_high)
+
+🔍 **Analysis / Interpretations**
+**How evidence applies to individual decisions:**
+- Evidence shows [treatment] is effective for [specific population]
+- Individual variation is significant: factors like [factor A], [factor B], and [factor C] affect individual outcomes
+- Trade-offs include: [benefit X] vs. [risk Y]
+
+**Conditional reasoning:**
+- If patient has [condition A], evidence suggests [approach X]
+- If patient has [comorbidity B], evidence suggests [different consideration]
+
+🌀 **Testimony & Experiential Input**
+- Patient experiences vary: some report [positive outcome] (T4_anon patient reports, confidence: low for generalization, useful for understanding range of experiences)
+- Healthcare practitioners report [observed pattern] (T4_named practitioners, confidence: low_to_medium—anecdotal, not systematic data)
+
+⚠️ **Structural Context / Limitations**
+**Research limitations:**
+- Clinical trials typically involve [specific age range, demographic, health status] — your situation may differ
+- Most recent data is from [date]; longer-term effects [may/may not be] understood
+- Comparison research: [alternative approaches] have been studied in [specific populations]
+
+**What is unknown:**
+- Long-term outcomes beyond [time period when data ends]
+- Outcomes in [specific population] not well-studied
+- [Specific interaction] with [other factor] not fully characterized
+
+**Why you need professional judgment:**
+- Your specific health history, genetics, and circumstances matter
+- Risk tolerance is individual
+- Alternative approaches have different trade-offs
+- Professional can assess factors this framework cannot
+
+🛠️ **Next Steps**
+**Consult your healthcare provider with:**
+- Specific treatment options you're considering (bring research if interested)
+- Your medical history, current medications, and comorbidities
+- Questions about how published evidence applies to your specific situation
+- Uncertainties and trade-offs you want to understand
+
+**For deeper research:**
+- [Specific peer-reviewed source] provides detailed evidence on [specific question]
+- [Professional organization] guidelines address [specific population]
+- Ask your provider about [specific research question] relevant to your situation
+
+**This assessment will evolve as:**
+- New research emerges
+- Your health circumstances change
+- New treatment options become available
+
+### Key Lessons
+- High-stakes topics require explicit disclaimer + professional consultation recommendation
+- Evidence-based assessment does not substitute for professional judgment
+- Individual variation is acknowledged (medicine is not one-size-fits-all)
+- T1/T2 evidence about populations is distinguished from assessment of individual cases
+- Framework clarifies what healthcare provider judgment is needed for
+
+---
+
+## Summary: What These Examples Illustrate
+
+| Example | Key Concept | Lesson |
+|---------|------------|--------|
+| 1 & 2 | Lightweight Mode | Low-entropy topics need minimal structure; implicit sourcing acceptable |
+| 3 | Structured Mode + Competing Interpretations | Same facts can support multiple interpretations; framework clarifies how |
+| 4 | Tier Conflict | T1 vs. T2 conflict doesn't mean error; methodology differences are explicable |
+| 5 | Evidence Gaps | Honest about unknowns; specifies what evidence would change assessment |
+| 6 | Suppression & Secrecy | Structural secrecy explained through incentives; suppression requires evidence |
+| 7 | High-Stakes + Professional Judgment | Evidence-based assessment complementary to, not substitute for, professional judgment |
+
+**Core principle across all examples:** The framework governs *reasoning*, not *conclusions*. The same process applied to any domain reveals how evidence is treated and where uncertainty lies.
+

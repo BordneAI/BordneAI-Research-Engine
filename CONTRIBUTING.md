@@ -1,282 +1,269 @@
-# Contributing: Error Reporting & Feedback
+# Contributing to BordneAI Research Engine
 
-## Overview
+---
 
-The BordneAI Research Engine v3.0 is a specification for evidence-based reasoning. This is **not traditional open-source software**; it does not accept code contributions via pull requests. However, we welcome feedback on:
+## Important: This Specification Is Maintained by BordneAI
 
-- **Specification errors**: Inconsistencies, unclear language, logical gaps
-- **Guardrail improvements**: Suggestions for additional or refined guardrails
-- **Governance feedback**: Ideas for improving the framework
-- **Documentation clarity**: Confusing explanations or missing examples
-- **Misuse reports**: See SECURITY.md for responsible disclosure
+The BordneAI Research Engine is a **specification maintained by BordneAI**, not an open-source community project. We do not accept external pull requests.
+
+**However, we welcome:**
+- Error reports
+- Clarity suggestions
+- Framework improvement proposals
+- Application examples and case studies
+- Implementation feedback
 
 ---
 
 ## How to Report Errors
 
-### Step 1: Identify the Error
+Found a factual error, ambiguity, or mistake in the specification?
 
-Clearly describe what is wrong:
-- **Location**: Which file and section?
-- **Error type**: Is it a typo, logical error, inconsistency, or unclear language?
-- **Description**: What is the error and why is it a problem?
-- **Impact**: Does this affect: (a) the framework's integrity, (b) practical application, or (c) clarity?
+### Step 1: Identify the Issue
 
-### Step 2: Provide Context
+Be specific:
 
-Help us understand the error:
-- **The text as written**: Include exact quote
-- **What it should be**: What is the correct version?
-- **Why it's wrong**: Explain the problem
-- **Reference**: Does this error appear elsewhere in the documentation?
+- **File:** Which document? (README.md, SYSTEM_PROMPT-v3.3.1.md, docs/framework.md, etc.)
+- **Location:** Section, paragraph, or line number
+- **What's wrong:** The specific error or ambiguity
+- **Evidence:** Why is this an error? (cite source if applicable)
 
-### Step 3: Submit the Report
+### Step 2: Report It
 
-Create a document with the following format:
+**For public issues:** [GitHub Issues](https://github.com/BordneAI/BordneAI-Research-Engine/issues)
 
+**Format:**
 ```
-ERROR REPORT
-============
-File: [filename]
-Location: [section/line number if applicable]
-Severity: [Critical / High / Medium / Low]
+Title: [Brief description of error]
 
-Error Description:
-[Clear description of what's wrong]
+File: [specific file]
+Location: [specific section]
 
-Current Text:
-"[Quote the problematic text]"
+Error: [What is stated incorrectly]
 
-Suggested Fix:
-[What should it say instead?]
+Correction: [What should be stated instead]
 
-Reasoning:
-[Why this matters; impact on framework integrity or clarity]
-
-References:
-[Links to related sections or examples]
-
----
-Reporter: [Your name/identifier]
-Date: [Date of report]
+Evidence/Justification: [Why this is wrong]
 ```
 
-### Step 4: Submit Through Appropriate Channel
+**For sensitive issues:** Email research@bordneai.org
 
-Since this is specification documentation:
-- **Documentation errors**: Include in issue report
-- **Guardrail improvements**: Include in governance feedback section
-- **Security/misuse concerns**: See SECURITY.md for responsible disclosure process
+### Step 3: We'll Investigate and Fix
 
----
-
-## Types of Errors We Address
-
-### 1. Logical Inconsistencies
-**Example**: "Guardrail A says X, but Guardrail B implies not-X"
-
-**We address this because**: Framework integrity requires internal consistency.
-
-**How to report**: Show which sections contradict each other; explain the logical problem.
-
-### 2. Unclear Language
-**Example**: "A key term is defined inconsistently across documents"
-
-**We address this because**: Users need clear, unambiguous definitions.
-
-**How to report**: Quote the unclear passages; explain what's ambiguous; suggest clearer language.
-
-### 3. Missing Examples
-**Example**: "Guardrail X is explained but has no concrete example"
-
-**We address this because**: Examples improve understanding and implementation.
-
-**How to report**: Suggest where an example would help; offer an example if possible.
-
-### 4. Specification Gaps
-**Example**: "The framework doesn't address [scenario]. How should it be handled?"
-
-**We address this because**: Completeness is essential for a governance framework.
-
-**How to report**: Describe the scenario; explain why the framework doesn't address it; suggest how it should be handled.
-
-### 5. Guardrail Improvements
-**Example**: "Guardrail X catches some errors but misses [related error]"
-
-**We address this because**: Guardrails are the core mechanism for preventing reasoning failures.
-
-**How to report**: Describe what the guardrail is designed to catch; identify gaps; suggest refinements.
+- If error is confirmed, we'll update the specification
+- We'll note the contribution in [CHANGELOG.md](CHANGELOG.md)
+- We'll follow up with you on resolution
 
 ---
 
-## Types of Errors We Don't Address
+## How to Suggest Clarity Improvements
 
-### 1. Disagreement with Framework Philosophy
-**Example**: "I disagree with the entire approach of treating sealed records as analyzable"
+Is the framework hard to understand? Is an example unclear?
 
-**Why**: The framework's philosophy is fundamental. Disagreement leads to alternative frameworks, not framework improvements.
+### Step 1: Identify the Clarity Issue
 
-**Alternative**: Develop your own framework; or document disagreement as academic critique rather than error.
+Be specific:
 
-### 2. Domain-Specific Application Disagreement
-**Example**: "Your example for historical research would never work in practice"
+- **What's confusing:** Which part of the text is hard to follow?
+- **What would help:** More explanation, examples, diagrams, restructuring?
+- **Why it matters:** Does this affect understanding of governance rules? Implementation?
 
-**Why**: Practical application varies by domain. The framework provides methodology, not guarantees.
+### Step 2: Report It
 
-**Alternative**: Report if the framework documentation misrepresents application feasibility.
-
-### 3. Requests for Executable Code or Software
-**Example**: "Please create a software implementation of this framework"
-
-**Why**: This repository is specification documentation, not software. Software development is a separate effort.
-
-**Alternative**: Consider forking this documentation as a basis for software development.
-
-### 4. Requests for Domain-Specific Presets
-**Example**: "Add a domain-specific module for [specific field]"
-
-**Why**: The framework is intentionally domain-agnostic. Domain-specific modules would undermine universality.
-
-**Alternative**: Document how domain-specific specialization would be done using the framework methodology.
-
----
-
-## Governance Feedback Process
-
-If you have suggestions for improving the governance framework itself (not just fixing errors):
-
-### Governance Feedback Format
+**Via GitHub Issues:**
 
 ```
-GOVERNANCE FEEDBACK
-===================
-Topic: [What aspect of governance?]
-Current State: [How does the framework currently address this?]
-Proposed Improvement: [What should change?]
-Reasoning: [Why is this improvement valuable?]
-Examples: [Scenarios where this would help]
+Title: Clarity improvement: [section name]
 
-Alternatives Considered:
-[Other ways to address this issue]
+Location: [specific file and section]
 
----
-Submitter: [Your name/identifier]
-Date: [Date of submission]
+Current text: [quote the confusing part]
+
+What's confusing: [explain what's hard to understand]
+
+Suggested improvement: [propose how to clarify]
 ```
 
-### What Governance Feedback We Consider
+### Step 3: We'll Improve It
 
-- **New guardrails**: Proposals for additional guardrails to catch reasoning errors
-- **Guardrail refinements**: Ways to make existing guardrails more effective
-- **Process improvements**: Better ways to apply the framework
-- **Institutional context**: Insights on how the framework applies to specific contexts
-- **Conflict resolution**: Proposals for handling cases where guardrails conflict
+- If improvement is justified, we'll update the documentation
+- We'll acknowledge contributions in [CHANGELOG.md](CHANGELOG.md)
+- We'll follow up on resolution
+
+---
+
+## How to Propose Framework Changes
+
+Do you think a governance rule should change? A tier should be re-defined?
+
+### Important Notes
+
+The **core philosophy is fixed:**
+- Prioritize documents over narratives
+- Separate known from claimed
+- Make uncertainty explicit
+- Refuse unanchored suppression claims
+
+**Governance principles are stable:**
+- Temporal Anchoring
+- Conflict Resolution (BAAM Weighting)
+- Suppression guardrails
+- Self-Check protocol
+
+**However, we consider refinements** if they:
+- Improve clarity without changing meaning
+- Strengthen governance without compromising flexibility
+- Add necessary exceptions without creating loopholes
+
+### Step 1: Develop Your Proposal
+
+**What we need:**
+
+1. **Current rule or principle:** What exists now?
+2. **Proposed change:** What should change?
+3. **Rationale:** Why is this change needed?
+4. **Evidence:** What evidence supports this change?
+5. **Scope:** What domains/use cases are affected?
+6. **Risks:** What could go wrong if we make this change?
+
+### Step 2: Submit for Review
+
+**Email:** research@bordneai.org
+
+**Format:**
+```
+Subject: Proposal: [Framework change]
+
+Current Rule/Principle:
+[Cite the rule from SYSTEM_PROMPT-v3.3.1.md or governance docs]
+
+Proposed Change:
+[State the change clearly]
+
+Rationale:
+[Why this change is needed]
+
+Evidence:
+[Cite examples, research, or use cases supporting change]
+
+Affected Domains:
+[Where does this apply?]
+
+Implementation Impact:
+[How would this affect existing implementations?]
+
+Risks:
+[What could go wrong?]
+
+Implementation Notes:
+[How would this work in practice?]
+```
+
+### Step 3: We'll Review and Decide
+
+- We'll evaluate against framework philosophy and principles
+- We'll consider impact on implementations
+- We'll discuss with you if clarification is needed
+- We'll decide whether to adopt, modify, or decline
+- We'll explain our reasoning either way
+
+---
+
+## How to Share Implementation Examples
+
+Have you built something using this framework? Found interesting applications?
+
+### We Welcome:
+
+✅ Case studies: "We used this framework to analyze [domain]"
+✅ Implementation notes: "Here's how we implemented [feature]"
+✅ Lessons learned: "We discovered [insight] using the framework"
+✅ Challenges: "We found [difficulty] and solved it by [approach]"
+✅ Feedback: "Here's what worked well and what was hard"
+
+### How to Share
+
+**Via GitHub Issues (public):**
+- Start a discussion with examples and lessons learned
+- Include: domain, what worked, what didn't, insights
+- This helps others and demonstrates framework utility
+
+**Via Email (private):**
+- Email research@bordneai.org if you prefer private feedback
+- We may ask permission to share anonymized lessons
 
 ---
 
 ## Code of Conduct
 
-This project follows a simple code of conduct:
+When contributing feedback, discussions, or proposals:
 
-### Be Respectful
-- Assume good faith in others' feedback
-- Disagree on substance, not on person
-- Avoid inflammatory language
+1. **Be specific.** "This is confusing" is less useful than "The term 'entropy level' is used inconsistently in sections 2.1 and 3.2"
+2. **Cite evidence.** If proposing a change, provide evidence or examples
+3. **Acknowledge alternatives.** If others disagree with your proposal, engage with their perspective
+4. **Distinguish fact from opinion.** "The framework states X" (fact) vs. "I think X should be Y" (opinion)
+5. **Assume good faith.** Framework decisions reflect principles, not arbitrary choices
 
-### Be Specific
-- Clear, concrete error reports are more useful than vague complaints
-- Provide examples and context
-- Quote problematic passages exactly
-
-### Be Constructive
-- If you identify a problem, suggest a solution
-- Explain why your suggestion is better
-- Acknowledge limitations of your own suggestions
-
-### Be Honest
-- Don't submit false error reports
-- Acknowledge if you're reporting opinion rather than error
-- Distinguish facts from interpretation in your feedback
+We reserve the right to decline contributions that:
+- Contradict core principles without substantial evidence
+- Propose domain-specific categories (contradicts universality)
+- Suggest weakening governance guardrails
+- Include disrespect or bad faith arguments
 
 ---
 
-## Response Timeline
+## What Won't Be Accepted
 
-**Critical errors** (framework integrity compromised):
-- Acknowledgment: Within 1 week
-- Resolution: Within 2 weeks
+We will **not accept:**
 
-**High-priority errors** (clarity, important gaps):
-- Acknowledgment: Within 2 weeks
-- Resolution: Within 1 month
-
-**Medium-priority errors** (documentation clarity, minor issues):
-- Acknowledgment: Within 1 month
-- Resolution: Within 2 months (may be batched with other updates)
-
-**Low-priority feedback** (suggestions, minor improvements):
-- May be reviewed as part of version planning
+❌ PRs that modify the framework without prior discussion (see "How to Propose" above)
+❌ Requests to add predefined domains or categories (framework is universal)
+❌ Requests to weaken Temporal Anchoring, BAAM Weighting, or Suppression guardrails
+❌ Proposals that enforce particular political, ideological, or religious positions
+❌ Feature requests for unrelated software
+❌ Contributions that misrepresent the framework's capabilities or limitations
 
 ---
 
-## Version Updates
+## Attribution & Recognition
 
-The framework is released in versions. Error corrections and governance improvements are incorporated into:
+**When we accept your contribution:**
 
-- **Point releases** (3.0.1, 3.0.2): Bug fixes and critical corrections
-- **Minor releases** (3.1, 3.2): New guardrails or significant improvements
-- **Major releases** (4.0): Fundamental restructuring
-
----
-
-## Example Error Report
-
-```
-ERROR REPORT
-============
-File: GOVERNANCE.md
-Location: Guardrail 1 section
-Severity: High
-
-Error Description:
-The definition of temporal anchoring is unclear about whether it applies to
-hypothetical scenarios or only historical claims. The section shows examples
-only for historical events.
-
-Current Text:
-"Every claim must specify *when* it applies. Historical change is real;
-temporal drift is a serious error."
-
-Suggested Fix:
-"Every claim must specify *when* it applies (or specify that it's hypothetical).
-Temporal specificity applies to all claims about facts: historical events,
-current states, and hypothetical scenarios. Temporal drift is a serious error."
-
-Reasoning:
-The framework applies to any contested domain, including policy analysis and
-scientific disputes where hypothetical scenarios are discussed. The current
-wording might suggest temporal anchoring only applies to historical claims.
-Clarification would help users apply the guardrail to non-historical domains.
-
-References:
-- Framework.md states this framework is domain-agnostic
-- Example 3 in examples.md discusses hypothetical scenarios
+- We'll acknowledge you in [CHANGELOG.md](CHANGELOG.md) with your name (or pseudonym if preferred)
+- Error corrections are attributed as "Reported by [name]"
+- Improvement suggestions are attributed as "Suggested by [name]"
+- Major proposals are attributed with explanation of contribution
+- You retain copyright in CC BY 4.0 attribution model
 
 ---
-Reporter: Alice Smith
-Date: 2025-11-17
-```
+
+## Timeline for Review
+
+- **GitHub Issues:** Reviewed within 2-4 weeks
+- **Email proposals:** Reviewed within 2-4 weeks
+- **Critical errors:** Reviewed and resolved within 1 week
+- **Implementation feedback:** Reviewed and incorporated into next version
 
 ---
 
 ## Questions?
 
-For questions about the contribution process:
-- See README.md for framework overview
-- See GOVERNANCE.md for guardrail details
-- See SECURITY.md for security concerns
+- **About framework usage:** See [README.md](README.md) or [docs/](docs/)
+- **About governance rules:** See [docs/governance.md](docs/governance.md)
+- **About this contribution process:** Email research@bordneai.org
 
 ---
 
-**BordneAI Research Engine v3.0-alpha**
-Specification for evidence-based reasoning. Released under CC BY 4.0.
+## Summary
+
+| Type | Method | Expectation |
+|------|--------|-------------|
+| **Error report** | GitHub Issues or email | Fix if confirmed |
+| **Clarity suggestion** | GitHub Issues | Improve documentation if justified |
+| **Framework proposal** | Email with full analysis | Review and respond with decision |
+| **Implementation feedback** | Email or GitHub discussion | Inform future improvements |
+| **No PRs** | N/A | Maintain specification integrity |
+
+---
+
+*BordneAI Research Engine v3.3.1 | Contribution Guidelines | 2025-11-17*
