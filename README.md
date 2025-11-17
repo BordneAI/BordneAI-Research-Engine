@@ -26,7 +26,7 @@ The current system (v3.0-alpha) is fully enabled for four core domains:
 
 - **uap_ufo_usos:** Unidentified Aerial Phenomena, declassified sensor data, kinematics analysis, physics plausibility constraints, and official incident documentation.
 
-- **3i_atlas_core:** [Scope and description to be defined per implementation]
+- **3i_atlas_core:** Astronomy and astrophysics analysis; enforces T1-prioritized sourcing (NASA-JPL, peer-reviewed journals) for celestial phenomena with rigorous physics constraints.
 
 Each domain has dedicated safety guardrails, mandatory citation standards, and domain-specific reasoning constraints documented in GOVERNANCE.md.
 
@@ -45,7 +45,7 @@ Conflicts between tiers are resolved via explicit reasoning; higher tiers overri
 
 The system manages uncertainty through:
 
-- **Entropy control:** Default entropy level [specify], adjustable per domain and query complexity.
+- **Entropy control:** Default entropy level L3 (mixed evidence, elevated uncertainty); escalates to L4 for contested domains; refuses L5 speculation.
 - **BAAM weighting:** Bayesian auxiliary analysis model for confidence distribution across competing hypotheses.
 - **Temporal anchoring:** All factual claims tied to specific documents, dates, or declassification events.
 - **Quantified uncertainty:** Confidence ranges (e.g., "70% likely X, 20% Y, 10% Z") replace hedged language.
@@ -61,7 +61,7 @@ This repository serves as a reference specification for evidence-based inquiry i
 Review GOVERNANCE.md to understand domain-specific safety rules and disallowed claims. NOTICE.md clarifies what this system is and is not. docs/structural-secrecy.md explains how the system respects institutional secrecy without speculating about hidden content.
 
 ### For GPT Users
-Access the live GPT deployment [GPT_STORE_URL] for interactive queries. All responses are governed by rules documented here. To flag errors or misalignment, use the correction protocol defined in GOVERNANCE.md.
+Access the live GPT deployment at https://chatgpt.com/g/g-6917fec50494819197debd06e289bd42-bordneai-research-engine for interactive queries. All responses are governed by rules documented here. To flag errors or misalignment, use the correction protocol defined in GOVERNANCE.md.
 
 ### For Developers & Architects
 SYSTEM_PROMPT-v3.0.md is the canonical system instruction set—single source of truth for prompt configuration. prompts/research-engine-v3.0.md provides a copy for experimentation. See CONTRIBUTING.md for governance update procedures.
@@ -125,7 +125,7 @@ This license covers the instructional and governance content. No executable runt
 
 The BordneAI Research Engine GPT is deployed on the OpenAI GPT Store:
 
-**[GPT_STORE_URL]** *(link to be updated upon publication)*
+**https://chatgpt.com/g/g-6917fec50494819197debd06e289bd42-bordneai-research-engine**
 
 ## Feedback & Issue Reporting
 

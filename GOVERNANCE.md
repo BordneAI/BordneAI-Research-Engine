@@ -256,15 +256,30 @@ These claims are explicitly disallowed without extraordinary T1/T2 evidence:
 
 ### Domain 4: 3i_atlas_core
 
-**Scope:** [To be defined per implementation]
+**Scope:** Astronomy and astrophysics analysis; celestial phenomena, astronomical observations, space missions, and related physics constraints. T1-prioritized sourcing from NASA-JPL, peer-reviewed astronomy journals, and official space agency reports.
 
-**Authoritative T1 Sources:** [Specify]
+**Authoritative T1 Sources:**
+- NASA-JPL official mission data and announcements
+- Space agency reports (ESA, JAXA, CNSA, etc.)
+- Peer-reviewed primary source data from observatories
+- Published astronomical survey catalogs with verifiable provenance
 
-**Key Authoritative T2 Sources:** [Specify]
+**Key Authoritative T2 Sources:**
+- Peer-reviewed astrophysics journals (ApJ, MNRAS, A&A)
+- Published astronomical research with reproducible methodologies
+- Think tank analyses of space policy and astronomy funding
 
-**Domain-Specific Disallowed Claims:** [Specify]
+**Domain-Specific Disallowed Claims:**
+- ❌ "Astronomical phenomena definitely prove [extraordinary conclusion]" without T1/T2 evidence
+- ❌ "Observations must have been misidentified as X when they were actually Y" (assumes source error without evidence)
+- ❌ "The data proves extraterrestrial [claim]" (requires extraordinary evidence standard)
 
-**Domain-Specific Guardrails:** [Specify]
+**Domain-Specific Guardrails:**
+1. Physics constraints binding: All claims must satisfy astrophysics principles
+2. Observational limits: Assess telescope resolution, detection sensitivity, false positive rates
+3. Data quality: Distinguish between confirmed data and processed/interpolated data
+4. Competing explanations: Present conventional astrophysical explanations first; only then exotic hypotheses
+5. Confidence scaling: Extraordinary claims (extraterrestrial, physics-violation) require proportionally stronger evidence
 
 ---
 
@@ -492,16 +507,16 @@ These are **legitimate** reasons to keep records sealed.
 
 ### Default Entropy Level
 
-[Specify: e.g., "Moderate — balanced between hypothesis exploration and evidence constraint"]
+**L3 (mixed evidence baseline)** — Balanced between hypothesis exploration and evidence constraint; escalates to L4 for contested domains; refuses L5 (pure speculation).
 
 ### Domain-Specific Entropy Adjustments
 
 | Domain | Default Entropy | Justification |
 |--------|-----------------|--------------|
-| nuclear_history_Okinawa | Low-Moderate | Strong T1 baseline; fewer evidence gaps |
-| politics_intel_elections | Moderate | Significant declassification; ongoing disputes |
-| uap_ufo_usos | High | Large evidence gaps; multiple plausible hypotheses |
-| 3i_atlas_core | [TBD] | [TBD] |
+| nuclear_history_Okinawa | L2 (low) | Strong T1 baseline; declassified facts grounded; fewer evidence gaps |
+| politics_intel_elections | L3 (moderate) | Significant declassification; ongoing expert disputes; contested interpretation |
+| uap_ufo_usos | L4 (elevated) | Large evidence gaps; multiple equally-plausible hypotheses; sensor limitations |
+| 3i_atlas_core | L2 (low) | Physics constraints binding; observable data high-quality; minimal speculation space |
 
 **When to Increase Entropy:**
 - Large evidence gaps (sealed records, little declassified data)

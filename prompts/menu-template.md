@@ -76,21 +76,26 @@ Welcome to the BordneAI Research Engine. This guided menu helps you explore evid
 
 ---
 
-### Option 4: 3i_atlas_core
+### Option 4: 3i_atlas_core (Astronomy & Astrophysics)
 
-**Description:** [Scope and description to be defined per implementation]
+**Description:** Astronomy and astrophysics analysis; celestial phenomena, astronomical observations, space missions, physics constraints. T1 prioritizes NASA-JPL, peer-reviewed astronomy journals, international space agency reports.
 
 **Key Questions This Domain Answers:**
-- [Specify typical questions]
+- What do NASA/JPL observations tell us about [celestial phenomenon]?
+- How do physics constraints bound plausible explanations?
+- What telescope/instrument limitations affect detection reliability?
 
 **Available Evidence (T1):**
-- [Specify available declassified material]
+- NASA-JPL official mission data and announcements
+- International space agency reports (ESA, JAXA, CNSA)
+- Peer-reviewed primary data from major observatories
+- Published astronomical survey catalogs
 
-**Sourcing Standards:** [Specify confidence level of available evidence]
+**Sourcing Standards:** High (strong T1 baseline; physics constraints binding; observable data high-quality)
 
-**Typical Queries:** [Specify example queries]
+**Typical Queries:** "What does NASA-JPL data show about X?", "How do physics constraints limit Y interpretation?", "What are conventional astrophysical explanations?"
 
-**[Explore 3i_atlas_core Domain]**
+**[Explore Astronomy Domain]**
 
 ---
 

@@ -419,70 +419,124 @@ patterns."
 
 ---
 
-## Domain 4: Scientific/Historical Anomalies
+## Domain 4: 3i_atlas_core (Astronomy & Astrophysics)
 
 ### Scope & Overview
 
-This domain covers anomalies, puzzles, and contested interpretations in:
-- Historical events with competing accounts
-- Scientific phenomena with unexplained elements
-- Institutional decisions with unclear motives
-- Evidence gaps creating interpretative uncertainty
+This domain covers:
+- Astronomical observations and celestial phenomena
+- Space mission data and announcements
+- Astrophysical analysis and physics constraints
+- Observational limits and instrumental capabilities
+- Competing explanations for observed phenomena
 
 ### T1 Priority Sources
 
-Domain-specific, based on anomaly type:
-- Archival materials (primary documents)
-- Contemporary records (newspapers, official reports)
-- Scientific data (experiments, measurements)
-- Interview records (if archived)
+**Highest-confidence sources:**
+- NASA-JPL official mission data and press releases
+- International space agency announcements (ESA, JAXA, CNSA)
+- Peer-reviewed primary source data from major observatories
+- Published astronomical survey catalogs with verifiable provenance
+- Official space agency technical documentation
+
+**Example citations:**
+- NASA-JPL Exoplanet Archive (NASA primary data)
+- ESA Gaia Mission data releases (peer-reviewed primary)
+- Sloan Digital Sky Survey (SDSS) published catalogs
 
 ### T2 Priority Sources
 
-- Peer-reviewed analyses of anomaly
-- Historical papers by domain specialists
-- Competing theoretical frameworks
+- Peer-reviewed astrophysics journals (ApJ, MNRAS, A&A)
+- Published research with reproducible methodologies
+- Think tank analyses of space policy and astronomy
 
-### Methodology: Competing Hypotheses Framework
+### Key Methodology: Observable Data with Physics Constraints
 
-**For contested anomalies:**
+#### Step 1: Establish T1 Observational Baseline
+- What does the official NASA-JPL or space agency data show?
+- What are the raw measurements (with uncertainty ranges)?
+- What instrumental specifications apply?
 
-1. **Map All Plausible Explanations:** List hypotheses (A, B, C, D)
-2. **Evidence for Each:** Cite T1/T2 support for each hypothesis
-3. **Uncertainty Quantification:** Confidence distribution across hypotheses
-4. **Gaps Identification:** What evidence would shift confidence?
-5. **Reasoning Made Transparent:** Why does hypothesis X rank above Y?
+#### Step 2: Assess Observational Limits
+- Telescope resolution and detection sensitivity
+- False positive rates under different conditions
+- Instrumental artifacts and known limitations
 
-**Example Structure:**
+**Example:**
 ```
-"Anomaly: Event X occurred; accounts differ on Y.
+"Hubble Space Telescope detects [object] with:
+- Resolution: [X arcseconds] at wavelength [Y]
+- Signal-to-noise ratio: [Z]
+- False positive rate under these conditions: [A%]"
+```
 
-Hypothesis A (45% credible): [Explanation], supported by
-[T1 evidence Z1], challenged by [T1 counter-evidence C1],
-analyzed in [T2 paper].
+#### Step 3: Apply Physics Constraints
+- What does astrophysics permit or forbid?
+- Energy requirements for observed phenomena
+- Stellar/galactic evolution constraints
 
-Hypothesis B (35% credible): [Alternative], supported by
-[T1 evidence Z2], challenged by [T1 counter-evidence C2],
-analyzed in [T2 paper].
+#### Step 4: Competing Explanations (Conventional → Exotic)
+- Hypothesis A (most conventional): [astrophysical explanation], [evidence]
+- Hypothesis B (alternative): [less conventional], [evidence]
+- Hypothesis C (exotic): [requires paradigm shift], [minimal evidence]
 
-Hypothesis C (15% credible): [Third option], supported by
-[limited evidence], major uncertainty on mechanism.
+#### Step 5: Confidence Quantification
+```
+"Most plausible (75%): [Conventional astrophysical explanation],
+supported by physics constraints and observational data.
 
-Hypothesis D (5% credible): [Lowest-probability], would require
-[extraordinary assumptions].
+Alternative (20%): [Less conventional], would require [additional
+assumptions], some conflict with standard astrophysics.
 
-Confidence distribution reasoning: A favored because T1 baseline
-is stronger; B is plausible alternative; C and D have lower
-evidence support. New declassification of [record type] would
-likely shift confidence by [expected direction and magnitude]."
+Other (5%): [Exotic hypothesis], requires extraordinary evidence
+not yet provided."
+```
+
+### Domain-Specific Guardrails
+
+1. **Physics constraints are binding:** All hypotheses must satisfy astrophysics principles
+2. **Data quality assessment mandatory:** Evaluate instrument specs, resolution, false positive rates
+3. **Distinguish data types:** Confirmed data vs. processed vs. interpolated
+4. **Conventional first:** Present standard astrophysical explanations before exotic ones
+5. **Confidence scaling:** Extraordinary claims require proportionally stronger evidence
+
+### Case Study Methodology: Exoplanet Classification
+
+**Question:** How do we classify an observed exoplanet and assess alternative scenarios?
+
+**T1 Baseline:**
+- Official NASA-JPL exoplanet database entry: [specific parameters]
+- Detection method and uncertainty: [spectroscopy/transit/direct imaging]
+- Orbital and physical characteristics: [measured values]
+
+**T2 Analysis:**
+- Peer-reviewed study of similar exoplanets: [comparison]
+- Formation models and stellar evolutionary constraints: [theoretical framework]
+
+**Physics Constraints:**
+- Habitable zone calculations: [boundary conditions]
+- Stellar radiation and planetary atmosphere stability: [physics limits]
+
+**Competing Hypotheses:**
+- Terrestrial planet (Earth-like) — most consistent with data
+- Super-Earth/mini-Neptune — plausible alternative
+- Brown dwarf or stellar companion — lower probability
+
+**Confidence Distribution:**
+```
+Terrestrial classification: 70% (matches observed parameters
+and formation models)
+Super-Earth alternative: 25% (possible, requires different
+composition assumptions)
+Other: 5% (requires additional data to assess)
 ```
 
 ### Key Principles
 
-- **Competing Hypotheses Valued:** Multiple explanations coexist with different confidence levels
-- **Uncertainty Embraced:** "We don't know" is epistemically honest answer
-- **Bayesian Framework:** Update confidence as new evidence arrives
-- **Transparent Reasoning:** Explain why one hypothesis ranks above another
+- **Competing Hypotheses Valued:** Multiple astrophysical explanations coexist
+- **Uncertainty Embraced:** "Needs more data" is honest scientific answer
+- **Physics Binding:** Extraordinary astronomical claims require extraordinary evidence
+- **Transparent Reasoning:** Show how physics constrains plausibility
 
 ---
 

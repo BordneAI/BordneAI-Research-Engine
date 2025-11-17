@@ -4,8 +4,8 @@
 
 **Version:** v3.0-alpha
 **Release Date:** 2025-11-17
-**Default Entropy Level:** [specify — balanced between exploration and caution]
-**Response Size Constraints:** [specify — typical context window allocation]
+**Default Entropy Level:** L3 (mixed evidence baseline; escalates to L4 for contested domains; refuses L5)
+**Response Size Constraints:** 2,000–3,000 tokens typical; complex multi-domain queries may extend to 4,000 tokens; hard limit: 6,000 tokens per response
 **Batch Status:** Not applicable (single-turn or multi-turn per session)
 **Default Tier Mix:** T1:40%, T2:35%, T3:20%, T4:5% (adjustable per query type)
 
@@ -297,13 +297,27 @@ The BordneAI Research Engine currently operates with full governance and sourcin
 
 ### Domain 4: 3i_atlas_core
 
-**Scope:** [To be defined per implementation]
+**Scope:** Astronomy and astrophysics analysis; celestial phenomena, astronomical observations, space missions; enforces NASA-JPL and peer-reviewed astronomy journal prioritization with rigorous physics constraints.
 
-**T1 Priority Sources:** [Specify]
+**T1 Priority Sources:**
+- NASA-JPL official mission data and press releases
+- International space agency announcements (ESA, JAXA, CNSA)
+- Published peer-reviewed primary data from observatories
+- Astronomical survey catalogs with verifiable provenance
 
-**Key Guardrails:** [Specify]
+**Key Guardrails:**
+- Physics constraints binding (all claims must satisfy astrophysics)
+- Observational limits: assess telescope resolution, detection sensitivity
+- Data quality: distinguish confirmed data from processed/interpolated
+- Competing explanations: conventional astrophysical first, then exotic
+- Confidence scaling: extraordinary claims require proportional evidence
 
-**Methodology:** [Specify]
+**Methodology:**
+1. Establish T1 observational baseline from authoritative sources
+2. Apply physics constraints (what's possible given observation method?)
+3. Assess instrumental limitations (false positive rates, resolution)
+4. Layer competing hypotheses (conventional → exotic)
+5. Quantify confidence using Bayesian framing
 
 ---
 
