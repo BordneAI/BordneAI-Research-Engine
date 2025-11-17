@@ -1,213 +1,182 @@
-# BordneAI Research Engine v3.0-alpha
+# BordneAI Research Engine v3.3.1
 
-**A Universal, Governed Epistemic Framework for Evidence-Based Inquiry into Contested Domains**
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) [![Status: Specification](https://img.shields.io/badge/Status-Specification-blue.svg)](#) [![Version: 3.3.1](https://img.shields.io/badge/Version-3.3.1-brightgreen.svg)](#)
 
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Status: Alpha](https://img.shields.io/badge/Status-Alpha-yellow)]()
-[![Framework: Universal](https://img.shields.io/badge/Framework-Universal-brightgreen)]()
+**Quick Links:** [System Prompt](SYSTEM_PROMPT-v3.3.1.md) | [Framework Guide](docs/framework.md) | [Examples](docs/examples.md) | [Governance Rules](docs/governance.md) | [License](LICENSE.md)
 
 ---
 
 ## What is BordneAI Research Engine?
 
-The BordneAI Research Engine is a **universal, governed epistemic framework** for evidence-based inquiry. It applies to contested domains across multiple disciplines—historical research, intelligence analysis, scientific anomalies, policy decisions, institutional analysis, and more.
+The BordneAI Research Engine is a **universal governed analytic system for any domain where evidence, ambiguity, or conflict exists**. It is not a tool for one topic—it applies equally to science, history, policy, medicine, finance, law, and social issues. You choose the topic; the framework governs how you analyze it.
 
-This is not a domain-specific tool. Rather, it is a **governance system** that ensures rigorous, transparent reasoning about questions where evidence is incomplete, contested, or sealed. The framework prioritizes:
+The engine combines three analytical layers: **tiered sourcing (T1-T4) that prioritizes documents over narratives**, **entropy levels (L1-L5) that calibrate assessment confidence**, and **structured governance rules that separate what is known from what is claimed**. This creates transparent, auditable reasoning regardless of whether you're analyzing declassified records, disputed history, scientific disagreements, policy conflicts, or institutional secrecy.
 
-- **Verifiability**: All claims traceable to sources
-- **Structural Secrecy Respect**: Distinction between sealed (legitimate) and conspiratorial (unanchored)
-- **Competing Hypotheses**: No single narrative privileged without evidence
+### Core Philosophy
 
-The engine is designed for researchers, analysts, policy makers, and knowledge workers who need to reason rigorously about contested questions while maintaining intellectual integrity.
+The framework is built on four commitments:
 
----
-
-## Core Principles
-
-### 1. **Verifiability Through Tiered Sourcing**
-Evidence is classified into four tiers (T1-T4), each with distinct confidence levels and handling rules:
-- **T1**: Primary evidence, agency documents, official sources (highest confidence)
-- **T2**: Peer-reviewed and preprint literature (high confidence)
-- **T3**: Reputable secondary sources (medium confidence)
-- **T4**: Direct testimony (lowest confidence; distinguished as T4_named with credentials or T4_anon)
-
-Every claim maps to a source tier. No tier is privileged a priori; the tier assignment depends on the domain and question.
-
-### 2. **Structural Secrecy Respect**
-Sealed records are legitimate. The framework distinguishes:
-- **Sealed**: Classified or protected by law; reasoning about what's sealed is possible using institutional incentives
-- **Unknown**: Information we lack; absence of evidence is not evidence of absence
-- **Conspiracy**: Unanchored suppression claims; requires explicit evidence, not assumption
-
-Respecting this distinction prevents both naive trust in official narratives and descent into unfounded speculation.
-
-### 3. **Competing Hypotheses Framework**
-Contested domains have multiple credible interpretations of available evidence. The framework:
-- Identifies all reasonable hypotheses consistent with the evidence base
-- Assigns Bayesian weights based on T1-T4 sourcing
-- Tracks confidence distributions rather than settling on a single narrative
-- Updates weights as evidence accumulates
-
----
-
-## How It Works
-
-### The Sourcing Hierarchy
-All analysis begins by classifying evidence:
-
-1. **Gather Available Evidence** across all tiers (T1, T2, T3, T4)
-2. **Classify by Tier** using explicit rules (is it peer-reviewed? official? testimony?)
-3. **Map Conflict Resolution** when sources conflict (T1 > T2 > T3 > T4 by default, but context matters)
-4. **Assign Entropy Levels** (L1-L5) indicating overall confidence:
-   - L1-L2: Strong T1 baseline
-   - L3: Mixed evidence (default for contested domains)
-   - L4: Highly contested domains
-   - L5: Refused (pure speculation; no clear T1/T2 evidence)
-
-### The Guardrails
-Seven universal guardrails prevent common reasoning errors:
-
-1. **Temporal Anchoring**: Claims must specify *when* they apply
-2. **No Unanchored Suppression**: "They're hiding X" requires evidence of suppression, not just absence of disclosure
-3. **Competing Hypotheses**: Present all credible interpretations
-4. **Language Precision**: Avoid hedging ("may," "could," "possibly") in favor of Bayesian weights
-5. **Institutional Context Without Conspiracy**: Explain institutional behavior through incentives, not malice
-6. **Physics/Logic Constraints**: If a hypothesis violates basic physics or logic, explicitly note it
-7. **Sealed ≠ Unknown ≠ Conspiracy**: Treat these as distinct categories
-
-### The Mandatory Analysis Structure
-Every analysis follows this structure:
-
-- **Header**: Entropy level, source tier mix, date analyzed
-- **Verified Facts**: Only T1/T2 sources; explicitly flagged by tier
-- **Analysis/Interpretation**: Separates fact from inference; shows reasoning
-- **Testimony Attribution**: T4_named or T4_anon explicitly identified
-- **Structural Secrecy Context**: What's sealed, what's unknown, what's conspiratorial
-- **Competing Hypotheses**: Bayesian weights for credible interpretations
-- **Next Steps**: What evidence would change the analysis
+- **Prioritize documents over narratives.** Primary sources and authoritative technical documentation outweigh opinions and testimony.
+- **Separate what is known from what is claimed.** Explicitly distinguish verified facts from analysis, interpretation, and hypothesis.
+- **Make uncertainties explicit.** When evidence is incomplete or conflicting, say so. Refusal to commit beyond what evidence supports is a feature, not a limitation.
+- **Distinguish absence of evidence from evidence of absence.** Unknown information is not proof of suppression or conspiracy; structural incentives may explain silence.
 
 ---
 
 ## Key Features
 
-### ✓ Universal Application
-Apply to any contested domain—no predefined categories. The framework is methodology, not substance.
+✅ **Tiered Sourcing (T1-T4)** — Four evidence tiers from documents to opinion; tier classification determines confidence ceilings
+✅ **Entropy Levels (L1-L5)** — Behavioral guidance keyed to certainty and stakes; low-entropy topics use lightweight structure, high-entropy topics require full governance
+✅ **Lightweight + Structured Modes** — Choose minimal structure for casual questions or full scaffolding for high-stakes claims
+✅ **Conflict Resolution (BAAM Weighting)** — Explicit priority rules when evidence tiers disagree; T1 > T2 > T3 > T4
+✅ **Suppression/Secrecy Guardrails** — Explains institutional incentives for silence without asserting unanchored conspiracy claims
+✅ **Temporal Anchoring** — Time-sensitive claims require explicit dates; enables fact-checking and correction
+✅ **Self-Check Protocol** — Built-in validation to prevent overconfidence and ensure governance rules are applied
 
-### ✓ Transparent Governance
-All analysis decisions are traceable. Show your work. Explain tier assignments, confidence weights, and reasoning.
+---
 
-### ✓ Institutional Literacy
-Understand how institutions operate without assuming malice. Institutional incentives shape behavior; use them to reason about sealed records.
+## How It Works
 
-### ✓ Bayesian Reasoning
-Confidence is distributed across hypotheses, not collapsed into binary true/false. Track uncertainty explicitly.
+### Tiered Sourcing
 
-### ✓ Secure Against Common Errors
-The seven guardrails catch reasoning failures at the source: hedging language, unanchored suppression claims, temporal drift, conspiracy thinking, etc.
+All claims are traced to source material classified into four tiers:
 
-### ✓ Domain-Agnostic
-Same framework applies to historical research, intelligence analysis, scientific anomalies, policy decisions, institutional analysis, and beyond.
+- **T1 Primary/Official/Direct:** Laws, court dockets, official reports, raw datasets, archival records, peer-reviewed raw data tables
+- **T2 Scholarly/Authoritative Technical:** Peer-reviewed articles, academic books, official technical documentation, reference works
+- **T3 Reputable Secondary:** Mainstream reporting with T1/T2 citations, textbooks, quality explainers, whitepapers
+- **T4 Testimony/Opinion:** Named expert statements, anonymous posts, hearsay, speculation
+
+When you see claims sourced to T1+T2, confidence is inherently higher. When only T3 or T4 is available, assessment must reflect that constraint. When sources disagree, the framework shows why rather than hiding conflict.
+
+### Entropy Levels
+
+Not all questions have the same evidentiary profile. The system assigns entropy levels based on how much evidence exists, how controversial it is, and what's at stake:
+
+- **L1-L2:** Simple, well-documented, low conflict (lightweight structure sufficient)
+- **L3:** Mixed evidence, moderate ambiguity (browse for T1/T2, explain disagreement)
+- **L4:** Contested, high-stakes, significant disagreement (full structured response required)
+- **L5:** Insufficient evidence or prohibitive uncertainty (focus on unknowns, refuse overconfidence)
+
+### Lightweight vs. Structured Mode
+
+**Lightweight Mode** applies to low-stakes questions where evidence is clear (factual lookups, simple coding, casual opinions). Sourcing remains implicit; tiers don't need explicit labeling.
+
+**Structured Mode** applies to contested topics, high-stakes claims, or questions with incomplete evidence. It uses the full response template with explicit tier attribution, confidence calibration, and governance checkpoints.
+
+**Default rule: When in doubt, choose Structured Mode.**
+
+---
+
+## When to Use Structured Mode
+
+Structured mode is **required** for:
+
+- **Medicine/Health/Psychology** (evidence-based assessment, conflict with alternative approaches)
+- **Law/Policy/Regulation** (legal standards, compliance, interpretation disputes)
+- **Finance/Investment/Security** (risk assessment, market claims, vulnerability analysis)
+- **Politics/Elections/Social Conflict** (contested narratives, competing factual claims)
+- **Disputed History/Archaeology** (competing interpretations, declassified records, archaeological evidence)
+- **Safety-Critical Systems** (medical devices, structural safety, security infrastructure)
+- **Any topic where incompleteness or conflict is evident**
 
 ---
 
 ## Repository Structure
 
-```
-BordneAI-Research-Engine/
-├── README.md                          # You are here
-├── LICENSE.md                         # CC BY 4.0 license
-├── NOTICE.md                          # Disclaimers and scope
-├── CHANGELOG.md                       # Version history
-│
-├── SYSTEM_PROMPT-v3.0.md              # Full system instructions
-├── SOURCING_PROFILE_V2.1.md           # Tiered sourcing specification
-├── GOVERNANCE.md                      # Guardrails and governance
-│
-├── docs/
-│   ├── framework.md                   # How to apply framework to any domain
-│   ├── structural-secrecy.md          # Sealed records and uncertainty
-│   └── examples.md                    # 5 generic methodology examples
-│
-├── prompts/
-│   ├── research-engine-v3.0.md        # System prompt (copy)
-│   └── menu-template.md               # Domain-agnostic guided menu
-│
-├── SECURITY.md                        # Responsible disclosure
-└── CONTRIBUTING.md                    # Error reporting and feedback
-```
+| File | Purpose |
+|------|---------|
+| **[SYSTEM_PROMPT-v3.3.1.md](SYSTEM_PROMPT-v3.3.1.md)** | Canonical system instructions; read this first for authoritative specification |
+| **[docs/framework.md](docs/framework.md)** | How tiered sourcing + entropy apply to *any* topic; detailed methodology guide |
+| **[docs/examples.md](docs/examples.md)** | Generic methodology examples showing lightweight vs. structured mode in action |
+| **[docs/governance.md](docs/governance.md)** | Safety rules (Temporal Anchoring, Conflict Resolution, Suppression guardrails, Self-Check) |
+| **[prompts/lightweight-template.md](prompts/lightweight-template.md)** | Guidance for informal queries and minimal-structure analysis |
+| **[NOTICE.md](NOTICE.md)** | Operational clarifications and limitations |
+| **[SECURITY.md](SECURITY.md)** | Misuse reporting and responsible disclosure |
+| **[CONTRIBUTING.md](CONTRIBUTING.md)** | How to report errors and propose improvements |
+| **[CHANGELOG.md](CHANGELOG.md)** | Version history and audit trail |
 
 ---
 
 ## Quick Start
 
-### For Researchers & Analysts
-1. **Start here**: [SOURCING_PROFILE_V2.1.md](SOURCING_PROFILE_V2.1.md) — Understand the tier system
-2. **Then read**: [docs/framework.md](docs/framework.md) — See how to apply it
-3. **Study**: [docs/examples.md](docs/examples.md) — Learn through generic examples
-4. **Reference**: [GOVERNANCE.md](GOVERNANCE.md) — Guardrails and correction protocols
+**I'm new. Where do I start?**
+→ Read the "How It Works" section above, then review [docs/examples.md](docs/examples.md) to see the framework in action.
 
-### For Policy Makers & Decision-Makers
-1. **Start here**: [README.md](README.md) (you are here) — Understand the principles
-2. **Then read**: [docs/structural-secrecy.md](docs/structural-secrecy.md) — How to reason about sealed information
-3. **Consult**: [docs/examples.md](docs/examples.md) — See methodology in action
+**I need to analyze a specific topic. What's the process?**
+→ Read [docs/framework.md](docs/framework.md) to understand tier classification and entropy levels for your domain, then consult [docs/governance.md](docs/governance.md) for safety rules.
 
-### For Developers & Integration
-1. **Start here**: [SYSTEM_PROMPT-v3.0.md](SYSTEM_PROMPT-v3.0.md) — Full system instructions
-2. **Copy**: [prompts/research-engine-v3.0.md](prompts/research-engine-v3.0.md) or [prompts/menu-template.md](prompts/menu-template.md)
-3. **Deploy**: Use in Claude API, ChatGPT, or other LLM interfaces
+**I'm implementing this system. What's the spec?**
+→ Read [SYSTEM_PROMPT-v3.3.1.md](SYSTEM_PROMPT-v3.3.1.md) (canonical) and [docs/governance.md](docs/governance.md) (rules).
 
-### For Newcomers
-1. **Start here**: [README.md](README.md) (you are here)
-2. **Read**: [docs/framework.md](docs/framework.md) — Five-step workflow
-3. **Explore**: [docs/examples.md](docs/examples.md) — See it in practice
-4. **Deep dive**: [SOURCING_PROFILE_V2.1.md](SOURCING_PROFILE_V2.1.md) for full sourcing rules
+**I found an error or want to propose a change.**
+→ See [CONTRIBUTING.md](CONTRIBUTING.md) for reporting protocols.
+
+**I have a policy or legal question. Can this framework help?**
+→ Yes, but see [docs/governance.md](docs/governance.md) for when professional consultation is required.
+
+---
+
+## Deployment
+
+This framework is deployed as:
+
+- **Specification Document** (this repository)
+- **System Prompt for AI Agents** (SYSTEM_PROMPT-v3.3.1.md)
+- **Reference Implementation** (live deployment in AI assistant applications)
+
+All responses are governed by the rules documented in [docs/governance.md](docs/governance.md) and validated against the [SYSTEM_PROMPT-v3.3.1.md](SYSTEM_PROMPT-v3.3.1.md) specification.
+
+---
+
+## Feedback & Issues
+
+### Report Errors
+
+Found a factual error or ambiguity in this framework? Please report:
+
+- **GitHub Issues:** [BordneAI-Research-Engine/issues](https://github.com/BordneAI/BordneAI-Research-Engine/issues)
+- **Email:** contact@bordneai.org
+- **Correction Protocol:** See [CONTRIBUTING.md](CONTRIBUTING.md)
+
+When reporting, include:
+1. Specific claim or rule in question
+2. Evidence of error or ambiguity
+3. Suggested correction or clarification
+
+### Propose Framework Changes
+
+The governance philosophy is fixed, but the framework evolves through evidence-based refinement. To propose changes:
+
+- Email with: current rule, proposed modification, rationale, affected domains
+- Example: "The Temporal Anchoring rule should be modified because [evidence]"
+- Changes are reviewed on merit; philosophical integrity is maintained
 
 ---
 
 ## Licensing
 
-This work is licensed under a **Creative Commons Attribution 4.0 International License** ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)).
+This work is licensed under **CC BY 4.0** (Creative Commons Attribution 4.0 International).
 
 **You are free to:**
-- Share and adapt this framework
-- Use it for any purpose (commercial or noncommercial)
+- Share, copy, and redistribute this framework in any medium or format
+- Adapt, remix, transform, and build upon this work for any purpose
 
-**You must:**
-- Provide attribution (see [LICENSE.md](LICENSE.md) for requirements)
-- Indicate if changes were made
-- Include a copy of the license
+**Under the condition that you:**
+- Provide appropriate attribution to BordneAI
+- Include a link to the license
+- Indicate if modifications were made
+- Do not add additional restrictions
 
----
-
-## Deployment & Integration
-
-This framework is available as a system prompt for use with:
-- **ChatGPT** (through the system prompt feature)
-- **Claude API** (through system context)
-- **Other LLM Interfaces** (supporting system prompts)
-
-**GPT Store Link**: [BordneAI Research Engine](https://chatgpt.com/gpts/BordneAI-Research-Engine-v3-0)
+See [LICENSE.md](LICENSE.md) for full terms.
 
 ---
 
-## Contact & Issues
+## Status
 
-**This is specification documentation only**—not software with executable code.
-
-- **Bug reports or specification issues**: See [CONTRIBUTING.md](CONTRIBUTING.md)
-- **Responsible disclosure**: See [SECURITY.md](SECURITY.md)
-- **Content errors or feedback**: Follow the contribution process in [CONTRIBUTING.md](CONTRIBUTING.md)
+**v3.3.1** — Released 2025-11-17
+**Status:** Public specification, ready for deployment
+**Maintenance:** Monitored for error correction and governance refinement
 
 ---
 
-## Version
-
-**Current Version**: v3.0-alpha
-**Last Updated**: 2025-11-17
-**Status**: Specification complete; ready for alpha testing
-
-See [CHANGELOG.md](CHANGELOG.md) for version history and updates.
-
----
-
-**BordneAI Research Engine** — Rigorous reasoning about contested knowledge, universal framework, transparent governance.
+*The BordneAI Research Engine is a framework for evidence-based inquiry. It governs reasoning, not belief. Its purpose is clarity under uncertainty.*
