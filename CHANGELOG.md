@@ -198,7 +198,7 @@ All content licensed under **CC BY 4.0** (Creative Commons Attribution 4.0 Inter
 Found an error in this changelog or the specification?
 
 - **GitHub Issues:** [github.com/BordneAI/BordneAI-Research-Engine/issues](https://github.com/BordneAI/BordneAI-Research-Engine/issues)
-- **Email:** research@bordneai.org
+- **Email:** research@bordne.com
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed reporting guidelines.
 

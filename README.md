@@ -135,7 +135,7 @@ All responses are governed by the rules documented in [docs/governance.md](docs/
 Found a factual error or ambiguity in this framework? Please report:
 
 - **GitHub Issues:** [BordneAI-Research-Engine/issues](https://github.com/BordneAI/BordneAI-Research-Engine/issues)
-- **Email:** contact@bordneai.org
+- **Email:** contact@bordne.com
 - **Correction Protocol:** See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 When reporting, include:

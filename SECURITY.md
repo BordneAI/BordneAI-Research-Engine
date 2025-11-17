@@ -66,7 +66,7 @@ If you are building an AI system or tool based on this framework and discover:
 - A governance gap that allows misuse
 - An unintended interpretation that creates risk
 
-**Report privately:** email security@bordneai.org
+**Report privately:** email security@bordne.com
 
 **Include:**
 1. What the issue is
@@ -97,9 +97,9 @@ If you identify:
 
 If you observe the framework being misrepresented or used to justify harmful claims:
 
-**For research/educational misuse:** Email research@bordneai.org
+**For research/educational misuse:** Email research@bordne.com
 
-**For commercial/deployed misuse:** Email security@bordneai.org
+**For commercial/deployed misuse:** Email security@bordne.com
 
 **What helps:** Specific example of misuse, URL or screenshot, nature of harm.
 

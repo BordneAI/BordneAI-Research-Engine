@@ -46,7 +46,7 @@ Correction: [What should be stated instead]
 Evidence/Justification: [Why this is wrong]
 ```
 
-**For sensitive issues:** Email research@bordneai.org
+**For sensitive issues:** Email research@bordne.com
 
 ### Step 3: We'll Investigate and Fix
 
@@ -128,7 +128,7 @@ The **core philosophy is fixed:**
 
 ### Step 2: Submit for Review
 
-**Email:** research@bordneai.org
+**Email:** research@bordne.com
 
 **Format:**
 ```
@@ -189,7 +189,7 @@ Have you built something using this framework? Found interesting applications?
 - This helps others and demonstrates framework utility
 
 **Via Email (private):**
-- Email research@bordneai.org if you prefer private feedback
+- Email research@bordne.com if you prefer private feedback
 - We may ask permission to share anonymized lessons
 
 ---
@@ -250,7 +250,7 @@ We will **not accept:**
 
 - **About framework usage:** See [README.md](README.md) or [docs/](docs/)
 - **About governance rules:** See [docs/governance.md](docs/governance.md)
-- **About this contribution process:** Email research@bordneai.org
+- **About this contribution process:** Email research@bordne.com
 
 ---
 
