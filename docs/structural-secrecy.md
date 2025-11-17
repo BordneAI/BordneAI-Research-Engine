@@ -1,456 +1,409 @@
-# Structural Secrecy: How to Reason About Sealed Records
+# Structural Secrecy: Reasoning About Sealed Records
 
-## Introduction
-
-"Structural Secrecy" is the practice of institutional classification of records for legitimate reasons (operational security, personnel protection, diplomatic sensitivity). This document explains:
-
-1. How to distinguish sealed records from conspiracy
-2. Why institutional secrecy is often legitimate
-3. How to reason about classified material without speculating
-4. When to refuse unanchored claims vs. quantify uncertainty
-
-**Core Principle:** A sealed record is not evidence of hidden content; it's an institutional choice requiring understanding, not speculation.
+## Framework for Analyzing What We Don't Know
 
 ---
 
-## PART 1: WHAT IS STRUCTURAL SECRECY?
+## What is Structural Secrecy?
 
-### Definition
+**Definition:** The deliberate withholding of information by legitimate authorities to serve specified institutional purposes, governed by law, regulation, or policy.
 
-Structural Secrecy = Institutional classification of records based on:
+Structural secrecy is **not** conspiracy. It is a system of **legitimate** information compartmentalization.
 
-1. **Operational Security:** Methods/techniques must stay secret to remain effective
-2. **Personnel Protection:** Identities of officers, agents, sources must be protected
-3. **Diplomatic Sensitivity:** Foreign relationships, negotiations require confidentiality
-4. **Military Readiness:** Ongoing weapons status, positioning, capabilities
-5. **Ongoing Investigation:** Sealed records in active cases (law enforcement, security)
+### Why Seal Information?
 
-### Examples in Each Category
+Legitimate reasons for information sealing include:
 
-**Operational Security:**
-- Intelligence gathering methods remain classified to protect active sources
-- NC3 (nuclear command protocols) remain classified to maintain deterrent credibility
-- Surveillance techniques classified to prevent adversary countermeasures
+| Reason | Example | Institutional Purpose |
+|---|---|---|
+| **Operational Security** | Ongoing investigation details | Prevent interference with active operations |
+| **Personnel Privacy** | Personnel records, medical histories | Comply with privacy law (HIPAA, GDPR, etc.) |
+| **National Security** | Classified military operations | Prevent disclosure to foreign adversaries |
+| **Proprietary Information** | Trade secrets, patent details | Protect commercial competitive advantage |
+| **Legal Privilege** | Attorney-client communications, deliberative process | Preserve legal functioning |
+| **Diplomatic Sensitivity** | Foreign agent identities, allied relationships | Protect international relationships |
+| **Compartmentalization** | "Need to know" classified information | Control who has access to sensitive information |
 
-**Personnel Protection:**
-- Intelligence officer identities sealed (physical safety, career protection)
-- Informant names sealed (witness protection, retaliation prevention)
-- Undercover agents' operations sealed (ongoing work protection)
+All of these are **legitimate** reasons for sealing information. The fact that information is sealed does **not** indicate conspiracy.
 
-**Diplomatic Sensitivity:**
-- Foreign government communications sealed (relationship damage prevention)
-- Negotiation records sealed (precedent implications for future talks)
-- Intelligence-sharing agreements sealed (preserve allied cooperation)
+### Key Principle: Sealed ≠ Unknown ≠ Conspiracy
 
-**Military Readiness:**
-- Current weapons positioning (affects deterrent credibility)
-- Technical specifications of active systems (prevents exploitation)
-- Deployment decisions (operational security)
+These are three distinct categories with different handling:
 
-**Ongoing Investigation:**
-- Active criminal investigations (prejudice to fair trial)
-- Security clearance reviews (protected personnel information)
-- Personnel matters (privacy, fairness)
-
-### Key Insight: Legitimacy of Institutional Secrecy
-
-**These are not cover-ups. They are normal, institutional practices serving defensible purposes.**
-
-Contrast:
-- **Legitimate Secrecy:** "We keep NC3 protocols secret because effective deterrence requires the adversary to believe we can respond. Revealing protocols undermines deterrence."
-- **Unjustified Suppression:** "We're hiding [X] to protect [Y agency/person]. The public has a right to know."
-
-The BordneAI Research Engine respects the former without assuming the latter.
+| Category | Definition | Characteristics | Handling |
+|---|---|---|---|
+| **Sealed** | Legitimately withheld by authority | Has legal basis; likely declassifiable; reasoning possible | Use structural secrecy framework |
+| **Unknown** | We lack information; no evidence of sealing | Natural gap; may close through research | Acknowledge gap; identify what would resolve it |
+| **Conspiracy** | Illegitimate suppression despite obligation | Requires explicit suppression evidence | Refuse to analyze; require evidence first |
 
 ---
 
-## PART 2: SEALED vs. UNKNOWN
+## The Three Categories: How to Distinguish Them
 
-### Critical Distinction #1: Sealed vs. Unknown
+### Sealed Records
 
-| State | Example | Treatment |
-|-------|---------|-----------|
-| **Sealed** | "NC3 protocols remain classified" | Acknowledge legitimacy; don't speculate about content |
-| **Unknown** | "Declassified 2015; contains facts X and gaps [Y]" | Evaluate T1/T2 evidence; accept uncertainty |
-| **Declassified but Disputed** | "Released in 2015; accounts differ on Y" | Weigh competing T1/T2 interpretations |
+**Recognition:** Information is classified, sealed by law, or protected by regulation.
 
-### Examples Showing Distinctions
+**Evidence of Sealing:**
+- Explicit classification markings ([CLASSIFIED], [REDACTED], etc.)
+- FOIA exemptions (national security, privacy, deliberative process)
+- Legal protection (attorney-client privilege, medical privacy)
+- Official statements refusing to disclose ("This is classified for reasons of...")
 
-**SEALED RECORD:**
+**Handling:**
+- Accept that information is sealed
+- Do NOT assume it doesn't exist
+- DO reason about likely content using institutional incentive reasoning
+- DO reference declassification patterns
+- DO acknowledge that future declassification will add evidence
+
+**Example Framing:**
 ```
-Question: "What are the current NC3 protocols?"
-
-Correct Response:
-"NC3 technical details remain classified. Institutional reason:
-operational security (deterrent effectiveness). What we know from
-declassified sources: Historical protocols used [mechanisms],
-indicating that modern protocols likely include [updated versions].
-Confidence in extrapolation: 65%."
-
-Incorrect Response:
-"NC3 protocols must contain [X]." (Assumes sealed content)
-"The government is hiding [Y] in NC3 details." (Assumes conspiracy)
-```
-
-**UNKNOWN (DECLASSIFIED BUT INCOMPLETE):**
-```
-Question: "What happened during Incident X?"
-
-Correct Response:
-"Declassified document shows [fact A]. T2 analysis disputes [fact B].
-Most likely: [Hypothesis 1] (70%), alternative: [Hypothesis 2] (25%),
-other (5%). New declassification would likely show [reasoning]."
-
-Incorrect Response:
-"Document shows [fact A]; that's the truth." (Overstates certainty)
-"Documents are incomplete; must be hiding [X]." (Assumes sealed
-content based on incomplete declassified record)
+This information is classified. The classification serves [legitimate purpose].
+The document was likely created around [inference based on adjacent events].
+Given [institutional incentive], the content likely addresses [inference].
+Confidence: XX% because [reasoning is indirect].
 ```
 
-**DECLASSIFIED BUT DISPUTED:**
+### Unknown Information
+
+**Recognition:** We lack information; there is no evidence that it was deliberately withheld.
+
+**Characteristics:**
+- No explicit evidence of sealing
+- Information was never gathered, discovered, or made public
+- Gap is natural; not evidence of suppression
+- Future research might discover it
+
+**Handling:**
+- Acknowledge the gap explicitly
+- Do NOT assume suppression
+- DO identify what evidence would resolve the gap
+- DO continue analysis without the unknown information
+- DO note uncertainty caused by unknown information
+
+**Example Framing:**
 ```
-Question: "What did the 2016 Intelligence Assessment conclude?"
+We lack information about [X]. This is not evidence of suppression; rather, [specific reason for gap]:
+- The information may not have been gathered
+- The question may not have been studied
+- Access may be limited for legitimate reasons
 
-Correct Response:
-"Declassified ICA states [exact quote]. T2 analysis interprets this
-as [reading A], while other T2 sources argue [reading B]. Most
-credible interpretation: [A] (70%), alternative (30%), based on
-[reasoning]."
-
-Incorrect Response:
-"The declassified assessment is the truth." (Treats declassified as
-infallible; ignores competing interpretations)
-"The assessment is incomplete; they're hiding [X]." (Assumes sealed
-content explains away dispute; may be interpretive, not factual)
+If [specific evidence] became available, analysis would shift toward [hypothesis].
 ```
 
-### Operational Rule: Sealed ≠ Conspiracy
+### Conspiracy (Illegitimate Suppression)
 
-**If a record is sealed:**
-1. Acknowledge the sealing (don't ignore it)
-2. Explain why it's likely sealed (institutional incentive)
-3. Do NOT assume specific content ("must contain X")
-4. Do use declassified benchmarks to inform reasoning
+**Recognition:** Claim that information is being suppressed illegitimately despite an obligation to disclose.
 
-**Example: Correct Handling of Sealed Record**
+**Required Evidence:**
+- Explicit evidence of suppression (destroyed records, denied FOIA, legal violation)
+- Documented obligation to disclose (law, regulation, contract)
+- Failure to disclose despite obligation
 
+**Handling:**
+- Do NOT analyze pure conspiracy claims without evidence
+- DO require explicit suppression evidence before treating as possible
+- DO distinguish from legitimate sealing
+- DO refuse analysis if evidence is absent
+
+**Example Refusal:**
 ```
-Question: "What is the current status of U.S. nuclear weapons in
-Okinawa?"
-
-Step 1 - T1 Declassified Baseline:
-"Declassified documents confirm X weapons deployed 1960–[year].
-Current status is NOT disclosed in declassified records."
-
-Step 2 - Acknowledge Sealing:
-"Records on current weapons status remain classified."
-
-Step 3 - Explain Institutional Incentive:
-"Military institutions keep weapons status sealed because:
-(1) Deterrent effectiveness depends on ambiguity (if adversary knows
-weapons are present, threat is credible; if absent, threat is null);
-(2) Revealing positioning would compromise operational security;
-(3) Diplomatic agreements with host nation may require non-disclosure."
-
-Step 4 - Use Declassified Benchmarks:
-"Historical patterns show: When weapons are withdrawn, this is
-eventually declassified (see [case X, declassified in year]). We
-have no such declassification for Okinawa."
-
-Step 5 - Quantify Uncertainty:
-"Most likely scenario (60%): Weapons remain, status deliberately
-non-disclosed. Alternative (30%): Weapons withdrawn, status kept
-quiet for diplomatic reasons. Other (10%): Status genuinely unknown
-to policy-makers."
-
-Step 6 - Avoid Conspiracy:
-"We cannot assume 'weapons definitely remain' or 'weapons
-definitely don't.' We can reason about institutional behavior
-and likelihood based on precedent."
+This claim assumes illegitimate suppression. However, there is no evidence of suppression—only
+absence of public disclosure. The absence of public disclosure is consistent with legitimate
+classification, not conspiracy. Analysis is refused until explicit evidence of suppression is provided.
 ```
 
 ---
 
-## PART 3: WHEN TO REFUSE UNANCHORED CLAIMS
+## Institutional Incentives Framework
 
-### Unanchored Suppression Claims
+How to reason about what sealed records likely contain:
 
-These claims assume sealed records contain specific content WITHOUT evidence. Refuse them:
+### Step 1: Identify the Sealing Authority
+- Who sealed the information? (Government agency? Court? Company?)
+- What authority do they have? (Law? Regulation? Policy?)
+- What is their mandate? (National security? Privacy protection? Business interest?)
 
-**Unanchored Claims to Refuse:**
+### Step 2: Infer Institutional Incentives
+Given the sealing authority and their mandate, what incentives drive the sealing decision?
 
-1. ❌ "Hidden documents definitely prove [X]"
-   - Problem: Unfalsifiable (no evidence could prove it false)
-   - Burden: Shifts to listener to disprove speculation
-   - Correct Response: "I can't establish facts about classified material. Here's what IS declassified..."
-
-2. ❌ "The government must be covering up [Y]"
-   - Problem: Assumes conspiracy without evidence
-   - Burden: Requires proving negative (proving they're NOT hiding something)
-   - Correct Response: "Institutional incentive to maintain secrecy: [reasons]. This explains classification without assuming cover-up."
-
-3. ❌ "Sealed records obviously contain [Z]"
-   - Problem: "Obviously" is not evidence; assumes content without reasoning
-   - Burden: Forces argument about unknowable content
-   - Correct Response: "Sealed records likely contain [reasoning based on institutional patterns]. Most plausible: [hypothesis], confidence: [XX%]."
-
-4. ❌ "If they're not hiding [X], why is it classified?"
-   - Problem: Circular reasoning (classification proves hidden content)
-   - Burden: Assumes classification is itself evidence
-   - Correct Response: "Classification has multiple legitimate reasons: [list]. Most likely: [reasoning]."
-
-### How to Refuse (Reframing Strategy)
-
-When user makes unanchored suppression claim:
-
-**Step 1:** Acknowledge the intuition
+**Example Incentive Analysis:**
 ```
-"I understand why you'd think hidden records likely contain [X].
-That's a natural inference."
+Authority: National security agency
+Mandate: Protect against foreign intelligence threats
+Incentive: Seal operational details to prevent adversary interference
+Inference: Sealed content likely addresses [specific operational concern]
+Confidence: Medium (incentive is clear, but specific content is speculative)
 ```
 
-**Step 2:** Explain the epistemological problem
+### Step 3: Identify Declassification Patterns
+Historical patterns show:
+- What kinds of information do agencies typically declassify?
+- After how long (30 years, 50 years, never)?
+- What triggers declassification (FOIA request, statute of limitations, historical release)?
+
+**Example Pattern Analysis:**
 ```
-"However, we can't establish facts about classified material.
-Assuming sealed records definitely contain [X] is unfalsifiable—
-no evidence could prove it false, so it's not a claim I can support."
+Historical pattern: [Agency] declassifies operational records after 25-30 years
+Current status: Records from [period] became eligible for declassification in [year]
+Inference: [Current year - 30 years] documents may be available; earlier documents less likely
+Confidence: High (based on documented agency practice)
 ```
 
-**Step 3:** Reframe as evidence-based question
+### Step 4: Reason About Adjacent Evidence
+What T1/T2 evidence exists in nearby areas that might illuminate sealed information?
+
+**Example Adjacent Evidence:**
 ```
-"What I CAN do:
-1. Show you what IS declassified about [topic]
-2. Explain why records might be sealed (institutional incentives)
-3. Describe what declassification would likely show (based on patterns)
-4. Help you reason about probability, not certainty"
+Sealed records: [Program details]
+Adjacent evidence: Declassified documents from [related program] show [specific detail]
+Inference: If [related program] operated on principle X, sealed program likely did too
+Confidence: Medium (similar programs often have similar structures, but not always)
 ```
 
-**Step 4:** Offer productive path forward
+### Step 5: Quantify Uncertainty
+How confident can you be about sealed record content?
+
+**Confidence Ranges for Sealed Record Reasoning:**
+- **High confidence (70-85%)**: Multiple incentive lines and adjacent evidence agree
+- **Medium confidence (50-70%)**: Incentive reasoning is clear; adjacent evidence supports inference
+- **Low confidence (30-50%)**: Incentive reasoning is plausible; weak adjacent evidence
+- **Very low confidence (<30%)**: Incentive reasoning is speculative; little corroboration
+
+**Rule:** Never assign high confidence to sealed record inferences; evidence is indirect by definition.
+
+---
+
+## Don't Know vs. Unknown vs. Speculation
+
+### Three Different Situations
+
+#### Situation 1: Don't Know (We Tried; Information is Sealed)
+**What happened:** You searched for evidence; information exists but is sealed by legitimate authority.
+
+**Characteristics:**
+- Explicit evidence of sealing (classification markings, FOIA denials, etc.)
+- Authority is legitimate (government agency, court, company with legal right)
+- Information likely exists but is not accessible
+- May be declassified in future
+
+**Handling:**
+- Use structural secrecy framework
+- Reason about likely content using institutional incentives
+- Acknowledge you're reasoning about sealed records
+- Assign confidence proportional to indirectness of evidence
+
+**Example:**
 ```
-"Would it help to: (1) examine declassified precedent in similar
-cases? (2) Analyze what declassification would need to show to
-change our understanding? (3) Quantify confidence in different
-scenarios?"
+Information about [X] is classified. Reasoning about likely content: [inference based on incentives].
+Confidence: 55% (reasoning is indirect; sealed record inference inherently uncertain).
+```
+
+#### Situation 2: Unknown (Information Was Not Gathered or Made Public)
+**What happened:** You searched for evidence; information doesn't exist in public or documented form.
+
+**Characteristics:**
+- No evidence of deliberate sealing
+- Information was simply not gathered, studied, or published
+- Gap is natural; many things are not studied
+- Future research might discover it
+
+**Handling:**
+- Acknowledge the gap explicitly
+- Do NOT assume suppression
+- Identify what evidence would resolve the gap
+- Continue analysis without assuming what's in the gap
+
+**Example:**
+```
+We lack documented evidence about [X]. This is not evidence of suppression; rather, the question
+has not been studied in the available literature. If [specific research] were conducted, we would
+have evidence about [Y].
+```
+
+#### Situation 3: Speculation (No Evidence of Existence or Sealing)
+**What happened:** You have no evidence that information exists; you're guessing what might be true.
+
+**Characteristics:**
+- No evidence the information exists
+- No evidence the information is sealed
+- You're inventing possibilities without evidence anchoring
+- This is pure speculation
+
+**Handling:**
+- REFUSE to analyze
+- Explain why (no T1/T2 evidence; pure speculation)
+- Offer to reframe to analyzable question if possible
+
+**Example:**
+```
+This question requires speculation about information with no evidence base. Analysis is refused.
+If you can provide evidence that [information] exists or was sealed, I can analyze using the
+structural secrecy framework. Otherwise, the question lacks evidential grounding.
 ```
 
 ---
 
-## PART 4: WHEN TO QUANTIFY UNCERTAINTY
+## Refusal Protocol for Speculation
 
-### Uncertainty Quantification Framework
+When to refuse analysis:
 
-**Quantify (don't refuse) when:**
+### Refuse If:
+1. **No T1/T2 Evidence Base**: Question requires inventing facts without documentation
+2. **Unanchored Suppression Claim**: Claims information is suppressed without evidence of suppression
+3. **Pure Invention**: No evidence the question addresses real phenomena
 
-1. **Declassified records exist but are incomplete**
-   - Uncertainty: Gaps in declassified record create alternative hypotheses
-   - Response: Quantify confidence in each hypothesis based on available evidence
-   - Example: "Document X shows Y; Z remains unclear. Most likely: [A] (70%), alternative [B] (25%)"
-
-2. **Multiple interpretations of declassified data are plausible**
-   - Uncertainty: T2 experts disagree on meaning of T1 evidence
-   - Response: Present competing interpretations with confidence weights
-   - Example: "T2 analyses split: 60% interpret declassified assessment as [A], 40% as [B]"
-
-3. **Sealed records are explained by institutional incentives**
-   - Uncertainty: Why something is sealed doesn't prove it contains X
-   - Response: Quantify institutional incentive explanations
-   - Example: "Record sealed for [reason 1] (70% likely), [reason 2] (20%), [reason 3] (10%)"
-
-4. **New declassification would resolve unsettled questions**
-   - Uncertainty: What would a future FOIA release show?
-   - Response: Reason forward from institutional patterns and incentives
-   - Example: "Declassification would likely show [X] (confidence 75%), with surprise element [Y] (confidence 20%)"
-
-### Examples: Quantifying Uncertainty Productively
-
-**EXAMPLE 1: Intelligence Assessment Uncertainty**
-
+### Standard Refusal Response:
 ```
-Question: "What did 2016 intelligence assessment conclude about
-election interference impact?"
+This question cannot be analyzed because [specific reason]:
+- Requires speculation without T1/T2 evidence base
+- Assumes suppression without evidence of suppression
+- Invents facts not documented in available sources
 
-Declassified Record: "Assessment concludes [A] occurred, with
-confidence [level], but declines to assess [B] impact."
+The framework does not analyze pure speculation. If you can provide:
+[Type of evidence] that would anchor the question, analysis becomes possible.
 
-Sealed Record: "Impact assessment remains classified"
-
-Quantified Uncertainty Response:
-"Declassified assessment is explicit: interference confirmed, impact
-assessment withheld. Why sealed?
-
-Institutional incentives:
-- Classified impact analysis might reveal intelligence methods (50%
-  likely reason)
-- Political sensitivity—assessment of election impact is
-  controversial (30% likely)
-- Ongoing investigation protecting sources/methods (15%)
-- Other reasons (5%)
-
-Most plausible scenario (60%): Impact assessment exists but remains
-sealed due to OPSEC (operational security). Alternative (30%):
-Impact assessment was genuinely uncertain, withheld to avoid
-political controversy. Other (10%): Impact assessment doesn't exist
-(question was genuinely unsettled at time of assessment).
-
-New declassification would likely show: [reasoning]."
+Alternatively, the reframed question [modified question] is analyzable because [reason].
 ```
 
-**EXAMPLE 2: Weapons Status Uncertainty**
+### Offering a Reframe:
+Often, refusal can be converted to analyzable analysis through reframing:
 
-```
-Question: "Are there still nuclear weapons in Okinawa?"
+**Original (Speculative):** "What did [sealed program] do?"
+**Refusal Reason:** "Program details are sealed; no adjacent evidence available to infer content"
+**Reframed:** "Given institutional incentives and declassification patterns from similar programs, what operational structure would be consistent?"
 
-Declassified Record: "Weapons deployed 1960–[year]. Current status
-not disclosed."
-
-Sealed Record: "Current status remains classified"
-
-Quantified Uncertainty Response:
-"Declassified baseline: weapons were present through [year].
-Current status: sealed.
-
-Institutional patterns:
-- When U.S. withdraws weapons, eventual declassification is pattern
-(see [precedent cases]). No Okinawa declassification of withdrawal.
-- Deterrent credibility depends on ambiguity (presence can be
-credible if undeclared)
-- Sealed status could reflect: continued presence (undeclared),
-withdrawn presence (undisclosed), or genuine uncertainty
-
-Confidence distribution:
-- Weapons remain, status undeclared (60%): Most consistent with
-deterrent strategy + no declassified withdrawal
-- Weapons withdrawn, status kept quiet (30%): Possible if political
-sensitivity warrants secrecy
-- Status genuinely unclear to policymakers (10%): Unlikely given
-institutional clarity on weapons
-
-Declassification would likely show: historical baseline + potentially
-current status, updating this distribution. New evidence would shift
-confidence by: ±[range]."
-```
-
-**EXAMPLE 3: UAP Sensor Uncertainty**
-
-```
-Question: "What was the Gimbal video showing?"
-
-Declassified Record: "Video released; kinematics reported as [X]"
-
-Sealed Record: "Full sensor analysis, incident context remain
-classified"
-
-Quantified Uncertainty Response:
-"Declassified data: video shows reported kinematics, sensor specs:
-[list]
-
-Competing hypotheses:
-1. Sensor artifact (50%): Atmospheric effect or processing error
-   creates apparent kinematics. Most likely because known failure
-   mode.
-2. Classified vehicle (30%): U.S. experimental platform. Plausible
-   but would violate OPSEC to confirm.
-3. Unconventional vehicle (15%): Unknown propulsion method. Physics
-   permits; no direct evidence.
-4. Other (5%): Extraordinary explanations. Highest-magnitude claim,
-   lowest prior probability.
-
-Why sealed? Institutional incentives:
-- If classified U.S. vehicle: protect ongoing programs (60% likely
-  reason for sealing)
-- If sensor artifact: avoid institutional embarrassment (20%)
-- If unconventional: protect ongoing investigation (15%)
-- If other: maintain strategic ambiguity (5%)
-
-Declassification would likely show: sensor analysis clarifying which
-hypothesis is correct. New data on similar incidents would shift
-confidence by [reasoning]."
-```
+**Original:** "Is the organization hiding evidence of X?"
+**Refusal Reason:** "Unanchored suppression claim; no evidence of suppression"
+**Reframed:** "What institutional incentives explain why information about X is not publicly disclosed?"
 
 ---
 
-## PART 5: OPERATIONAL DECISION TREE
+## Quantifying Uncertainty About Sealed Records
 
-### When User Makes Claim About Sealed Records
+### The Challenge
+When records are sealed, confidence is inherently limited because reasoning is **indirect**:
+- You don't have direct evidence
+- You're inferring from incentives and adjacent information
+- Sealed content might contradict your reasoning
 
-```
-[User Question About Sealed Material]
-          |
-          v
-[Does question assume sealed content?]
-    /          \
-  YES           NO
-   |             |
-   v             v
-[Unanchored    [Is declassified
-suppression?]  baseline available?]
-  /   \           /      \
-YES   NO        YES      NO
- |     |         |        |
- |     v         v        v
- |  [Quantify] [Weigh]  [Explain
- |  institutional T1/T2  sealing,
- |  incentives]  against  quantify
- |              sealed]   why sealed]
- |
- v
-[REFUSE: Reframe as
-evidence-based question]
+### Confidence Reduction
+Apply systematic reductions to confidence based on:
 
-Output path:
-REFUSE branch: "I can't establish facts about classified material.
-Here's what IS declassified..."
+**Base Confidence (if fully documented):** 85%
+**Sealed Record Reductions:**
+- Information is sealed (not directly accessible): -20% → 65%
+- Reasoning relies on incentive inference: -15% → 50%
+- Adjacent evidence is ambiguous: -10% → 40%
+- Multiple interpretations of incentives exist: -15% → 25%
 
-QUANTIFY branch: "Declassified record shows [X]. Sealed records
-likely sealed for [reasons]. Confidence in scenarios: [A] [XX%],
-[B] [XX%]"
-```
+### Result: Sealed Record Confidence Range
+- **High inference confidence (70-80%)**: Multiple independent lines of reasoning agree; adjacent evidence corroborates
+- **Medium confidence (50-70%)**: Incentive reasoning is clear; some corroboration
+- **Low confidence (30-50%)**: Reasoning is plausible but has gaps; weak corroboration
+- **Very low confidence (<30%)**: Reasoning is speculative; little corroboration
+
+**Never claim high confidence about sealed records.** Direct evidence gives higher confidence.
 
 ---
 
-## PART 6: SUMMARY & PRINCIPLES
+## Generic Hypothetical Examples
 
-### Five Core Principles for Structural Secrecy
-
-1. **Sealed ≠ Conspiracy**
-   - Sealing is institutional norm
-   - Requires understanding institutional incentives, not assuming hidden content
-
-2. **Closed Records Require Open Reasoning**
-   - Explain WHY records are sealed
-   - Use institutional patterns to inform but not determine conclusions
-   - Quantify uncertainty; don't speculate
-
-3. **Unfalsifiable Claims Are Rejected**
-   - "Hidden documents definitely contain [X]" is unfalsifiable
-   - Reframe as: "What would declassification show? What institutional incentives suggest?"
-
-4. **Declassified Benchmarks Anchor Reasoning**
-   - Historical precedent (e.g., when weapons are withdrawn, eventually declassified)
-   - Institutional patterns inform likely behavior
-   - Do not determine current status, but narrow plausibility ranges
-
-5. **Uncertainty Is Quantified, Not Hedged**
-   - "Confidence: 60% A, 35% B, 5% C" (clear)
-   - "Perhaps A; arguably B; possibly C" (hedged, unclear)
-
-### Example Summary: Nuclear Weapons in Okinawa
-
-**Question:** Are there still nuclear weapons in Okinawa?
+### Example 1: Sealed Operational Records
+**Scenario:** An agency conducted an operation. Details remain classified.
 
 **Analysis:**
-1. **Sealed Record:** Current status classified (legitimate institutional secrecy)
-2. **Declassified Baseline:** Historical deployment confirmed through [year]
-3. **No Declassified Withdrawal:** No announcement/disclosure of removal
-4. **Institutional Incentive:** Ambiguity serves deterrent; declaration of either presence or absence reduces credibility
-5. **Confidence Distribution:** Likely remain (60%), withdrawn quietly (30%), other (10%)
-6. **Declassification Path:** Would likely show historical timeline; possibly current status
+```
+Operation [X] was conducted from [date] to [date]. Details remain classified under [classification authority].
 
-**Outcome:** Respect sealed record without assuming content; reason from institutional patterns and declassified precedent; quantify confidence in remaining scenarios.
+Institutional context:
+- Agency mandate: [Specific mission]
+- Likely incentive for classification: [Operational security reason]
+- Classification likely lifts: [Future date based on historical patterns]
+
+Adjacent evidence:
+- [Declassified document Y] describes similar operation from earlier period
+- Structure suggests [operational pattern]
+
+Inference about sealed operation:
+- Likely operational scope: [Based on adjacent evidence], XX% confidence
+- Likely institutional purposes: [Based on agency mandate], XX% confidence
+- Likely timeline: [Based on adjacent events], XX% confidence
+
+Confidence Summary:
+These inferences are indirect (based on reasoning about sealed records). Confidence: 40-55%.
+Future declassification will provide direct evidence.
+```
+
+### Example 2: Unknown but Not Sealed
+**Scenario:** A question about a phenomenon with no public research.
+
+**Analysis:**
+```
+We lack documented evidence about [phenomenon X].
+
+Why knowledge gap exists:
+- The phenomenon has not been widely studied (no funded research program)
+- Research may exist but is not in peer-reviewed literature
+- The question is new (emerging interest)
+
+What would resolve the gap:
+- Peer-reviewed research study of [phenomenon]
+- Systematic data collection on [specific measurement]
+- [Type of] documentation from participants
+
+Current confidence: Unable to assess hypotheses; insufficient evidence base.
+```
+
+### Example 3: Sealed Records with Clear Incentive
+**Scenario:** Government protects identity of intelligence operatives (legitimate secrecy).
+
+**Analysis:**
+```
+Intelligence operative identities remain classified indefinitely.
+
+Institutional context:
+- Agency: Intelligence service
+- Mandate: Conduct intelligence operations and protect operatives
+- Incentive for classification: Operative safety (personal security threat if identity exposed)
+
+Conclusion:
+Classification is legitimate. Identities will remain sealed indefinitely (not subject to
+standard declassification timelines). Reasoning about sealed identities is not possible
+without independent evidence about specific individuals.
+
+Analysis refused: Cannot reason about classified operative identities without independent evidence.
+```
 
 ---
 
-**Version:** Part of BordneAI Research Engine v3.0-alpha
-**Last Updated:** 2025-11-17
-**License:** CC BY 4.0
-**Related Files:** GOVERNANCE.md, docs/domains.md, docs/examples.md
+## Practice: Distinguishing Categories
+
+### Test Yourself: Which Category?
+
+**Scenario 1:** "What is the content of classified government documents from 1965?"
+- Sealed (legitimate classification) / Unknown (not studied) / Conspiracy (illegitimate suppression)?
+- **Answer:** Sealed. Classification is explicit and legitimate. Reasoning possible using institutional incentives.
+
+**Scenario 2:** "What percentage of [population] experienced [phenomenon]? No published research exists."
+- Sealed / Unknown / Conspiracy?
+- **Answer:** Unknown. Not deliberately sealed; simply not researched. Gap is natural, not evidence of suppression.
+
+**Scenario 3:** "Is organization X hiding evidence of wrongdoing?"
+- Sealed / Unknown / Conspiracy?
+- **Answer:** Conspiracy (without evidence). Unless you have explicit evidence of suppression (destroyed records, denied FOIA, etc.), this is speculation. Refusal appropriate.
+
+**Scenario 4:** "Personnel records of employees are not public. Why?"
+- Sealed / Unknown / Conspiracy?
+- **Answer:** Sealed. Legal requirement (privacy law). Legitimate sealing, not suppression or conspiracy.
+
+---
+
+## Version & References
+
+**Version**: 1.0
+**Last Updated**: 2025-11-17
+
+For guardrails on suppression claims, see GOVERNANCE.md (Guardrail 2).
+For reasoning about sealed institutional behavior, see docs/examples.md.

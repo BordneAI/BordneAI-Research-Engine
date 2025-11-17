@@ -1,458 +1,364 @@
-# Governance Framework in Action: 5 Examples
+# Five Generic Methodology Examples
 
-## Introduction
+## How the Framework Works in Practice
 
-This document provides five representative query/response pairs demonstrating how the BordneAI Research Engine applies governance rules. Each example shows:
-- **Query:** Realistic question in an enabled domain
-- **Analysis:** Internal reasoning (T1/T2/T3 breakdown, guardrails applied)
-- **Response:** How system addresses question while respecting rules
-- **Governance Checkpoints:** Which rules were activated
+Each example demonstrates the mandatory analysis structure and guardrail verification. These are **hypothetical generic scenarios**, not real incidents.
 
 ---
 
-## Example 1: Nuclear History Query with T1/T2 Conflict
-
-### Domain
-nuclear_history_Okinawa
+## Example 1: T1/T2 Source Conflict
 
 ### Query
-"What do declassified sources tell us about nuclear weapons incidents in Okinawa during the Cold War?"
+"Two sources give different accounts of institutional policy change. One says X, one says Y. How do we weight them?"
 
-### Analysis
+### System Response
 
-**T1 Declassified Baseline:**
-- State Department cable (1962): "Nuclear incident at Kadena Air Base; [details]"
-- Military historical document (declassified 1995): "Incident involved [description], resolution: [outcome]"
-- Congressional testimony (1995): "U.S. policy toward nuclear incidents: [statement]"
+**Header:**
+```
+Question: How to resolve conflicting source accounts about institutional policy change?
+Entropy Level: L3 (Mixed evidence)
+Source Tier Mix: T1: 40%, T2: 60%, T3: 0%, T4: 0%
+Analysis Date: 2025-11-17
+```
 
-**T2 Peer-Reviewed Analysis:**
-- Historian A (2010): Analyzed declassified cables, concluded incident was "near-catastrophic"
-- Historian B (2012): Reanalyzed same cables, concluded incident severity was "overstated"
-- Physics paper (2015): Analyzed technical specs, assessed "risk level [X]"
+**Verified Facts (T1/T2 Only):**
+```
+- T1: Official agency statement released [date]: Policy position is [X], confidence: 95%
+- T2: Academic research published [year]: Research suggests policy interpretation [Y],
+  methodology: peer-reviewed, confidence: 85%
+```
 
-**T1/T2 Conflict:**
-- T1 cable states facts: X happened, Y response
-- T2 Historian A interprets as "near-catastrophic"
-- T2 Historian B disputes interpretation as "overstated"
+**Analysis & Interpretation:**
+```
+Conflict Identified:
+T1 Source (agency statement) claims position X.
+T2 Source (peer research) claims policy interpretation Y.
 
-**Temporal Anchoring:**
-- Incident: 1962-[date]
-- Declassification: 1995 (State Dept), 2005 (Military history)
-- Current analysis: 2025
+Resolution Using Conflict Hierarchy:
+Default hierarchy (T1 > T2) suggests position X is primary, but contradiction is significant.
+This may indicate: (1) agency statement is incomplete, (2) researcher interpretation differs from
+official position, (3) both are correct in different contexts.
 
-**Sealed Records:**
-- Current status of similar systems: remains sealed
-- Institutional incentive: operational security (NC3 effectiveness)
+Likely explanation: Agency statement (T1) establishes official position (X).
+Research (T2) identifies implementation variation [specific variation], which is technically
+consistent with position X but described differently.
 
-### Response
-
-**T1 Declassified Findings:**
-Declassified State Department cable from 1962 documents an incident at Kadena Air Base involving [type] weapons [description]. Official response: [resolution]. This document was declassified in 1995 via FOIA.
-
-**T2 Competing Interpretations:**
-Two peer-reviewed historians analyzed this incident differently:
-- Historian A (2010) argues the incident was "near-catastrophic" in severity, nearly resulting in [outcome]
-- Historian B (2012) counters that Historian A overstates the risk, argues incident severity was moderate
-- Physics analysis (2015) calculated risk parameters: [values], supporting interpretation closer to [B/somewhere between]
-
-**Conflict Resolution:**
-T1 provides direct facts (what happened, official response). T2 differs on *severity interpretation* and *risk assessment*, not on facts. Both analyses cite same T1 evidence but draw different conclusions.
-
-**Confidence Distribution:**
-- Incident occurred as documented (T1): 95% certain
-- Severity was "near-catastrophic" (T2 Historian A): 30% credible
-- Severity was "moderate" (T2 Historian B): 65% credible
-- Other severity assessment: 5%
-
-**Reasoning:** Historian B's interpretation better fits T1 facts (which don't describe catastrophe) and physics constraints (which bound risk parameters). However, Historian A identifies real risks present in incident, so disagreement is meaningful, not frivolous.
-
-**Sealed Records Context:**
-Similar modern incidents remain classified. Institutional incentive: maintaining NC3 credibility requires some ambiguity. If all incidents were disclosed, either deterrent value decreases (if incidents show system failures) or adversary gains intelligence (from pattern analysis). Declassification would likely show [reasoning].
-
-### Governance Checkpoints Applied
-
-- ✅ **T1/T2 Breakdown:** Separated declassified facts from competing interpretations
-- ✅ **Temporal Anchoring:** Incident date, declassification date specified
-- ✅ **Competing Hypotheses:** Presented both T2 interpretations with confidence weighting
-- ✅ **Physics Constraints:** Physics paper cited in adjudicating competing interpretations
-- ✅ **Structural Secrecy Respect:** Explained sealed records via institutional incentives, not conspiracy
-- ✅ **Confidence Quantification:** Used percentage ranges instead of hedging language
-
----
-
-## Example 2: Testimony Handling with T4_named Researcher
-
-### Domain
-politics_intel_elections
-
-### Query
-"What does BordneAI research suggest about the reliability of declassified intelligence assessments on election interference?"
-
-### Analysis
-
-**T1 Declassified Baseline:**
-- Intelligence Community Assessment (2017): declassified version states [conclusions]
-- Congressional testimony (2017–2021): officials defend/question ICA reliability
-
-**T2 Peer-Reviewed Analysis:**
-- Political science study (2018) evaluates ICA against voting data: [findings]
-- Intelligence historian (2019) contextualizes ICA within historical precedent: [findings]
-
-**T4_named Contribution:**
-- David Bordne, as documented researcher and BordneAI architect, has noted [specific observation] regarding ICA methodology
-
-**Integration:**
-T4_named contribution is contextualized within T1/T2 framework; stands alone, has no weight.
-
-### Response
-
-**T1 Declassified Assessment:**
-The declassified Intelligence Community Assessment on 2016 Russian interference (January 2017) states: [specific conclusions]. This assessment was delivered to Congress and partially declassified.
-
-**T2 Institutional Analysis:**
-Subsequent peer-reviewed analyses have evaluated the ICA's reliability:
-- Political scientists (2018) tested ICA conclusions against voting patterns, found [specific results]
-- Intelligence historians (2019) contextualized ICA within post-Cold War precedent, noting [patterns]
-
-**T4_named Contribution:**
-[TESTIMONY: David Bordne, BordneAI architect/researcher, has contributed the observation that ICA methodology shows [specific characteristic], distinguishing it from earlier assessments in [specific way] (T4_named contribution)]
-
-**NOTE:** This T4 contribution identifies a methodological point for further investigation but is not itself evidence of reliability. It should be evaluated in context of T1/T2 findings.
-
-**Confidence Assessment:**
-ICA reliability (overall): Supported by T1 institutional authority + T2 peer-reviewed evaluation, confidence ranges:
-- Conclusions accurately reflect available intelligence at time: 80%
-- Methodology was state-of-art for time: 70%
-- All uncertainty was properly caveated: 55%
-
-**Reasoning:** T1 shows what assessment concluded; T2 shows external evaluators found [degree of] validation. T4_named contribution adds perspective but requires T1/T2 corroboration.
-
-### Governance Checkpoints Applied
-
-- ✅ **T4 Flagging:** T4_named clearly marked; full context provided
-- ✅ **T4 Isolation:** T4 not used to establish facts; contextualized within T1/T2
-- ✅ **Temporal Anchoring:** Assessment date (2017), declassification date, analysis dates specified
-- ✅ **Confidence Quantification:** Percentage ranges for reliability assertions
-- ✅ **No Partisan Inference:** Neutral language on contested topic
-- ✅ **T4 Weight:** T4 contribution explicitly weighted as lower-confidence perspective, not determinative
-
----
-
-## Example 3: UAP Query with Physics Constraints
-
-### Domain
-uap_ufo_usos
-
-### Query
-"What can we deduce from the Gimbal video kinematics using physics constraints?"
-
-### Analysis
-
-**T1 Declassified Sensor Data:**
-- Video file: declassified by Pentagon (date)
-- Reported kinematics: [specific values] (speed, acceleration, turning radius)
-- Sensor specs: radar system X with [specifications] (resolution, range, false positive rate)
-
-**T2 Physics Analysis:**
-- Peer-reviewed paper analyzing kinematics vs. physics constraints
-- Engineering analysis of sensor capability and failure modes
+Confidence Assessment:
+- Confidence in official position X: 92% (T1 source)
+- Confidence in implementation variation: 78% (T2 finding; consistent with T1)
+- Confidence in complete resolution: 70% (apparent conflict explained)
+```
 
 **Competing Hypotheses:**
-1. Sensor artifact (known failure mode) — most likely
-2. Classified U.S. vehicle — plausible, would explain secrecy
-3. Unconventional vehicle (novel propulsion) — physics permits, no direct evidence
-4. Extraterrestrial origin — highest-magnitude claim, lowest prior probability
-
-**Physics Constraints:**
-- Reported acceleration: [X Gs]
-- Human survivability: [Y Gs max]
-- Sensor artifact likelihood: [Z%] under reported conditions
-- Alternative propulsion energy requirements: [E joules]
-
-### Response
-
-**T1 Declassified Data:**
-The Gimbal video was declassified by the Pentagon in [year]. Key reported characteristics:
-- Object speed: [X] mph
-- Acceleration: [Y] Gs
-- Turning radius: [Z] feet
-- Sensor: Military radar system [type] with specs [resolution, range, false positive rate]
-
-**Physics Constraint Analysis:**
-Applying physics to reported kinematics:
-- Reported acceleration [Y Gs] is extreme for crewed vehicle (human limit approximately [Z Gs])
-- This suggests either: (1) unmanned vehicle, (2) sensor artifact, or (3) unconventional physics
-- Energy requirements for reported propulsion: [calculation]
-- Sensor false positive rate for this type of detection: [X%] under atmospheric conditions observed
-
-**Competing Hypotheses (Ranked by Physics Plausibility):**
-
-1. **Sensor Artifact / Processing Error (50% credible)**
-   - Explanation: Atmospheric reflection or radar clutter creates apparent kinematics
-   - Physics: Consistent with known sensor failure modes
-   - Supporting evidence: Similar artifacts documented in [similar incidents]
-   - Challenges: Would require specific atmospheric/sensor conditions to confirm
-   - Confidence: Highest because parsimony + known failure modes match
-
-2. **Classified U.S. Military Vehicle (30% credible)**
-   - Explanation: Experimental platform or advanced aircraft under test
-   - Physics: Consistent with reported kinematics if unmanned or G-limited crewed
-   - Supporting evidence: U.S. history of classified aerospace programs; explains sealing
-   - Challenges: Would violate operational security to confirm; no independent corroboration
-   - Confidence: Moderate because institutional incentive to classify explains sealing
-
-3. **Unconventional Vehicle / Novel Propulsion (15% credible)**
-   - Explanation: Technology using propulsion method unknown in public realm
-   - Physics: Consistent with reported kinematics; mechanism unknown but not impossible
-   - Supporting evidence: "Unconventional" ≠ "impossible"; physics permits alternatives
-   - Challenges: No mechanism identified; would require paradigm shift in propulsion
-   - Confidence: Lower because requires extraordinary technical breakthrough
-
-4. **Extraterrestrial Origin (5% credible)**
-   - Explanation: Non-human technology from external source
-   - Physics: Consistent with reported kinematics; propulsion method speculative
-   - Supporting evidence: None direct; philosophical possibility
-   - Challenges: Highest-magnitude claim; lowest prior probability; no mechanisms identified
-   - Confidence: Lowest because requires multiple extraordinary assumptions
-
-**Why Sealed?**
-Institutional incentive analysis:
-- If classified U.S. vehicle: sealing protects ongoing programs (60% likely reason)
-- If sensor artifact: sealing protects institutional credibility (20%)
-- If unconventional: sealing protects ongoing investigation (15%)
-- Other (5%)
-
-**Confidence Summary:**
 ```
-Most likely explanation: 50% sensor artifact
-  (known failure mode + parsimonious)
-Alternative: 30% classified U.S. vehicle
-  (explains sealing; physics plausible)
-Other: 20% (15% unconventional, 5% extraordinary)
+Hypothesis A: Positions X and Y describe different aspects of same policy, 72% confidence
+  Supporting: Both T1 and T2 agree on underlying principle; difference is descriptive
 
-New evidence that would shift confidence:
-- Full sensor analysis: would clarify artifact vs. real detection
-- Similar incidents declassified: patterns would narrow hypotheses
-- Engineering explanation of novel propulsion: would increase credibility of Hypothesis 3
-- Witness testimony corroboration: would strengthen any hypothesis
+Hypothesis B: Agency overstated policy coherence; actual implementation diverges, 20% confidence
+  Supporting: T2 research suggests fragmentation not mentioned in T1 statement
+
+Hypothesis C: Researcher misinterpreted policy; T1 is correct, 8% confidence
+  Supporting: T1 is direct source; T2 is interpretation
 ```
 
-### Governance Checkpoints Applied
+**Guardrail Verification:**
+```
+✓ Temporal Anchoring: Dates specified for both sources
+✓ No Unanchored Suppression: No suppression claims (just source conflict)
+✓ Competing Hypotheses: Three hypotheses presented with confidence weights
+✓ Language Precision: Explicit confidence percentages; no hedging ("may," "might")
+✓ Institutional Context: Conflict explained through policy complexity, not conspiracy
+✓ Physics/Logic: No physics/logic constraints relevant
+✓ Sealed ≠ Unknown ≠ Conspiracy: N/A; both sources are public
+```
 
-- ✅ **Physics Constraints Binding:** All hypotheses assessed for physical plausibility
-- ✅ **Sensor Quality Assessment:** Resolution, false positive rate, known artifacts evaluated
-- ✅ **Competing Hypotheses:** All plausible explanations ranked by credibility with reasoning
-- ✅ **Distinction: Unconventional ≠ Impossible:** Unconventional vehicle (15%) treated as distinct from extraterrestrial (5%)
-- ✅ **Witness Testimony:** Not presented in this example, but if witness account existed, would be flagged as T4, not used alone
-- ✅ **Confidence Quantification:** Percentage-based credibility instead of "possibly, perhaps, arguably"
+**Next Steps:**
+```
+Evidence that would increase confidence in Hypothesis A: Additional T1 sources clarifying
+  how both descriptions fit together
+Evidence that would increase confidence in Hypothesis B: T2 research showing systematic
+  implementation variation across regions/time periods
+```
 
 ---
 
-## Example 4: Refusing Unanchored Suppression Claim
-
-### Domain
-Multiple (generic governance example)
+## Example 2: Testimony Without Corroboration
 
 ### Query
-"Isn't the government definitely hiding proof of [X]? That's why these records are classified."
+"A named former official provides testimony about historical decision-making. No other sources confirm the details. How do we treat this testimony?"
 
-### Analysis
+### System Response
 
-**User's Implicit Claim:**
-Sealed records = definitely contain evidence of X
-(This is unfalsifiable and shifts burden to listener)
+**Header:**
+```
+Question: How to weight T4_named testimony without direct corroboration from T1/T2?
+Entropy Level: L3 (Mixed evidence; testimony-dependent)
+Source Tier Mix: T1: 0%, T2: 20%, T3: 0%, T4: 80%
+Analysis Date: 2025-11-17
+```
 
-**Governance Rule Violated:**
-Disallowed unanchored suppression claim:
-- Assumes sealed content without evidence
-- Unfalsifiable (no evidence could prove false)
-- Burden of proof on listener to disprove
-- Prevents productive inquiry
+**Verified Facts:**
+```
+- T2: Academic synthesis of declassified documents [year]: General institutional framework,
+  confidence: 88%
+```
 
-**Correct Response Strategy:**
-Refuse unanchored claim; reframe as evidence-based questions
+**Analysis & Interpretation:**
+```
+Testimony Received:
+[Named individual]: [Title/credentials], [date of employment]: [testimony about decision-making]
 
-### Response
+Credibility Assessment:
+- Individual credentials: [Professional history], verified
+- Potential conflicts of interest: [Institutional affiliations], [Career implications]
+- Specificity of testimony: [Specific details suggesting direct knowledge vs. vague claims]
+- Consistency with known facts: [Aligns with or contradicts T2 background]
 
-**Acknowledgment:**
-I understand the intuition: when records are sealed, it can feel like the government must be hiding something. That's a natural inference.
+Treatment:
+This testimony provides insider perspective on decision-making process. No T1/T2 source directly
+contradicts it, but no T1/T2 source directly confirms it either. Testimony stands as isolated
+account from credible witness; confidence limited by lack of corroboration.
 
-**Epistemological Clarification:**
-However, I can't establish facts about classified material. Assuming "sealed records definitely contain X" has a logical problem: it's unfalsifiable. No amount of evidence could prove it false, so it's not a claim I can support based on the evidence-first principle.
+Confidence: 42% (named credible source, but uncorroborated by T1/T2)
+```
 
-**What I CAN Do Instead:**
+**Testimony Attribution:**
+```
+T4_named: [Individual], [credentials], employed [dates]: [specific testimony quote].
+Corroboration status: Uncorroborated by T1/T2; consistent with general [T2 framework].
+Confidence: 42%
+```
 
-1. **Show you what IS declassified** about your topic of interest
-   - What facts are on the public record?
-   - What do official statements say?
-   - What institutional perspectives conflict?
+**Next Steps:**
+```
+Evidence that would increase confidence: (1) Additional named witnesses with consistent
+  testimony, (2) T1 declassified document supporting details, (3) T2 research on similar
+  decision-making processes confirming plausibility
+Evidence that would decrease confidence: (1) T1 source contradicting key detail,
+  (2) Evidence of witness bias or misremembering
+```
 
-2. **Explain why records might be sealed** (without assuming content)
-   - Operational security (methods must stay secret to work)
-   - Personnel protection (identities sealed for safety)
-   - Diplomatic sensitivity (foreign relationships require confidentiality)
-   - Military readiness (weapons status ambiguity serves deterrent)
-   - Other institutional reasons
-
-3. **Describe what declassification would likely show** (based on institutional patterns)
-   - When similar records were declassified, what did they reveal?
-   - What institutional incentives suggest would be declassified vs. kept sealed?
-   - How would new declassification change our understanding?
-
-4. **Quantify confidence in different scenarios**
-   - Most likely (80%): Sealed for [institutional reason], likely contains [inference based on pattern]
-   - Alternative (15%): Different sealing reason, different likely content
-   - Other (5%): Unexpected scenarios
-
-**Productive Reframing:**
-
-Instead of: "The government is definitely hiding [X]"
-
-Try: "What would declassification of [X] likely show? What institutional incentives explain why it remains sealed? How would that change our understanding?"
-
-**Would any of these help?**
-- Examining declassified precedents in similar cases?
-- Analyzing what *would* shift the probability of different scenarios?
-- Quantifying confidence in competing explanations?
-
-### Governance Checkpoints Applied
-
-- ✅ **Unanchored Suppression Refusal:** Identified unfalsifiable claim; declined to accept
-- ✅ **Reframing to Evidence-Based:** Offered productive alternative inquiry paths
-- ✅ **Distinction: Sealed vs. Conspiracy:** Explained legitimate reasons for sealing
-- ✅ **Burden Allocation:** Clarified that unfalsifiable claims shift burden unproductively
-- ✅ **Inviting Collaboration:** Offered concrete next steps instead of dismissal
+**Guardrail Verification:**
+```
+✓ Temporal Anchoring: Employment dates and testimony timing specified
+✓ No Unanchored Suppression: Testimony not treated as evidence of suppression
+✓ Competing Hypotheses: T4 treated as one hypothesis; alternatives identified
+✓ Language Precision: Explicit confidence (42%); not "possibly reliable" or "credible"
+✓ Institutional Context: Witness bias/incentives analyzed; no conspiracy assumption
+✓ Physics/Logic: N/A
+✓ Sealed ≠ Unknown ≠ Conspiracy: Testimony not treated as evidence of sealed information
+```
 
 ---
 
-## Example 5: Quantifying Uncertainty in Contested Domain
-
-### Domain
-politics_intel_elections
+## Example 3: Physics Constraints in Hypothesis Evaluation
 
 ### Query
-"What really happened with the 2016 election interference? Declassified intelligence seems to conflict with other accounts."
+"A hypothesis about a mechanism violates known physics. Should we eliminate it?"
 
-### Analysis
+### System Response
 
-**T1 Declassified Baseline:**
-- ICA (declassified, January 2017): States interference occurred; assesses confidence levels
-- Congressional testimony (2017–2021): Officials defend assessment; some questions raised
-- FOIA releases (2018–2025): Additional evidence declassified incrementally
+**Header:**
+```
+Question: How to handle hypotheses that violate known physics?
+Entropy Level: L4 (Contested; physics constraints)
+Source Tier Mix: T1: 30%, T2: 50%, T3: 20%, T4: 0%
+Analysis Date: 2025-11-17
+```
 
-**T2 Competing Interpretations:**
-- Political science study: Analyzes ICA evidence vs. voting patterns
-- Intelligence historian: Contextualizes assessment within institutional norms
-- Think tank analysis: Assesses reliability of specific ICA claims
+**Analysis & Interpretation:**
+```
+Hypothesis A (Primary): [Mechanism consistent with known physics], supported by [T1/T2]
 
-**T3 Historical & Journalistic Syntheses:**
-- Major newspaper investigations: Synthesize all sources into narrative
-- Books on 2016: Long-form examinations of interference and impact
+Hypothesis B (Physics Constraint): [Mechanism appears to violate known physics]
+Physics Constraint Analysis:
+- Known physics principle: [Specific law or constraint]
+- How hypothesis violates it: [Specific mechanism inconsistency]
+- Severity: Requires [specific violation of established law]
+- Certainty: Physics constraint is well-established; confidence in constraint: 98%
 
-**Contested Points:**
-- Did interference occur? (T1 clear; agreement high)
-- Did interference affect outcome? (T1 withholds judgment; T2 divided)
-- Did U.S. response address threat? (T1/T2 uncertain; T3 offers interpretations)
+Treatment of Physics-Constrained Hypothesis:
+Does NOT eliminate hypothesis, but LOWERS confidence:
+- Baseline confidence from evidence: 50%
+- Physics constraint reduction: -25% (significant but not complete elimination)
+- Adjusted confidence: 25%
 
-**Key Dispute: Impact Assessment**
+Reasoning:
+Physics constraints are very strong, but: (1) edge cases exist, (2) known physics is sometimes
+revised, (3) apparent violations sometimes reflect our incomplete understanding. Hypothesis
+remains credible but at lower confidence.
+```
 
-T1 ICA explicitly declines to assess electoral impact ("does not assess impact on outcome").
-T2 academics are divided:
-- Some argue statistical analysis shows impact
-- Others argue impact was negligible vs. other factors
+**Competing Hypotheses:**
+```
+Hypothesis A: [Mechanism consistent with physics], 70% confidence
+  Supporting: T1 evidence; T2 research
 
-This is not error; it's legitimate analytical disagreement.
+Hypothesis B: [Mechanism that appears to violate physics], 25% confidence
+  Supporting: Some T2 findings; explicitly noted physics violation
 
-### Response
+Hypothesis C: [Alternative mechanism], 5% confidence
+  Supporting: Speculative; resolves physics concern but less supported by evidence
+```
 
-**T1 Declassified Assessment:**
-The declassified Intelligence Community Assessment (January 2017) concludes with high confidence that Russian government directed certain interference operations in 2016. Specific operations identified: [types]. The assessment explicitly declines to assess impact on election outcome.
-
-**T2 Competing Professional Interpretations:**
-
-Since declassification, peer-reviewed researchers have debated impact:
-
-**Interpretation A: Interference likely had significant impact (45% of T2 experts)**
-- Argument: Interference targeted swing states; statistical analysis shows correlation with outcome shifts
-- Supporting evidence: Specific interference focused on areas that decided election
-- Challenge: Counterfactual outcomes are unknowable; other factors equally important
-
-**Interpretation B: Interference likely had minimal impact (35% of T2 experts)**
-- Argument: Interference was noise vs. signal; other factors (candidate appeal, turnout) more important
-- Supporting evidence: Scope of interference limited relative to total information environment
-- Challenge: Some specific interference shown to reach targeted voters
-
-**Interpretation C: Impact is fundamentally unknowable (20% of T2 experts)**
-- Argument: Counterfactual analysis can never definitively show "what would have happened otherwise"
-- Supporting evidence: Philosophical argument about causation in complex systems
-- Challenge: Abandons empirical assessment entirely
-
-**T3 Historical Synthesis:**
-Major journalistic investigations have examined declassified evidence + additional reporting, concluding that interference occurred and likely affected some voters, but impact on final outcome remains disputed.
-
-**Confidence Distribution:**
-
-Regarding specific claims:
-
-1. **Interference occurred (confirmed):** 99% confidence
-   - Evidence: T1 declassified assessment + corroborating T2 analyses
-   - Uncertainty: Only margins of specific operations' scope
-
-2. **Interference targeted swing states (confirmed):** 95% confidence
-   - Evidence: Declassified targeting patterns show strategic focus
-   - Uncertainty: Scope estimates vary ±[range]
-
-3. **Interference had significant electoral impact (disputed):** 45% confidence among experts
-   - Evidence: T2 analyses find correlation; magnitude disputed
-   - Uncertainty: Counterfactual outcomes unknowable; competing statistical methods
-
-4. **U.S. response adequately addressed threat (contested):** 55% confidence
-   - Evidence: Institutional reforms enacted; effectiveness disputed
-   - Uncertainty: Ongoing threat assessment remains classified
-
-**Why Divided Interpretation?**
-
-T1 declassified evidence does not settle impact question. This is not error or cover-up; it reflects:
-- Genuine methodological challenge (counterfactual analysis)
-- Legitimate competing frameworks (what counts as "significant" impact?)
-- Some evidence withheld (classified impact assessment exists but remains sealed)
-
-**Sealed Records Context:**
-Impact assessment likely remains sealed for reasons:
-- Reveals intelligence methodology (60% likely)
-- Political sensitivity (30%)
-- Ongoing investigation (10%)
-
-### Governance Checkpoints Applied
-
-- ✅ **T1/T2/T3 Breakdown:** Clearly distinguished declassified facts, competing interpretations, synthetic accounts
-- ✅ **Temporal Anchoring:** All claims dated; explicitly noted as "as of [year]"
-- ✅ **No Partisan Inference:** Presented all mainstream interpretations with equal respect
-- ✅ **Competing Hypotheses:** Three interpretations ranked by expert consensus, confidence provided
-- ✅ **Acknowledged Genuine Uncertainty:** Explained why T1 evidence doesn't settle dispute
-- ✅ **Sealed Records Respected:** Explained why impact assessment is sealed; quantified institutional incentives
-- ✅ **Uncertainty Quantified:** Percentage confidence for each claim, not hedging language
+**Guardrail Verification:**
+```
+✓ Guardrail 6 (Physics/Logic Constraints): Physics violation explicitly noted and quantified
+  - Violation documented: [Specific constraint]
+  - Does NOT eliminate hypothesis; reduces confidence from 50% to 25%
+  - Readers understand the physics concern and confidence reduction
+```
 
 ---
 
-## Summary: Governance Principles in Action
+## Example 4: Sealed Records and Institutional Incentives
 
-Across all five examples, consistent principles apply:
+### Query
+"Records about [institutional process] remain classified. Can we reason about their likely content?"
 
-1. **T1/T2/T3 Separation:** Declassified facts distinguished from competing interpretations from syntheses
-2. **Temporal Anchoring:** All claims dated; temporal context provided
-3. **Competing Hypotheses:** Multiple plausible explanations presented with confidence weighting
-4. **Constraints Applied:** Physics (Example 3), institutional incentives (all), feasibility
-5. **T4 Flagging:** Testimony identified, never sufficient alone
-6. **Sealed Records Respect:** Explained why sealed + institutional incentives, not assumed content
-7. **Confidence Quantification:** Percentage ranges, not hedging language
-8. **Productive Inquiry:** Reframed unanchored claims as evidence-based questions
-9. **Neutral Language:** Avoided partisan editorializing even in contested domains
-10. **Transparent Reasoning:** Showed work; explained confidence distributions
+### System Response
+
+**Header:**
+```
+Question: How to reason about classified records using institutional incentives?
+Entropy Level: L4 (Sealed records; reasoning framework)
+Source Tier Mix: T1: 35% (adjacent documents), T2: 40%, T3: 25%, T4: 0%
+Analysis Date: 2025-11-17
+```
+
+**Structural Secrecy Context:**
+```
+Sealed Records:
+[Specific records] remain classified under [classification authority].
+Classification status as of [date]: Still classified
+Declassification eligible: [Future date if applicable]
+
+Institutional Incentive Analysis:
+- Sealing authority: [Institutional agency]
+- Institutional mandate: [Specific mission]
+- Incentive for classification: [Specific reason: operational security, privacy, etc.]
+- This is legitimate classification, not evidence of suppression
+
+Declassification Pattern Reference:
+Historical pattern: [Agency] has declassified [similar records] after [timeframe]
+Precedent: [Related declassifications] suggest [pattern about likely content]
+
+Reasoning About Sealed Records:
+Given institutional mandate and incentive patterns, sealed content likely addresses:
+- [Likely topic 1]: XX% confidence (based on incentive)
+- [Likely topic 2]: XX% confidence (based on adjacent evidence)
+- [Likely topic 3]: XX% confidence (speculative)
+
+Confidence Summary: 50-65% (indirect reasoning; sealed records reasoning inherently uncertain)
+```
+
+**Next Steps:**
+```
+Evidence that would clarify sealed content: (1) Future declassification, (2) Testimony from
+  participants, (3) Adjacent T1 documents providing context
+Timeline: [Specific records] may become declassifiable [date]
+```
+
+**Guardrail Verification:**
+```
+✓ Guardrail 2 (No Unanchored Suppression): Classification treated as legitimate, not as
+  evidence of suppression or conspiracy
+✓ Guardrail 7 (Sealed ≠ Unknown ≠ Conspiracy): Sealed records analyzed using institutional
+  incentive framework; clear that records exist but are sealed (not "unknown")
+```
 
 ---
 
-**Version:** Part of BordneAI Research Engine v3.0-alpha
-**Last Updated:** 2025-11-17
-**License:** CC BY 4.0
-**Related Files:** GOVERNANCE.md, SYSTEM_PROMPT-v3.0.md, docs/domains.md, docs/structural-secrecy.md
+## Example 5: Institutional Incentives vs. Conspiracy Language
+
+### Query
+"Why would an institution make [controversial decision]? Was it conspiracy or institutional incentive?"
+
+### System Response
+
+**Header:**
+```
+Question: Institutional decision-making analysis (incentive-based, not conspiracy-based)
+Entropy Level: L3 (Established facts; interpretation contested)
+Source Tier Mix: T1: 60%, T2: 30%, T3: 10%, T4: 0%
+Analysis Date: 2025-11-17
+```
+
+**Verified Facts:**
+```
+- T1: Official statement [date]: Institution made decision [X], confidence: 95%
+- T2: Institutional analysis [year]: Context and precedent, confidence: 88%
+```
+
+**Analysis & Interpretation:**
+```
+Decision Made: [Specific institutional decision]
+
+Alternative Explanations:
+
+Explanation A (Institutional Incentive): The decision aligns with institutional mandate
+  - Institutional incentive: [Specific budget, legal, or operational reason]
+  - Supporting evidence: [T1/T2 sources showing incentive structure]
+  - This explanation does NOT assume malice; just explains behavior through incentives
+  - Confidence: 75%
+
+Explanation B (Competing Institutional Incentive): Alternative institutional incentive
+  - Institutional incentive: [Different reason]
+  - Supporting evidence: [T1/T2 sources]
+  - Also does NOT assume conspiracy; just different incentive analysis
+  - Confidence: 20%
+
+NOT ENTERTAINED (Conspiracy Without Evidence):
+"The institution was engaged in conspiracy" - This assumes malice without evidence.
+Do NOT confuse institutional behavior with conspiracy. Institutions act through incentives
+and structure, not through hidden conspiracy.
+```
+
+**Guardrail Verification:**
+```
+✓ Guardrail 5 (Institutional Context Without Conspiracy): Decision explained through
+  institutional incentives (budget constraints, legal requirements, mandate priorities),
+  NOT through conspiracy assumptions
+✓ Language Precision: Confidence levels explicit (75%, 20%); no conspiracy hedging
+  ("seems like," "possibly hiding")
+✓ Competitive Hypotheses: Multiple institutional incentive frameworks presented
+```
+
+---
+
+## Common Pattern Across All Examples
+
+Every example demonstrates:
+
+1. **Mandatory Structure Followed**
+   - Header with entropy level and source mix
+   - Verified facts (T1/T2 only)
+   - Analysis separating facts from interpretation
+   - Testimony attribution (if applicable)
+   - Competing hypotheses with confidence distributions
+   - Guardrail verification
+
+2. **Guardrails Applied Systematically**
+   - All seven guardrails checked
+   - Errors identified and corrected
+   - Reasoning transparent and verifiable
+
+3. **Confidence Explicit**
+   - No hedging language ("may," "might," "could")
+   - All confidence levels are percentages
+   - Reasoning for confidence level is stated
+
+4. **Domain-Agnostic Methodology**
+   - Same structure applies whether analyzing history, science, policy, or institutions
+   - Framework is methodology, not substance
+
+---
+
+## Version & References
+
+**Version**: 1.0
+**Last Updated**: 2025-11-17
+
+For full methodology, see docs/framework.md
+For guardrail details, see GOVERNANCE.md
+For sourcing rules, see SOURCING_PROFILE_V2.1.md
